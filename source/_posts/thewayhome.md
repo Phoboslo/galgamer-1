@@ -110,104 +110,55 @@ body {
 ## 登場人物
 
 <style>
-  .charname {
-    font-size: 150%;
-  }
-  .namearea hr {
-    margin: 1.5rem 0;
-  }
-  .sp-character img, .img-shade {
-    filter: drop-shadow(0 0 6px #000c);
-  }
-  .sp-character {
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 5px 11px 0 rgb(0 0 0 / 18%), 0 4px 15px 0 rgb(0 0 0 / 15%);
-
-    -webkit-backdrop-filter: blur(1px);
-    backdrop-filter: blur(1px);
-    
-    background-color: var(--chara-card-color);
-    
-    /* background-color: transparent;
-    background-image: var(--this-bg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
-
-  }
-  .sp-character .char-overlay {
-    background-color: var(--chara-card-color);
-    min-height: 400px;
-    background-image: var(--right-bg);
-    background-repeat: no-repeat;
-    background-position: bottom -80px right calc(100% * 0.3 - 130px);
-    background-size: auto 550px;
-
-    margin: 0;
-    padding: 0;
-  }
-  :root { /* 配色 */
-    --chara-card-color: #ffffffcf;
-  }
-  [data-user-color-scheme='dark'] {
-    --chara-card-color: #1a1a1aa6;
-  }
-  @media screen and (max-width: 767px) {
-    .namearea hr {
-      margin: 1rem 0;
-    }
-    .pc-left {
-      -webkit-backdrop-filter: blur(3px);
-      backdrop-filter: blur(3px);
-      
-      background: var(--chara-card-color);
-      transition: opacity 0.3s;
-    }
-    .pc-left.touch {
-      opacity: 0.1;
-    }
-    .sp-character {
-     /*background: unset;*/
-      /*-webkit-backdrop-filter: unset;
-    backdrop-filter: unset;*/
-    }
-    .sp-character .char-overlay {
-      min-height: unset;
-      /* background-size: contain;*/
-      background-position: bottom -90px right 0px; 
-    }
-    :root { /* 配色 */
-      --chara-card-color: #ffffff87;
-    }
-    [data-user-color-scheme='dark'] {
-      --chara-card-color: #1a1a1aa6;
-    }
-  }
+.text-outline {
+    text-shadow:
+    -2px -2px 0 #FFF,
+    2px -2px 0 #FFF,
+    -2px 2px 0 #FFF,
+    2px 2px 0 #FFF;
+}
+.text-outline-black {
+    text-shadow:
+      -1px -1px 0 #151550,
+      1px -1px 0 #151550,
+      -1px 1px 0 #151550,
+      1px 1px 0 #151550;
+      -2px -2px 0 #151550,
+      2px -2px 0 #151550,
+      -2px 2px 0 #151550,
+      2px 2px 0 #151550;
+}
+.verticaltext{
+   width: 1px;
+   word-wrap: break-word;
+   white-space: pre-wrap; 
+}
+.sp-name {
+  font-size: 200% !important;
+  right: 0;
+}
+.sp-desc {
+  background-color: var(--card-color);
+}
+.sp-card {
+  bottom: 0;
+  right: 0;
+}
 </style>
 
-{% template sp-character name no yomi uid html %}
-<div class={`row sp-character ${uid}`} style={`--this-bg: url(../image/thewayhome/chars/${no}b.webp)`}>
-  <div class="col-12 char-overlay row" style={`--right-bg: url(../image/thewayhome/chars/${no}.webp)`}>
-    <div class="pc-left col-12 col-md-8">
-      <div class="namearea col-12 pt-2">
-        <div class="charname font-serif font-weight-bold font-italic">
-          {name}
-        </div>
-        <div class="yomi font-italic">
-          {yomi}
-        </div>
-        <hr />
-      </div>
-      <div class="infoarea col-12" html={html}>
-      </div>  
+{% template sp-character no name dark html %}
+<div class="card bg-transparent text-dark border-light col-lg-8 my-2 px-2 py-2" style=%{ $cardColor: dark ? "#141428CC" : "#FFFFFFCC" }% id={name}>
+  <img src={`../image/thewayhome/chars/${no}.webp`} width="1030" height="1100" loading="lazy" class="img-lazy card-img bg-transparent" />
+  <div class="card-img-overlay">
+    <div class="position-absolute sp-card">
+      <h3 class="sp-name text-right mr-4 text-light text-outline-black font-italic font-weight-light" id={name}>{name}</h3>
+      <p class={`sp-desc text-right mr-2 ${dark ? "text-light" : "text-dark"} rounded px-2 py-2`} html={html} />
     </div>
-  </div>  
+  </div>
 </div>
 {% endtemplate %}
 
-<sp-character no=0 name="女主角" yomi="独居JD" uid="">
-
+<sp-character no=0 name="女主角" dark=“1”>
   <p>
 独居东京的女子大生</br>
 身上还留着海滩旅行的晒痕</br>
@@ -217,20 +168,17 @@ body {
 困扰于归路上时时发生的灵异现象</br>
 如果不好好应对的话，会掉进无法逃离的深渊吧 
   </p>
-
 </sp-character>
 <br>
-<sp-character no=1 name="女招待" yomi="澡堂女侍" uid="">
-
+<sp-character no=1 name=""澡堂女侍" dark ="1">
   <p>
       迷糊的澡堂女招待</br>
 也许是值夜班的关系</br>
 每次见她都一副没睡醒的样子
   </p>
-
 </sp-character>
 <br>
-<sp-character no=2 name="吉普赛人" yomi="占卜师" uid="">
+<sp-character no=2 name="吉普赛人" dark=“1”>
   <p>
       吉普赛人打扮的女占卜师</br>
 打扮暴露,肉体色情</br>
