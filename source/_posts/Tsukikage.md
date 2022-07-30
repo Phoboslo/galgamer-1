@@ -152,11 +152,7 @@ excerpt: '被表妹如月零邀請，回到故鄉如月老宅參加「儀式」�
 
 <details><summary>點此展開 OP 動畫</summary>
 
-<video width="100%" controls="controls"  preload="metadata" muted> 
-<source src="https://cdn.cloudflare.steamstatic.com/steam/apps/256756829/movie480.webm" src-cn="https://media.st.dl.pinyuncloud.com/steam/apps/256756829/movie480.webm" type="video/webm"/>
-<source src="https://cdn.cloudflare.steamstatic.com/steam/apps/256756829/movie480.mp4" src-cn="https://media.st.dl.pinyuncloud.com/steam/apps/256756829/movie480.mp4" type="video/mp4"/>
-<p>無法使用  JavaScript。</p>  
-</video>
+{% steam_player 256756829 %}
 
 動畫來自 Steam。
 </details>
@@ -165,9 +161,9 @@ excerpt: '被表妹如月零邀請，回到故鄉如月老宅參加「儀式」�
 
 霜月はるか - **イノチの灯し方** 
 
-*音訊來自網易雲音樂，自動加載已停用，播放時請注意音量。*
+*請注意音量。*
 
-<audio controls="" style="width: 100%" preload="none" src="https://music.163.com/song/media/outer/url?id=473403622.mp3" type="audio/mp3"></audio>
+<audio controls="" style="width: 100%" preload="metadata" src="https://s3static-zone0.galgamer.eu.org/audio-2d35/%E3%82%A4%E3%83%8E%E3%83%81%E3%81%AE%E7%81%AF%E3%81%97%E6%96%B9.mp3" type="audio/mp3"></audio>
 
 歌詞唱出了遊戲中某個人物的內心，旋律也很有意境，這首歌是俺入坑遊戲的契機。
 
