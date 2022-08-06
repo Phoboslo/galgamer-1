@@ -385,7 +385,7 @@ https://www.purplesoftware.jp/cgi/diary/nicky.cgi?page=119
 
 ## 資源和下載
 
-英文無修版（終於能跨跨越日語的障礙來遊玩本作辣！）：
+英文無修版（終於能跨越日語的障礙來遊玩本作辣！）：
 
 https://www.ryuugames.com/eng-amatsutsumi-uncensored/
 
