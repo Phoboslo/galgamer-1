@@ -1,5 +1,5 @@
 ---
-title:'美少女万花镜-罪与罚的少女-'
+title:'美少女万华镜-罪与罚的少女-'
 keywords:"美少女万华镜, ωstar, 美少女万華鏡"
 banner_image:''
 index_img:''
