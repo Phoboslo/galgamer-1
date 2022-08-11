@@ -157,6 +157,9 @@ categories:
 ## 资源和下载
 
 
+安卓版:https://t.me/RhineLibrary/145
+
+pc版:https://t.me/ACGNyouxifenxiang/2249
 
 
 <style>
