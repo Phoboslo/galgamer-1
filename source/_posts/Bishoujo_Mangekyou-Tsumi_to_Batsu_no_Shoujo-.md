@@ -10,15 +10,13 @@ tags:
   - 女装
   - 剧情
   - 伦理
- 
 categories:
   - [R-18]
   - [游戏公司, ωstar] 
 
-
-`作者：Gal 编辑`
-
-透着一股伦理味儿的拔作
+author: 'SacalWiki'
+excerpt: '业界清流，透着伦理味儿的拔作'
+---
 
 | 資訊一覽     |                 |
 | :----------- | :------------------------------------ |
@@ -80,6 +78,7 @@ categories:
 <span style="font-size:175%">覡 夕摩</span>
 
 本作主角，和姐姐长相神似，饱读诗书，时常被姐姐捉弄但他乐在其中。
+
 
 
 <div class='my-0 col-lg-8 col-12'>
@@ -152,14 +151,21 @@ categories:
 
 ## 还在犹豫是否下载？
 
+这里有一个试玩录像
+
+<video controls preload="metadata" width='100%' poster='../image/Bishoujo_Mangekyou-Tsumi_to_Batsu_no_Shoujo-/movie.webp'>
+<source src="" type="video/mp4">
+</video>
 
 
 ## 资源和下载
 
 
-安卓版:https://t.me/RhineLibrary/145
+安卓直装:https://t.me/RhineLibrary/145
 
 pc版:https://t.me/ACGNyouxifenxiang/2249
+
+ONS版:https://t.me/c/1797032243/13498
 
 
 <style>
