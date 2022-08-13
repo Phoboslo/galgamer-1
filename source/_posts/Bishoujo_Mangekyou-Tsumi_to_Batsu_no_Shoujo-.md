@@ -18,6 +18,8 @@ abbrlink: 20861
 excerpt: '业界清流，透着伦理味儿的拔作'
 ---
 
+<img src="../image/Bishoujo_Mangekyou-Tsumi_to_Batsu_no_Shoujo-/tg-preview.jpg" class="d-none"/>
+
 ![Cover](../image/Bishoujo_Mangekyou-Tsumi_to_Batsu_no_Shoujo-/cover.jpg)
 
 | 資訊一覽     |                 |
