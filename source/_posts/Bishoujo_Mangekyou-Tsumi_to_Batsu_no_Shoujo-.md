@@ -143,6 +143,13 @@ excerpt: '业界清流，透着伦理味儿的拔作'
 
 ![](../image/Bishoujo_Mangekyou-Tsumi_to_Batsu_no_Shoujo-/cg/4.webp)
 
+![](../image/Bishoujo_Mangekyou-Tsumi_to_Batsu_no_Shoujo-/cg/5.webp)
+
+![](../image/Bishoujo_Mangekyou-Tsumi_to_Batsu_no_Shoujo-/cg/6.webp)
+
+![](../image/Bishoujo_Mangekyou-Tsumi_to_Batsu_no_Shoujo-/cg/7.webp)
+
+
 
 ## 给新玩家的推荐理由
 
