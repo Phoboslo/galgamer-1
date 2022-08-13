@@ -145,8 +145,8 @@ excerpt: '业界清流，透着伦理味儿的拔作'
 </style>
 
 {% template sp-character name no yomi uid html %}
-<div class={`row sp-character ${uid}`} style={`--this-bg: url(../image/Amatu-tumi/chars/${no}b.webp)`}>
-  <div class="col-12 char-overlay row" style={`--right-bg: url(../image/Amatu-tumi/chars/${no}.webp)`}>
+<div class={`row sp-character ${uid}`} style={`--this-bg: url(../image/Bishoujo_Mangekyou-Tsumi_to_Batsu_no_Shoujo-/chars/${no}b.webp)`}>
+  <div class="col-12 char-overlay row" style={`--right-bg: url(../image/Bishoujo_Mangekyou-Tsumi_to_Batsu_no_Shoujo-/chars/${no}.webp)`}>
     <div class="pc-left col-12 col-md-8">
       <div class="namearea col-12 pt-2">
         <div class="charname font-serif font-weight-bold font-italic">
