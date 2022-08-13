@@ -67,71 +67,159 @@ excerpt: '业界清流，透着伦理味儿的拔作'
 
 ## 登场人物
 
-<div class='my-0 col-lg-8 col-12'>
-<img src='../image/Bishoujo_Mangekyou-Tsumi_to_Batsu_no_Shoujo-/chars/夕摩.webp' class='bg-transparent'/>
+<style>
+  .charname {
+    font-size: 150%;
+  }
+  .namearea hr {
+    margin: 1.5rem 0;
+  }
+  .sp-character img, .img-shade {
+    filter: drop-shadow(0 0 6px #000c);
+  }
+  .sp-character {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 11px 0 rgb(0 0 0 / 18%), 0 4px 15px 0 rgb(0 0 0 / 15%);
+
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
+    
+    background-color: var(--chara-card-color);
+    
+    /* background-color: transparent;
+    background-image: var(--this-bg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+
+  }
+  .sp-character .char-overlay {
+    background-color: var(--chara-card-color);
+    min-height: 400px;
+    background-image: var(--right-bg);
+    background-repeat: no-repeat;
+    background-position: bottom -80px right calc(100% * 0.3 - 130px);
+    background-size: auto 550px;
+
+    margin: 0;
+    padding: 0;
+  }
+  :root { /* 配色 */
+    --chara-card-color: #ffffffcf;
+  }
+  [data-user-color-scheme='dark'] {
+    --chara-card-color: #1a1a1aa6;
+  }
+  @media screen and (max-width: 767px) {
+    .namearea hr {
+      margin: 1rem 0;
+    }
+    .pc-left {
+      -webkit-backdrop-filter: blur(3px);
+      backdrop-filter: blur(3px);
+      
+      background: var(--chara-card-color);
+      transition: opacity 0.3s;
+    }
+    .pc-left.touch {
+      opacity: 0.1;
+    }
+    .sp-character {
+     /*background: unset;*/
+      /*-webkit-backdrop-filter: unset;
+    backdrop-filter: unset;*/
+    }
+    .sp-character .char-overlay {
+      min-height: unset;
+      /* background-size: contain;*/
+      background-position: bottom -90px right 0px; 
+    }
+    :root { /* 配色 */
+      --chara-card-color: #ffffff87;
+    }
+    [data-user-color-scheme='dark'] {
+      --chara-card-color: #1a1a1aa6;
+    }
+  }
+</style>
+
+{% template sp-character name no yomi uid html %}
+<div class={`row sp-character ${uid}`} style={`--this-bg: url(../image/Amatu-tumi/chars/${no}b.webp)`}>
+  <div class="col-12 char-overlay row" style={`--right-bg: url(../image/Amatu-tumi/chars/${no}.webp)`}>
+    <div class="pc-left col-12 col-md-8">
+      <div class="namearea col-12 pt-2">
+        <div class="charname font-serif font-weight-bold font-italic">
+          {name}
+        </div>
+        <div class="yomi font-italic">
+          {yomi}
+        </div>
+        <hr />
+      </div>
+      <div class="infoarea col-12" html={html}>
+      </div>  
+    </div>
+  </div>  
 </div>
+{% endtemplate %}
 
-<span style="font-size:175%">覡 夕摩</span>
-
-本作主角，和姐姐长相神似，时常被姐姐捉弄但他乐在其中
-因家庭原因住院一年，出院后和姐姐一起读女校
-饱读诗书，<del>我青年时代就读过</del>《恶之花》（也作恶之华）
-《山羊之歌》《麦田的守望者》《鲜花圣母》《地狱一季》（这本好像没有中译本）
-有诗人的敏感，能精准捕捉生活中的小确幸
-
-
-<div class='my-0 col-lg-8 col-12'>
-<img src='../image/Bishoujo_Mangekyou-Tsumi_to_Batsu_no_Shoujo-/chars/夕莉.webp' class='bg-transparent'/>
-</div>
-
-<span style="font-size:175%">覡 夕莉</span>
-
-夕摩的双胞胎姐姐，学习优秀，运动万能，料理上手，是学校里有名的冰山美人
-意外地有宅的一面，给弟弟安利姐控向gal，书柜里也有轻小说
-重度弟控，严重到不想让弟弟吃其他女人做的饭
-
-
-<div class='my-0 col-lg-8 col-12'>
-<img src='../image/Bishoujo_Mangekyou-Tsumi_to_Batsu_no_Shoujo-/chars/いちか.webp' class='bg-transparent'/>
-</div>
-
-<span style="font-size:175%">铃森 伊千果</span>
-
-夕摩的同班同学，胆小&天然呆，喜欢小动物
-读不懂空气(KY)，没把握好当代年轻人轻浮的气球社交
-在班里是存在感比较低的存在，这大概是她偶尔会通宵玩gal的原因
-
-
-<div class='my-0 col-lg-8 col-12'>
-<img src='../image/Bishoujo_Mangekyou-Tsumi_to_Batsu_no_Shoujo-/chars/鏡子.webp' class='bg-transparent'/>
-</div>
-
-<span style="font-size:175%">御场 镜子</span>
-
-夕摩的同班同学，电波系，半边脸用头发遮住
-文艺部部长，涉猎范围广泛，尤其喜欢看克苏鲁神话
-文艺部部室种种怪谈的制造者
-
-
-<div class='my-0 col-lg-8 col-12'>
-<img src='../image/Bishoujo_Mangekyou-Tsumi_to_Batsu_no_Shoujo-/chars/咲.webp' class='bg-transparent'/>
-</div>
-
-<span style="font-size:175%">藤堂 咲</span>
-
-保健室的老师，热情成熟，人气很高
-但在学生中流传着一些关于她的不好的传言
-
-
-<div class='my-0 col-lg-8 col-12'>
-<img src='../image/Bishoujo_Mangekyou-Tsumi_to_Batsu_no_Shoujo-/chars/礼次郎.webp' class='bg-transparent'/>
-</div>
-
-<span style="font-size:175%">覡 礼次郎</span>
-
-夕摩的父亲，职场精英，对子女要求严格。
-
-
+<sp-character no=0 name="覡夕摩" yomi="kannagi yuuma" uid="yuuma">
+  <p>
+    本作主角，和姐姐长相神似，时常被姐姐捉弄但他乐在其中，<br>
+    因家庭原因住院一年，出院后和姐姐一起读女校，<br>
+    有诗人的敏感，能精准捕捉生活中的小确幸。
+  </p>
+  <p>
+    饱读诗书，<del>我青年时代就读过</del>《恶之花》（也作恶之华）<br>
+    《山羊之歌》《麦田的守望者》《鲜花圣母》《地狱一季》（这本好像没有中译本）
+  </p>
+</sp-character>
+<br>
+<sp-character no=1 name="覡夕莉" yomi="kannagi yuuri" uid="yuuri">
+  <p>
+    夕摩的双胞胎姐姐，学习优秀，运动万能，料理上手，是学校里有名的冰山美人。
+  </p>
+  <p>
+    意外地有宅的一面，给弟弟安利姐控向gal，书柜里也有轻小说，<br>
+    重度弟控，严重到不想让弟弟吃其他女人做的饭。
+  </p>
+</sp-character>
+<br>
+<sp-character no=2 name="铃森伊千果" yomi="suzumori ichika" uid="ichika">
+  <p>
+    夕摩的同班同学，胆小&天然呆，喜欢小动物
+  </p>
+  <p>
+    读不懂空气(KY)，没把握好当代年轻人轻浮的气球社交，<br>
+    在班里是存在感比较低的存在，这大概是她偶尔会通宵玩gal的原因。
+  </p>
+</sp-character>
+<br>
+<sp-character no=3 name="御殿场镜子" yomi="gotenba kyouko" uid="kyouko">
+  <p>
+    夕摩的同班同学，电波系，半边脸用头发遮住。
+  </p>
+  <p>
+    文艺部部长，涉猎范围广泛，尤其喜欢看克苏鲁神话，<br>
+    文艺部部室种种怪谈的制造者
+  </p>
+</sp-character>
+<br>
+<sp-character no=4 name="藤堂咲" yomi="toudou saki" uid="saki">
+  <p>
+    保健室的老师，热情成熟，人气很高。
+  </p>
+  <p>
+    但在学生中流传着一些关于她的不好的传言。
+  </p>
+</sp-character>
+<br>
+<sp-character no=5 name="覡礼次郎" yomi="kannagi reijirou" uid="reijirou">
+  <p>
+    夕摩的父亲，职场精英，对子女要求严格。
+  </p>
+</sp-character>
 
 ## 游戏 CG（含有 R-18）
 
