@@ -1,9 +1,9 @@
 ---
-title:'美少女万华镜-罪与罚的少女-'
+title: '美少女万华镜-罪与罚的少女-'
 date: 2022-08-13 00:30:00
-keywords:"美少女万华镜, ωstar, 美少女万華鏡"
-banner_image:''
-index_img:'../image/Bishoujo_Mangekyou-Tsumi_to_Batsu_no_Shoujo-/cover.webp'
+keywords: "美少女万华镜, ωstar, 美少女万華鏡"
+banner_image: ''
+index_img: '../image/Bishoujo_Mangekyou-Tsumi_to_Batsu_no_Shoujo-/cover.webp'
 tags:
   - 拔作
   - 伪娘
@@ -13,7 +13,6 @@ tags:
 categories:
   - [R-18]
   - [游戏公司, ωstar] 
-
 author: 'SacalWiki'
 excerpt: '业界清流，透着伦理味儿的拔作'
 ---
