@@ -190,7 +190,7 @@ body {
 
 </sp-character>
 <br>
-<sp-character no=01 name=""阿露露" dark ="1">
+<sp-character no=01 name="阿露露" dark ="1">
 
   <p>
 擅长战斗和谍报的兽人女仆长阿露露。</br>
