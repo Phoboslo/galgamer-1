@@ -137,14 +137,14 @@ body {
 }
 .text-outline-black {
     text-shadow:
-      -1px -1px 0 #151550,
-      1px -1px 0 #151550,
-      -1px 1px 0 #151550,
-      1px 1px 0 #151550;
-      -2px -2px 0 #151550,
-      2px -2px 0 #151550,
-      -2px 2px 0 #151550,
-      2px 2px 0 #151550;
+      -1px -1px 0 #4fdadd,
+      1px -1px 0 #4fdadd,
+      -1px 1px 0 #4fdadd,
+      1px 1px 0 #4fdadd;
+      -2px -2px 0 #4fdadd,
+      2px -2px 0 #4fdadd,
+      -2px 2px 0 #4fdadd,
+      2px 2px 0 #4fdadd;
 }
 .verticaltext{
    width: 1px;
@@ -154,6 +154,7 @@ body {
 .sp-name {
   font-size: 200% !important;
   right: 0;
+  margin-top: 1em !important;
 }
 .sp-desc {
   background-color: var(--card-color);
@@ -162,57 +163,47 @@ body {
   bottom: 0;
   right: 0;
 }
+.card-img{
+  margin: 1rem;
+}
 </style>
 
-{% template sp-character no name dark html %}
-<div class="card bg-transparent text-dark border-light col-lg-8 my-2 px-2 py-2" style=%{ $cardColor: dark ? "#141428CC" : "#FFFFFFCC" }% id={name}>
-  <img src={`../image/imperialharem/chars/${no}.webp`} width="1030" height="1100" loading="lazy" class="img-lazy card-img bg-transparent" />
-  <div class="card-img-overlay">
-    <div class="position-absolute sp-card">
-      <h3 class="sp-name text-right mr-4 text-light text-outline-black font-italic font-weight-light" id={name}>{name}</h3>
-      <p class={`sp-desc text-right mr-2 ${dark ? "text-light" : "text-dark"} rounded px-2 py-2`} html={html} />
-    </div>
-  </div>
-</div>
-{% endtemplate %}
 
-<sp-character no=00 name="蒂安娜" dark="1">
+<h3 class="sp-name mr-auto text-outline-black font-italic font-weight-light">
+  蒂安娜
+</h3>
 
-  <p>
-皇帝的独生女蒂安娜公主</br>
-信奉廉洁政治，因此痛恨弄权腐败的你</br>
-拥有比任何人都高洁的道德准则</br>
-因此收揽了阿露露和菲的忠心</br>
-王族的魔法显示，在30天以内，她就会登基成为女王</br>
-如果不在这之前征服她的身心</br>
-恐怕她就会毫无怜悯的让你死无葬身之地
-  </p>
+![](../image/imperialharem/chars/00.webp)
 
-</sp-character>
-<br>
-<sp-character no=01 name="阿露露" dark ="1">
+**皇帝的独生女蒂安娜公主。**
+信奉廉洁政治，因此痛恨弄权腐败的你，拥有比任何人都高洁的道德准则，因此收揽了阿露露和菲的忠心。
 
-  <p>
-擅长战斗和谍报的兽人女仆长阿露露。</br>
-在这个兽人被歧视的世界，只有公主蒂安娜真心待她</br>
-她也因此对公主抱有着超过一般主仆的感情</br>
-受制于兽人的本能，她正出于不可抑制的发情期中</br>
-藉由这点，你就可以趁虚而入
-  </p>
+王族的魔法显示，在30天以内，她就会登基成为女王，如果不在这之前征服她的身心，恐怕她就会毫无怜悯地让你死无葬身之地。
 
-</sp-character>
-<br>
-<sp-character no=02 name="菲" dark="1">
 
-  <p>
-      以“真实”作为至上价值追求的研究狂,宫廷炼金术师菲。</br>
-待人接物都是一副假面般的冷漠</br>
-但心里却深深仰慕公主蒂安娜，因此还对阿露露很是嫉妒</br>
-为了公主，她愿意牺牲一切，即使是身体——</br>
+<h3 class="sp-name mr-auto text-outline-black font-italic font-weight-light">
+  阿露露
+</h3>
+
+![](../image/imperialharem/chars/01.webp)
+
+**擅长战斗和谍报的兽人女仆长阿露露。**
+在这个兽人被歧视的世界，只有公主蒂安娜真心待她，她也因此对公主抱有着超过一般主仆的感情。
+
+受制于兽人的本能，她正处于不可抑制的发情期中，藉由这点，你就可以趁虚而入。
+
+<h3 class="sp-name mr-auto text-outline-black font-italic font-weight-light">
+  菲
+</h3>
+
+![](../image/imperialharem/chars/02.webp)
+
+
+**以“真实”作为至上价值追求的研究狂，宫廷炼金术师菲。**
+待人接物都是一副假面般的冷漠，但心里却深深仰慕公主蒂安娜，因此还对阿露露很是嫉妒。
+
+为了公主，她愿意牺牲一切，即使是身体——
 年幼无知的她，将会怎样因性的快乐而扭曲——
-  </p>
-
-</sp-character>
 
 
 ## 遊戲 CG
@@ -246,13 +237,17 @@ body {
 ## H 場景
 
 {% gallery hcg %}
-../image/imperialharem/hcg/0.webp
 ../image/imperialharem/hcg/1.webp
 ../image/imperialharem/hcg/2.webp
 ../image/imperialharem/hcg/3.webp
 ../image/imperialharem/hcg/4.webp
-../image/imperialharem/hcg/5.webp
 {% endgallery %}
+
+
+![](../image/imperialharem/hcg/0.webp)
+
+![](../image/imperialharem/hcg/5.webp)
+
 
 ## 遊戲畫面
 
@@ -272,30 +267,19 @@ body {
 <source src="https://s3static-zone0.galgamer.eu.org/video-2d35/Imperialharem/pv.mp4" type="video/mp4">
 </video>
 
-## 试玩视频
-
-<video controls preload="metadata" width='100%' poster='../image/imperialharem/op.webp'>
-<source src="https://s3static-zone0.galgamer.eu.org/video-2d35/Imperialharem/7mins-know.mp4" type="video/mp4">
-</video>
-
 ## 點評
 
 **玩法:**
 
 本作是触摸型日式互动slg，玩家可以利用鼠标上下摇晃来对女主角们进行爱抚或者插入的操作。
-
 类似的游戏还有**催眠高傲大小姐**，但与风格更接近3D的催眠高傲大小姐不同，本作是Live 2D风格。
-
 我个人是觉得，目前的技术水平，2D还是比3D更精致。
 
 进入游戏后会发现有简单普通困难三种难度，大概区别在于调教的时限不同和对爱抚操作的要求不同。
-
-不过剧情和cg上是没有差别的，所以还是建议选择普通难度。
-
+不过剧情和CG上是没有差别的，所以还是建议选择普通难度，
 毕竟玩拔作还要研究晃动鼠标频率挺喜剧的，还是不要和自己的手指过不去。
 
-本作在宣传上说可以接入手机，通过在触屏手机上划动来进行触摸操作。
-
+本作在宣传上说可以接入手机，通过在触屏手机上划动来进行触摸操作，
 听起来十分高科技，但盗版资源能否进行这个操作还是未知数。
 
 **剧本:**
@@ -316,7 +300,7 @@ body {
 
 这种初始秩序被破坏的场景实际上就是一个冲突激烈的场景，也是整个故事的关键点之一。如果这个破坏过于轻巧，那么后续主角开始采取行动对抗破坏就显得可笑。如果过于冗长，就会挤压之后主角行动的篇幅。在一些现实背景的故事中，如果是读者已经了解过秩序破坏的背景，比如敌军轰炸自己要紧急撤退这种故事，作者就可以简单提及快速进入应对部分。但如果是虚构故事，就最好细腻的用人物冲突场景来表现这种秩序破坏。
 
-于是在接下来，故事迅速引入了朝会审判场景。在这个场景中，主角丹特斯和公主及侍从三人激烈冲突，而公主拿出了致命证据，足以致丹特斯于死地，丹特斯用诡计结束朝会，但是自知躲不过下一次。在这个部分，游戏甚至在cg极其有限的情况下专门为这个场景做了一张丹特斯下属勾结敌国的cg，可以说是非常细致有张力的完成了这个初始秩序破坏的部分。
+于是在接下来，故事迅速引入了朝会审判场景。在这个场景中，主角丹特斯和公主及侍从三人激烈冲突，而公主拿出了致命证据，足以致丹特斯于死地，丹特斯用诡计结束朝会，但是自知躲不过下一次。在这个部分，游戏甚至在cg极其有限的情况下专门为这个场景做了一张丹特斯下属勾结敌国的CG，可以说是非常细致有张力的完成了这个初始秩序破坏的部分。
 
 而后，故事进入下一部分，这个初始秩序破坏的压力作用到主角身上，开始给主角任务，驱动主角行动。主角丹特斯在被公主扳倒的压力下，开始准备利用梦魇戒指干翻公主和两个侍从，摆平危机。
 
@@ -334,29 +318,31 @@ body {
 
 根据你对三个女主角的攻略状况不同和是否给她们开苞，结局会有所不同。游戏内部设置了good end，normal end和bad end三种表示。不过每种end对应结局其实不止一个。
 
-个人建议可以利用破解补丁直接打开所有cg，在gallery中观看所有结局和分支剧情。
+个人建议可以利用破解补丁直接打开所有CG，在gallery中观看所有结局和分支剧情。
 
-cg和立绘:
+**CG和立绘:**
 
-这是小成本制作游戏，cg和立绘都很节俭。三个女主角的立绘表情差分只有三个，也就是说只有三种表情。而且每个女主角的立绘只有固定一个姿势。除去很可能是免费素材的背景，真正的游戏CG也只有三四张。不过由于画风还算精致，所以体验不差。
+这是小成本制作游戏，CG和立绘都很节俭。三个女主角的立绘表情差分只有三个，也就是说只有三种表情。而且每个女主角的立绘只有固定一个姿势。除去很可能是免费素材的背景，真正的游戏CG也只有三四张。不过由于画风还算精致，所以体验不差。
 
 Live 2D也很可爱，可用的调教方法在最初的版本比较少。之后一年左右的更新增加了几个跳蛋玩法，但似乎网上流传的盗版版本都不包含后续更新内容。
 
-声优:
+**声优:**
 
-本作声优值得提及的一个点是，有知名下海里界声优**杏子御津**的参与。杏子御津也就是Fate系列里伊利亚声优的里界马甲。单亲妈妈养小孩不易，即使是小成本色情slg的配音也愿意接...
+本作声优值得提及的一个点是，有知名下海里界声优**杏子御津**的参与。杏子御津也就是Fate系列里伊利亚声优的里界马甲。单亲妈妈养小孩不易，即使是小成本色情SLG的配音也愿意接...
 
+
+## 试玩视频
+
+<video controls preload="metadata" width='100%' poster='../image/imperialharem/op.webp'>
+<source src="https://s3static-zone0.galgamer.eu.org/video-2d35/Imperialharem/7mins-know.mp4" type="video/mp4">
+</video>
 
 
 ## 資源和下載
 
-下面是琉璃神社在电报上的下载链接
+琉璃神社：
 
 {% telegram_channel 1796 liuli_link %}
-
-```
-https://t.me/liuli_link/1796?comment=5072
-```
 
 
 <script>
