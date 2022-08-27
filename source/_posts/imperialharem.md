@@ -68,7 +68,7 @@ body {
 </style>
 `作者：木卫一`
 
-<img src="../image/imperialharem/tg-preview.jpg" class="d-none">
+<img src="../image/imperialharem/tg-preview2.jpg" class="d-none">
 
 ## At A Glance
 
