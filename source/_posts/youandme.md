@@ -178,7 +178,9 @@ excerpt: '我想要的————只是“你”'
 
 steam近期更新官方中文，但無R-18，且據説中文翻譯質量不行，可以用盜版替換大法。(最後再提一嘴，進入“正戯”后還是乖乖的查攻略比較好，攻略基本都是同一個版本直接檢索就好
 
-學習版： {% telegram_channel 4859 RhineLibrary %}
+學習版：
+中文 {% telegram_channel 4895 RhineLibrary %}
+日文 {% telegram_channel 335615 Galgamer %}
 
 <style>
 body {
