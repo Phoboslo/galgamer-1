@@ -446,7 +446,7 @@ BGM 曲名叫做：***今昔の街***
 
 Steam 商店版需要額外安裝 R-18 補丁。
 
-網友發的資源： {% telegram_channel 153 acg49 %}
+網友發的資源： {% telegram_channel 888 %}
 （已安裝 R-18 補丁）
 
 備註：Hikari Field 警告
