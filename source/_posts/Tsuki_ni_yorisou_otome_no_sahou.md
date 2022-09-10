@@ -1,9 +1,8 @@
 ---
-title: '近月少女的礼仪：伪娘题材的青春恋爱喜剧'
-date: 2022-09-10 00:30:00
-keywords: "Navel, 近月少女的礼仪, 月に寄りそう乙女の作法"
+title: 近月少女的礼仪：伪娘题材的青春恋爱喜剧
+keywords: 'Navel, 近月少女的礼仪, 月に寄りそう乙女の作法'
 banner_image: ''
-index_img:  '../image/Tsuki_ni_yorisou_otome_no_sahou/cover.webp'
+index_img: ../image/Tsuki_ni_yorisou_otome_no_sahou/cover.webp
 tags:
   - 治愈
   - 伪娘
@@ -11,10 +10,13 @@ tags:
   - 剧情
   - 调教
 categories:
-  - [R-18]
-  - [游戏公司, Navel] 
-author: 'SacalWiki'
-excerpt: '跨过阴郁的过去，迎接闪闪发光的未来吧'
+  - - R-18
+  - - 游戏公司
+    - Navel
+author: SacalWiki
+excerpt: 跨过阴郁的过去，迎接闪闪发光的未来吧
+abbrlink: 55677
+date: 2022-09-10 00:30:00
 ---
 
 `作者：SacalWiki`
@@ -182,7 +184,7 @@ excerpt: '跨过阴郁的过去，迎接闪闪发光的未来吧'
   </p>
 </sp-character>
 <br>
-<sp-character no=2 name=花之宫瑞穗" yomi="hananomiya mizuho" uid="mizuho">
+<sp-character no=2 name="花之宫瑞穗" yomi="hananomiya mizuho" uid="mizuho">
   <p>
     黑发大和抚子，温文尔雅，面对危机时又有沉着冷静的一面。
   </p>
@@ -201,7 +203,7 @@ excerpt: '跨过阴郁的过去，迎接闪闪发光的未来吧'
   </p>
   <p>
     过去曾被露娜捉弄得团团转，为了和露娜竞争而特地来日本留学，<br>
-    受到称赞会毫不犹豫地发出愉悦的女王三段笑：哦~吼~哦~哦~<br>
+    受到称赞会毫不犹豫地发出愉悦的女王三段笑：哦~吼~哦~哦~ <br>
     在很多方面都表现出与露娜的竞争意识，多次试图挖角朝日娘。
   </p>
 </sp-character>
