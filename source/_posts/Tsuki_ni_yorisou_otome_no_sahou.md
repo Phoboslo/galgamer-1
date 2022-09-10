@@ -1,6 +1,6 @@
 ---
 title: '近月少女的礼仪：伪娘题材的青春恋爱喜剧'
-date: 2022-08-13 00:30:00
+date: 2022-09-10 00:30:00
 keywords: "Navel, 近月少女的礼仪, 月に寄りそう乙女の作法"
 banner_image: ''
 index_img:  '../image/Tsuki_ni_yorisou_otome_no_sahou/cover.webp'
@@ -16,6 +16,14 @@ categories:
 author: 'SacalWiki'
 excerpt: '跨过阴郁的过去，迎接闪闪发光的未来吧'
 ---
+
+`作者：SacalWiki`
+
+<img src="../image/Tsuki_ni_yorisou_otome_no_sahou/tg-preview.jpg" class="d-none" />
+
+跨过阴郁的过去，迎接闪闪发光的未来吧
+
+![Cover](../image/Tsuki_ni_yorisou_otome_no_sahou/cover.webp)
 
 | 資訊一覽     |                 |
 | :----------- | :------------------------------------ |
@@ -226,11 +234,10 @@ excerpt: '跨过阴郁的过去，迎接闪闪发光的未来吧'
 
 ## 遊戲 OP
 
-动画来自bilibili，建议关闭弹幕<del>你问我为什么不是油管？不用看广告你们就偷着乐吧</del>
+动画来自 Steam
 
-<video controls preload="metadata" width='100%' poster='../image/Tsuki_ni_yorisou_otome_no_sahou/op.webp'>
-<source src="https://player.bilibili.com/player.html?bvid=BV1BX4y1K752" type="video/mp4">
-</video>
+{% steam_player 256859396 %}
+
 
   
 ## 遊戲 CG
@@ -327,9 +334,9 @@ excerpt: '跨过阴郁的过去，迎接闪闪发光的未来吧'
 
 ## 资源和下载
 
-PC: https://t.me/RhineLibrary/9456?single
+{% steam_widget 1776970 %}
 
-ONS: https://t.me/RhineLibrary/9456?single
+萊茵圖書館：{% telegram_channel 9456 RhineLibrary %}
 
 
 <style>
