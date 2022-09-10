@@ -226,11 +226,10 @@ excerpt: '跨过阴郁的过去，迎接闪闪发光的未来吧'
 
 ## 遊戲 OP
 
-动画来自bilibili，建议关闭弹幕<del>你问我为什么不是油管？不用看广告你们就偷着乐吧</del>
+动画来自 Steam
 
-<video controls preload="metadata" width='100%' poster='../image/Tsuki_ni_yorisou_otome_no_sahou/op.webp'>
-<source src="https://player.bilibili.com/player.html?bvid=BV1BX4y1K752" type="video/mp4">
-</video>
+{% steam_player 256859396 %}
+
 
   
 ## 遊戲 CG
