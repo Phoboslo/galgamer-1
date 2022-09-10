@@ -327,9 +327,9 @@ excerpt: '跨过阴郁的过去，迎接闪闪发光的未来吧'
 
 ## 资源和下载
 
-PC: https://t.me/RhineLibrary/9456?single
+{% steam_widget 1776970 %}
 
-ONS: https://t.me/RhineLibrary/9456?single
+萊茵圖書館：{% telegram_channel 9456 RhineLibrary %}
 
 
 <style>
