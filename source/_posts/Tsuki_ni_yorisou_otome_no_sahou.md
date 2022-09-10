@@ -264,9 +264,6 @@ excerpt: '跨过阴郁的过去，迎接闪闪发光的未来吧'
   <img class="img-lazy ar16x9" src="../image/Tsuki_ni_yorisou_otome_no_sahou/cg/05.webp" loading="lazy"/>
 </p>
 
-<p>
-  <img class="img-lazy ar16x9" src="../image/Tsuki_ni_yorisou_otome_no_sahou/cg/06.webp" loading="lazy"/>
-</p>
 
 ## H 場景
 
@@ -293,10 +290,6 @@ excerpt: '跨过阴郁的过去，迎接闪闪发光的未来吧'
 
 <p>
   <img class="img-lazy ar16x9" src="../image/Tsuki_ni_yorisou_otome_no_sahou/H/05.webp" loading="lazy"/>
-</p>
-
-<p>
-  <img class="img-lazy ar16x9" src="../image/Tsuki_ni_yorisou_otome_no_sahou/H/06.webp" loading="lazy"/>
 </p>
 
 
