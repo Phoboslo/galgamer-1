@@ -1,9 +1,8 @@
 ---
-title: '近月少女的礼仪：伪娘题材的青春恋爱喜剧'
-date: 2022-09-10 00:30:00
-keywords: "Navel, 近月少女的礼仪, 月に寄りそう乙女の作法"
+title: 近月少女的礼仪：伪娘题材的青春恋爱喜剧
+keywords: 'Navel, 近月少女的礼仪, 月に寄りそう乙女の作法'
 banner_image: ''
-index_img:  '../image/Tsuki_ni_yorisou_otome_no_sahou/cover.webp'
+index_img: ../image/Tsuki_ni_yorisou_otome_no_sahou/cover.webp
 tags:
   - 治愈
   - 伪娘
@@ -11,10 +10,13 @@ tags:
   - 剧情
   - 调教
 categories:
-  - [R-18]
-  - [游戏公司, Navel] 
-author: 'SacalWiki'
-excerpt: '跨过阴郁的过去，迎接闪闪发光的未来吧'
+  - - R-18
+  - - 游戏公司
+    - Navel
+author: SacalWiki
+excerpt: 跨过阴郁的过去，迎接闪闪发光的未来吧
+abbrlink: 55677
+date: 2022-09-10 00:30:00
 ---
 
 `作者：SacalWiki`
@@ -134,8 +136,8 @@ excerpt: '跨过阴郁的过去，迎接闪闪发光的未来吧'
 </style>
 
 {% template sp-character name no yomi uid html %}
-<div class={`row sp-character ${uid}`} style={`--this-bg: url(../image/Amatu-tumi/chars/${no}b.webp)`}>
-  <div class="col-12 char-overlay row" style={`--right-bg: url(../image/Amatu-tumi/chars/${no}.webp)`}>
+<div class={`row sp-character ${uid}`} style={`--this-bg: url(../image/Tsuki_ni_yorisou_otome_no_sahou/chars/${no}b.webp)`}>
+  <div class="col-12 char-overlay row" style={`--right-bg: url(../image/Tsuki_ni_yorisou_otome_no_sahou/chars/${no}.webp)`}>
     <div class="pc-left col-12 col-md-8">
       <div class="namearea col-12 pt-2">
         <div class="charname font-serif font-weight-bold font-italic">
@@ -182,7 +184,7 @@ excerpt: '跨过阴郁的过去，迎接闪闪发光的未来吧'
   </p>
 </sp-character>
 <br>
-<sp-character no=2 name=花之宫瑞穗" yomi="hananomiya mizuho" uid="mizuho">
+<sp-character no=2 name="花之宫瑞穗" yomi="hananomiya mizuho" uid="mizuho">
   <p>
     黑发大和抚子，温文尔雅，面对危机时又有沉着冷静的一面。
   </p>
@@ -201,7 +203,7 @@ excerpt: '跨过阴郁的过去，迎接闪闪发光的未来吧'
   </p>
   <p>
     过去曾被露娜捉弄得团团转，为了和露娜竞争而特地来日本留学，<br>
-    受到称赞会毫不犹豫地发出愉悦的女王三段笑：哦~吼~哦~哦~<br>
+    受到称赞会毫不犹豫地发出愉悦的女王三段笑：哦~吼~哦~哦~ <br>
     在很多方面都表现出与露娜的竞争意识，多次试图挖角朝日娘。
   </p>
 </sp-character>
@@ -238,8 +240,6 @@ excerpt: '跨过阴郁的过去，迎接闪闪发光的未来吧'
 
 {% steam_player 256859396 %}
 
-
-  
 ## 遊戲 CG
 
 <p>
@@ -266,12 +266,7 @@ excerpt: '跨过阴郁的过去，迎接闪闪发光的未来吧'
   <img class="img-lazy ar16x9" src="../image/Tsuki_ni_yorisou_otome_no_sahou/cg/05.webp" loading="lazy"/>
 </p>
 
-<p>
-  <img class="img-lazy ar16x9" src="../image/Tsuki_ni_yorisou_otome_no_sahou/cg/06.webp" loading="lazy"/>
-</p>
-
 ## H 場景
-
 
 <p>
   <img class="img-lazy ar16x9" src="../image/Tsuki_ni_yorisou_otome_no_sahou/H/00.webp" loading="lazy"/>
@@ -297,12 +292,7 @@ excerpt: '跨过阴郁的过去，迎接闪闪发光的未来吧'
   <img class="img-lazy ar16x9" src="../image/Tsuki_ni_yorisou_otome_no_sahou/H/05.webp" loading="lazy"/>
 </p>
 
-<p>
-  <img class="img-lazy ar16x9" src="../image/Tsuki_ni_yorisou_otome_no_sahou/H/06.webp" loading="lazy"/>
-</p>
-
-
-## 笔者给新玩家的现身说法的推荐
+## 笔者现身说法的推荐
 
 刚玩这作我是非常迷惑的，完全欣赏不来，
 序章给人一种王子复仇记的感觉，但是男主的深仇大恨在后来的剧情里几乎没有体现，
@@ -326,10 +316,10 @@ excerpt: '跨过阴郁的过去，迎接闪闪发光的未来吧'
 其实就是看我自己愿不愿意放过自己，但我终究是没有放过自己，
 任由无尽的梦魇在漫长的黑夜里将我性格里柔软的部分吞噬殆尽。
 
-男主却放下了阴郁的过去，向闪闪发光的未来迈进，
+男主却放下了阴郁的过去，向未来迈进，
 我曾经在交流群里说过，我感觉男主特别的软弱(
 现在看来，放得下过去的朝日娘才是真正的强大，
-我这种小丑才是真正的软弱，各位别学我(
+我这种才是真正的小丑，各位别学我(
 
 
 ## 资源和下载
