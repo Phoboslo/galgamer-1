@@ -17,6 +17,14 @@ author: 'SacalWiki'
 excerpt: '跨过阴郁的过去，迎接闪闪发光的未来吧'
 ---
 
+`作者：SacalWiki`
+
+<img src="../image/Tsuki_ni_yorisou_otome_no_sahou/tg-preview.jpg" class="d-none" />
+
+跨过阴郁的过去，迎接闪闪发光的未来吧
+
+![Cover](../image/Tsuki_ni_yorisou_otome_no_sahou/cover.webp)
+
 | 資訊一覽     |                 |
 | :----------- | :------------------------------------ |
 | **開發商**   | Navel |
