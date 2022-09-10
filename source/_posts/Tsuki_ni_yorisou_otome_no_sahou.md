@@ -1,6 +1,6 @@
 ---
 title: '近月少女的礼仪：伪娘题材的青春恋爱喜剧'
-date: 2022-08-13 00:30:00
+date: 2022-09-10 00:30:00
 keywords: "Navel, 近月少女的礼仪, 月に寄りそう乙女の作法"
 banner_image: ''
 index_img:  '../image/Tsuki_ni_yorisou_otome_no_sahou/cover.webp'
