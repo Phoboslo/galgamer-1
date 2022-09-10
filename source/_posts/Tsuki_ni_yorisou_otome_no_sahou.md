@@ -264,9 +264,7 @@ excerpt: '跨过阴郁的过去，迎接闪闪发光的未来吧'
   <img class="img-lazy ar16x9" src="../image/Tsuki_ni_yorisou_otome_no_sahou/cg/05.webp" loading="lazy"/>
 </p>
 
-
 ## H 場景
-
 
 <p>
   <img class="img-lazy ar16x9" src="../image/Tsuki_ni_yorisou_otome_no_sahou/H/00.webp" loading="lazy"/>
@@ -292,8 +290,7 @@ excerpt: '跨过阴郁的过去，迎接闪闪发光的未来吧'
   <img class="img-lazy ar16x9" src="../image/Tsuki_ni_yorisou_otome_no_sahou/H/05.webp" loading="lazy"/>
 </p>
 
-
-## 笔者给新玩家的现身说法的推荐
+## 笔者现身说法的推荐
 
 刚玩这作我是非常迷惑的，完全欣赏不来，
 序章给人一种王子复仇记的感觉，但是男主的深仇大恨在后来的剧情里几乎没有体现，
