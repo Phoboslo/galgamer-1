@@ -12,27 +12,23 @@ categories:
 - - R-18
 - - 游戏公司
 - AUGUST
-excerpt: 日本超人大战现代军队
+excerpt: 貫徹到歷史盡頭的忠義、跨越千年的戀歌
 author: Hiyatoki
 banner_img: ''
 index_img: ../image/Senmomo/momo.webp
 abbrlink: 53636
 ---
 
-<!-- <script src="../js/Senmomo/jquery-1.11.2.min.js"></script> -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-<script src="../js/Senmomo/velocity.js"></script>
-<script src="../js/Senmomo/page_to.js"></script>
-<script src="../js/Senmomo/sakura_config.js"></script>
+<script defer src="../js/Senmomo/velocity.js"></script>
+<script defer src="../js/Senmomo/page_to.js"></script>
+<script defer src="../js/Senmomo/sakura_config.js"></script>
 
 <script src="/js/cplayer.min.js"></script>
 <script defer src="../js/Senmomo/music.js"></script>
 
-
-
 ![Title](../image/Senmomo/title.webp)
 
-
+<img src="../image/Senmomo/tg-preview.jpg" loading="lazy" class="d-none">
 
 <center>花謝，花飛 </center>
 <center>散落，飄去</center>
@@ -40,15 +36,11 @@ abbrlink: 53636
 <center>啊，我深愛的人兒</center>
 <center>你爲何還要繼續戰鬥，甚至不惜爲此起誓不再哭泣</center><br>
 
-
-
 `作者：Hiyatoki`
 
-貫徹到歷史盡頭的忠義、跨越千年的戀歌
+**貫徹到歷史盡頭的忠義、跨越千年的戀歌**
 
 ——歡迎來到千の刃濤、桃花染の皇姫的安利文章
-
-
 
 ## At A Glance
 
@@ -61,13 +53,35 @@ abbrlink: 53636
 | **分级** | R-18 |
 | **游戏引擎** | BURIKO General Interpreter |
 
-***『千の刃濤、桃花染の皇姫』***是`AUGUST會社`歷代作品中唯二的嚴肅題材作品其中的一部（另一部是***穢翼のユースティア***穢翼的尤斯蒂婭）。
+- ***『千の刃濤、桃花染の皇姫』***是`AUGUST會社`歷代作品中唯二的嚴肅題材作品其中的一部（另一部是***穢翼のユースティア** 穢翼的尤斯蒂婭）。
 
-本作的藝術風格以和風為主調，但背景設定在科技發達的現代。
+- 本作的藝術風格以和風為主調，但背景設定在科技發達的現代。
 
-在本作中你既可以看到華麗的和風著裝、街道建築；擁有傳說般神奇力量的武士和巫女們，也能看到各式電子設備、現代熱兵器之類的現代元素。
+- 在本作中你既可以看到華麗的和風著裝、街道建築；擁有傳說般神奇力量的武士和巫女們，也能看到各式電子設備、現代熱兵器之類的現代元素。
 
+## CG速覽
 
+{% gallery %}
+../image/Senmomo/cg_intro/cg1.webp
+../image/Senmomo/cg_intro/cg2.webp
+../image/Senmomo/cg_intro/cg3.webp
+../image/Senmomo/cg_intro/cg4.webp
+{% endgallery %}
+
+<div class="row m-1">
+  <div class="col-12 col-md-6 p-1 round">
+    <img class="img-lazy rounded ar16x9 box-shadow" src="../image/Senmomo/cg_intro/bg1.webp" loading="lazy" />
+  </div>
+  <div class="col-12 col-md-6 p-1 round">
+    <img class="img-lazy rounded ar16x9 box-shadow" src="../image/Senmomo/cg_intro/bg2.webp" loading="lazy" />
+  </div>
+  <div class="col-12 col-md-6 p-1 round">
+    <img class="img-lazy rounded ar16x9 box-shadow" src="../image/Senmomo/cg_intro/bg3.webp" loading="lazy" />
+  </div>
+  <div class="col-12 col-md-6 p-1 round">
+    <img class="img-lazy rounded ar16x9 box-shadow" src="../image/Senmomo/cg_intro/bg4.webp" loading="lazy" />
+  </div>
+</div>
 
 ## 故事
 
@@ -94,12 +108,6 @@ abbrlink: 53636
 皇國歷**2173**年，**皇國的咒壁機能突然中止**，共和國迅速入侵並占領了皇國，『天神庇佑的國家』之傳說被打破，皇國政府由共和國掌控，主權喪失，女帝駕崩，『**翡翠帝**』登基，由宰相小此木在共和國的限製下運作皇國政府。
 
 ![](../image/Senmomo/animation/invasion.webp)
-
-
-
-
-
-
 
 ## 主要登場人物
 
@@ -161,7 +169,8 @@ abbrlink: 53636
 <br>
 <sp-char name="Elsa" cv="奏雨">
   <p>
-    共和國總督兼共和國軍總司令 沃倫 瓦倫丁 的女兒 <br>
+    艾爾莎·瓦倫丁<br>
+    共和國總督兼共和國軍總司令 沃倫·瓦倫丁 的女兒 <br>
     天京中央師團團長、治安負責人、主角一行人所就讀學校的學生會長
   </p>
   <p>
@@ -215,22 +224,153 @@ abbrlink: 53636
 
 #### 咒術
 
-依靠神力實現奇跡，使用時會減少壽命，所以咒術使用者多為年輕女性，即**巫女**。
+- 依靠神力實現奇跡，使用時會減少壽命，所以咒術使用者多為年輕女性，即**巫女**。
 經過訓練的巫女可以使用各種各樣效果的咒術，如攻擊咒術和治愈咒術。
 
 - 咒裝具，由巫女使用咒術為其附魔而得的用具。
 
-**咒裝刀**是其中的一種。咒裝刀可以強化使用者的身體能力，對攻擊附加各種效果，或有特殊技能。咒裝刀戰前有約兩千振，戰後悉數被共和國沒收。
+  **咒裝刀**是其中的一種。咒裝刀可以強化使用者的身體能力，對攻擊附加各種效果，或有特殊技能。咒裝刀戰前有約兩千振，戰後悉數被共和國沒收。
 
-咒裝刀通過咒紋輸送力量，所以只有武人才能操作。
+​  咒裝刀通過咒紋輸送力量，所以只有武人才能操作。
 
-- 咒壁，以皇宮中巖壁為載體的巨型咒裝具，其生成的屏障在皇國歷史的兩千年中保護其不受外敵入侵，由皇祖緋彌之命主持建造。
+- 咒壁，以皇宮中巖壁為載體的巨型咒裝具，其生成的屏障在皇國歷史的兩千年中保護其不受外敵入侵,由皇祖緋彌之命主持建造。
+
+
+## 路綫圖
+
+## CG鑒賞
+
+### 場景背景
+
+<div class="row m-1">
+  <div class="col-12 col-md-6 p-1 round">
+    <img class="img-lazy rounded ar16x9 box-shadow" src="../image/Senmomo/cg/scenes_bg/bg1.webp" loading="lazy" />
+  </div>
+  <div class="col-12 col-md-6 p-1 round">
+    <img class="img-lazy rounded ar16x9 box-shadow" src="../image/Senmomo/cg/scenes_bg/bg2.webp" loading="lazy" />
+  </div>
+  <div class="col-12 col-md-6 p-1 round">
+    <img class="img-lazy rounded ar16x9 box-shadow" src="../image/Senmomo/cg/scenes_bg/bg3.webp" loading="lazy" />
+  </div>
+  <div class="col-12 col-md-6 p-1 round">
+    <img class="img-lazy rounded ar16x9 box-shadow" src="../image/Senmomo/cg/scenes_bg/bg4.webp" loading="lazy" />
+  </div>
+  <div class="col-12 col-md-6 p-1 round">
+    <img class="img-lazy rounded ar16x9 box-shadow" src="../image/Senmomo/cg/scenes_bg/bg5.webp" loading="lazy" />
+  </div>
+  <div class="col-12 col-md-6 p-1 round">
+    <img class="img-lazy rounded ar16x9 box-shadow" src="../image/Senmomo/cg/scenes_bg/bg6.webp" loading="lazy" />
+  </div>
+  <div class="col-12 col-md-6 p-1 round">
+    <img class="img-lazy rounded ar16x9 box-shadow" src="../image/Senmomo/cg/scenes_bg/bg7.webp" loading="lazy" />
+  </div>
+  <div class="col-12 col-md-6 p-1 round">
+    <img class="img-lazy rounded ar16x9 box-shadow" src="../image/Senmomo/cg/scenes_bg/bg8.webp" loading="lazy" />
+  </div>
+</div>
+
+### 游戲中CG
+
+{% gallery %}
+../image/Senmomo/cg/r1.webp
+../image/Senmomo/cg/r2.webp
+../image/Senmomo/cg/r3.webp
+../image/Senmomo/cg/r4.webp
+{% endgallery %}
+<br>
+{% gallery %}
+../image/Senmomo/cg/a1.webp
+../image/Senmomo/cg/a2.webp
+../image/Senmomo/cg/a3.webp
+{% endgallery %}
+<br>
+{% gallery %}
+../image/Senmomo/cg/m1.webp
+../image/Senmomo/cg/m2.webp
+../image/Senmomo/cg/m3.webp
+../image/Senmomo/cg/m4.webp
+{% endgallery %}
+
+### R-18 CG
+
+{% gallery %}
+../image/Senmomo/cg/hcg/h1.webp
+../image/Senmomo/cg/hcg/h2.webp
+../image/Senmomo/cg/hcg/h3.webp
+../image/Senmomo/cg/hcg/h4.webp
+../image/Senmomo/cg/hcg/h5.webp
+{% endgallery %}
+
+### 游戲中現代兵器鑒賞
+
+這個游戲裏出現的現代兵器都是現實中存在的，但幾乎沒有對外形作任何改動，所以甚至能辨認出具體型號。
+
+<div class="row m-1">
+  <div class="col-12 col-md-6 p-1 round">
+    <img class="img-lazy rounded ar16x9 box-shadow" src="../image/Senmomo/cg/weapons/g36k.webp" loading="lazy" />
+    <p>
+      Heckler & Koch G36 5.56×45mm 突击步枪<br>
+      該槍為德国联邦国防军自1997年以來的標準服役步槍，2022年將由 HK416A8 取代。<br>
+      圖中為短槍管的K(Kurz)型號 G36K
+    </p>
+
+  </div>
+  <div class="col-12 col-md-6 p-1 round">
+    <img class="img-lazy rounded ar16x9 box-shadow" src="../image/Senmomo/cg/weapons/mp5k.webp" loading="lazy" />
+    <p>
+      同樣是來自德國 HK 公司的MP5衝鋒槍<br>
+      圖中為自帶握把的 MP5K 型號
+    </p>
+  </div>
+  <div class="col-12 col-md-6 p-1 round">
+    <img class="img-lazy rounded ar16x9 box-shadow" src="../image/Senmomo/cg/weapons/glock17.webp" loading="lazy" />
+    <p>
+      來自奧地利的 Glock17 9x19mm 半自動手槍
+    </p>
+  </div>
+  <div class="col-12 col-md-6 p-1 round">
+    <img class="img-lazy rounded ar16x9 box-shadow" src="../image/Senmomo/cg/weapons/m1a2.webp" loading="lazy" />
+    <p>
+      美軍 M1A2 主戰坦克
+    </p>
+  </div>
+  <div class="col-12 col-md-6 p-1 round">
+    <img class="img-lazy rounded ar16x9 box-shadow" src="../image/Senmomo/cg/weapons/ah-1f.webp" loading="lazy" />
+    <p>
+      AH-1F Cobra 武裝直升機
+    </p>
+  </div>
+  <div class="col-12 col-md-6 p-1 round">
+    <img class="img-lazy rounded ar16x9 box-shadow" src="../image/Senmomo/cg/weapons/f-15e.webp" loading="lazy" />
+    <p>
+      F-15E Strike Eagle 戰鬥機
+    </p>
+  </div>
+</div>
+
+## 音樂鑒賞
+
+我玩過的另一部和風作品是千戀萬花，同樣是現代背景的和風游戲，這兩部作品的粉絲群體之間也誕生出不少梗。從音樂方面來説，千戀萬花的音樂偏向流行和搖滾，皇姬的音樂則是加了甲方很喜歡的大氣弦樂（本人不是專業的，只是業餘見解）
 
 <div id="player0"></div>
+<p>
+  這一首是翡翠帝的出場BGM，上文所提的“小家碧玉”也許在其中能得以體現
+</p>
 <div id="player1"></div>
+<p>
+  古杜音的出場BGM，稍顯活潑的風格
+</p>
 <div id="player2"></div>
+<p>
+  Title界面BGM
+</p>
 <div id="player3"></div>
+<p>
+</p>
 <div id="player4"></div>
+<p>
+  本作ED，但這首不是True End的ED
+</p>
 
 ## 點評
 
@@ -250,6 +390,28 @@ abbrlink: 53636
 
 感謝看到這裏的你，希望本篇文章能夠幫助你決定要不要玩這款游戲。
 
+## 游戲版本介紹
+
+| | **初回限定版** | **初回限定版** | **通常版** |
+| :----------------- | :-------------------- |:------------------ |:---------------------|
+| **年份** | 2016 | 2017 | 2016 |
+| **語言** | 日語 | 英語 | 日語 |
+| **平臺？** | PC | **PS4** | PC |
+| **有漢化？** | 有 | 無 | 有 |
+| **全人物語音？** | 有 | 我不知道 | 有 |
+| **分辨率** | 1280x720 | 1920x1080 | 1280x960 |
+| **推薦？** | 推薦 | | 推薦 |
+
+[點擊此處以查看詳情](https://august-soft.com/hatou/products.html)
+
+一般玩家能接觸到的應該是彌生月漢化組的漢化版，也建議普通玩家游玩這個版本。
+
+聽聞官方中文版將由[Hikari Field](https://store.hikarifield.co.jp/)代理發行。具體消息暫未公佈。
+
+## 游玩錄屏
+
+## 資源和下載
+
 <!-- //以下都是代碼 -->
 
 {% template gga-piece name no %}
@@ -263,8 +425,8 @@ abbrlink: 53636
 
 {% endtemplate %}
 
-
 {% template sp-char name html cv%}
+
 <div>
   <style>
     {
@@ -275,11 +437,11 @@ abbrlink: 53636
       .${name}.tce1 .char-overlay {
         --right-bg: url(../image/Senmomo/chars/${name}/tce2.webp);
       }
-
+    
       .${name}.tce2 .char-overlay {
         --right-bg: url(../image/Senmomo/chars/${name}/tce3.webp);
       }
-
+    
       `
     }
   </style>
@@ -333,11 +495,11 @@ abbrlink: 53636
 
 {% endtemplate %}
 
-
-
-
-
 <style>
+  .ar16x9 {
+    aspect-ratio: 16/9;
+  }
+
   .btarea {
     display: flex;
     justify-content: flex-end;
@@ -352,9 +514,9 @@ abbrlink: 53636
     -webkit-user-select: none;
 
     -moz-user-select: none;
-
+    
     -o-user-select: none;
-
+    
     user-select: none;
   }
 
@@ -531,7 +693,7 @@ abbrlink: 53636
     backdrop-filter: blur(1px);
     
     background-color: var(--chara-card-color); */
-
+    
     background-color: transparent;
     background-image: var(--this-bg);
     background-position: center;
@@ -569,32 +731,32 @@ abbrlink: 53636
     .pc-right {
       -webkit-backdrop-filter: blur(3px);
       backdrop-filter: blur(3px);
-
+    
       background: var(--chara-card-color);
       transition: opacity 0.3s;
     }
-
+    
     .pc-right.touch {
       opacity: 0.05;
     }
-
+    
     .sp-character {
       /*background: unset;*/
       /*-webkit-backdrop-filter: unset;
     backdrop-filter: unset;*/
     }
-
+    
     .sp-character .char-overlay {
       min-height: unset;
       background-size: 320px;
       background-position: top 0px left 0px;
     }
-
+    
     :root {
       /* 配色 */
       --chara-card-color: transparent;
     }
-
+    
     [data-user-color-scheme='dark'] {
       --chara-card-color: transparent;
     }
