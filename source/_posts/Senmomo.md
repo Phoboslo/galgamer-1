@@ -332,15 +332,15 @@ date: 2022-09-17 00:30:00
 ### 游戲中現代兵器鑒賞
 
 
-這個游戲裏出現的現代兵器都是現實中存在的，但幾乎沒有對外形作任何改動，所以甚至能辨認出具體型號。
+本作中出現的現代兵器都是現實中存在的，但幾乎沒有對外形作任何改動，所以甚至能辨認出具體型號。
 
 
 <div class="row m-1">
   <div class="col-12 col-md-6 p-1 round">
     <img class="img-lazy rounded ar16x9 box-shadow" src="../image/Senmomo/cg/weapons/g36k.webp" loading="lazy" />
     <p>
-      Heckler & Koch G36 5.56×45mm 突击步枪<br>
-      該槍為德国联邦国防军自1997年以來的標準服役步槍，2022年將由 HK416A8 取代。<br>
+      Heckler & Koch G36 5.56×45mm 突擊步槍<br>
+      該槍為德國聯邦國防軍自1997年以來的標準服役步槍，2022年將由 HK416A8 取代。<br>
       圖中為短槍管的K(Kurz)型號 G36K
     </p>
 
@@ -378,6 +378,13 @@ date: 2022-09-17 00:30:00
   </div>
 </div>
 
+## 遊戲 OP
+
+<video controls preload="metadata" width='100%' poster="../image/Senmomo/cover.webp">
+  <source src="https://s3static-zone0.galgamer.eu.org/video-2d35/senmomo/op.mp4" type="video/mp4" />
+  <p> To view this video please enable JavaScript</p>
+</video>
+
 ## 音樂鑒賞
 
 我玩過的另一部和風作品是千戀萬花，同樣是現代背景的和風游戲，這兩部作品的粉絲群體之間也誕生出不少梗。從音樂方面來説，千戀萬花的音樂偏向流行和搖滾，皇姬的音樂則是加了甲方很喜歡的大氣弦樂（本人不是專業的，只是業餘見解），以下是我挑選的幾首，請聼聼看。
@@ -414,6 +421,14 @@ date: 2022-09-17 00:30:00
 <div id="player4"></div>
 <p>
   本作ED，這首是其他女主角的結局ED，真女主另有特殊ED。
+</p>
+
+---
+
+<div id="player5"></div>
+<p>
+  本作 Fan Disc 花あかり 的ED。<br>
+  跨越千年的戀歌就此劃上終止符，交由後人繼續編織悠遠的物語。
 </p>
 
 ## 點評
@@ -470,7 +485,7 @@ date: 2022-09-17 00:30:00
 ## 還在猶豫是否下載？來看看游玩錄屏吧
 
 <video controls preload="metadata" width='100%' poster="../image/Senmomo/cover.webp">
-  <source src="https://s3static-zone0.galgamer.eu.org/video-2d35/subahibi/subamovie.mp4" type="video/mp4" />
+  <source src="https://s3static-zone0.galgamer.eu.org/video-2d35/senmomo/senmomo.mp4" type="video/mp4" />
   <p> To view this video please enable JavaScript</p>
 </video>
 
@@ -481,6 +496,18 @@ date: 2022-09-17 00:30:00
 ```
 magnet:?xt=urn:btih:093e191308a74eb52ef314d75e745358ec1be620
 ```
+
+Fan Disc 『**千の刃濤、桃花染の皇姫 花あかり**』 的磁力鏈接
+
+```
+magnet:?xt=urn:btih:406fa9b40857064f5b1c35395ae017ad733a3eb9
+```
+---
+
+以上兩者的漢化補丁:
+<p>
+  {% telegram_channel 902 %}
+</p>
 
 <!-- //以下都是代碼 -->
 
