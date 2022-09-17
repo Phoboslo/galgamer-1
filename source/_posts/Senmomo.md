@@ -195,7 +195,7 @@ date: 2022-09-17 00:30:00
 </sp-char>
 <br>
 <div class="row sp-character Sojin tce0" style="--this-bg: url(../image/Senmomo/chars/Sojin/bg.webp)">
-  <div class="col-12 char-overlay row">
+  <div class="col-12 char-overlay row" style="background-color: #ffffff87">
     <div class="pc-right col-12 col-md-8 ml-auto">
       <div class="namearea col-12 pt-2 px-2">
         <div class="nameblock">
@@ -610,16 +610,6 @@ magnet:?xt=urn:btih:406fa9b40857064f5b1c35395ae017ad733a3eb9
     --right-bg: url(../image/Senmomo/chars/Sojin/tce0.webp);
   }
 
-  .infoarea {
-    -webkit-user-select: none;
-
-    -moz-user-select: none;
-    
-    -o-user-select: none;
-    
-    user-select: none;
-  }
-
   .tcebt {
     background-color: transparent;
     background-image: url(../image/Senmomo/bt.png);
@@ -785,6 +775,13 @@ magnet:?xt=urn:btih:406fa9b40857064f5b1c35395ae017ad733a3eb9
     filter: drop-shadow(0 0 6px #000c);
   }
 
+  .infoarea,
+  .swarea,
+  .yomi{
+    color: black;
+    text-shadow: 0 0 3px white ;
+  }
+
   .sp-character {
     border-radius: 20px;
     overflow: hidden;
@@ -837,6 +834,23 @@ magnet:?xt=urn:btih:406fa9b40857064f5b1c35395ae017ad733a3eb9
       transition: opacity 0.3s;
     }
     
+    .infoarea ,
+    .swarea,
+    .yomi{
+
+    color: black;
+
+    -webkit-user-select: none;
+
+    -moz-user-select: none;
+    
+    -o-user-select: none;
+    
+    user-select: none;
+
+    text-shadow: 0 0 3px white ;
+    }
+
     .pc-right.touch {
       opacity: 0.05;
     }
