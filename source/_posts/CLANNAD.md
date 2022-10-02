@@ -62,8 +62,9 @@ excerpt: '一段長長的坡道，一段人生的旅程'
 
 ## 故事梗概
 
-在某個不知名的小鎮上，***岡崎朋也***因爲家庭原因對生活失去了色彩，只想離開這個小鎮，因此在光坂高等學院和好基友***春原陽平***過著混吃等死的生活。
-就在即將畢業的高三，一如既往翹課遲到的朋也在校門口前的櫻花坡道悠閑的走著，一名柔弱的女學生向其搭話，説出了上面那段話，給朋也留下了印象。
+在某個不知名的小鎮上，男主角***岡崎朋也***因爲家庭原因失去了生活的色彩，只想離開這個小鎮。因此在光坂高等學院就讀的他和好基友***春原陽平***一直過著混吃等死的生活。
+
+就在即將畢業的高三，一如既往翹課遲到的朋也正在校門口前的櫻花坡道悠閑地走著，一名柔弱的女生向其搭話，説出了上面那段話，給朋也留下了深刻的印象。
 
 <div  align="center"> 
 <img src="../image/CLANNAD/01.webp" height = "400" alt="" align=center />
@@ -71,91 +72,124 @@ excerpt: '一段長長的坡道，一段人生的旅程'
 
 <br />
 
-午飯時間，朋也看到早上的女孩一個人孤獨的在中庭吃麵包，同爲邊緣人的他動了惻隱之心，向前搭話，得知了女孩名叫***古河渚***，交談中得知渚想重振演劇部，並想在學園祭登臺表演。
-也不知是一見鍾情還是命運使然（其實就是玩家的選擇），朋也開始協助渚重建演劇部並準備節目，期間又和許多貌美的女學生建立下深厚的羈絆（當然得看玩家的選擇），最終渚如願以償，而與朋也的感情也急劇升溫，朋也頹廢的生活也逐漸被染上色彩，一切的一切都在穩中向好，然而……
+午飯時間，朋也看到早上的女孩一個人孤獨地在中庭吃麵包，同爲邊緣人的他動了惻隱之心，上前搭話，得知了女孩名叫***古河渚***，交談中得知渚想重振演劇部，並想在學園祭登臺表演。
+
+也不知是一見鍾情還是命運使然（其實就是玩家的選擇），朋也開始協助渚重建演劇部並準備節目，期間又和許多貌美的女學生建立下深厚的羈絆（當然得看玩家的選擇），最終渚如願以償，與朋也的感情也急劇升溫，朋也頹廢的生活也逐漸被染上色彩，一切的一切都在穩中向好，然而……
 <div  align="center"> 
 <img src="../image/CLANNAD/02.webp" height = "400" alt="" align=center />
 </div>
 
 ## 人物介紹
 
-### 該作人物衆多且每個人都有自己的綫（甚至岳父都有），這裏只介紹 TV 動畫中有綫的女主角們和男主。
+該作人物衆多且每個人都有自己的綫（甚至岳父都有），這裏只介紹 TV 動畫中有綫的女主角們和男主。
 
 ### 岡崎 朋也（cv：伊藤 健太郎）
 <br>
 <div class="row">
-<div class="col-4">
-<img class="bg-transparent" src="../image/CLANNAD/ch.webp" style="max-height:1000px"/>
-</div>
-<div class="col-8">
-<p>全校聞名的不良，外表帥氣但總是甩著張臭臉讓人不敢靠近<br>以體育特長生的身份入讀學校，但因爲某些原因而無法繼續打籃球，便從此自甘墮落，每日和基友春原鬼混，課也是愛上不上 <br>但其實内心十分善良，樂於助人，雖然看起來是不良但從未做過什麽壞事（除了惡搞春原<br>對待感情十分的專一，每條綫對女主都是不離不棄的好男人</p>
-</div>
+  <div class="col-4">
+    <img class="bg-transparent" src="../image/CLANNAD/ch.webp" style="max-height:1000px" />
+  </div>
+  <div class="col-8">
+    <p>
+      全校聞名的不良，外表帥氣但總是甩著張臭臉讓人不敢靠近。
+    </p>
+    <p>
+      以體育特長生的身份入讀學校，但因爲某些原因而無法繼續打籃球，便從此自甘墮落，每日和基友春原鬼混，課也是愛上不上，
+    </p>
+    <p>
+      但其實他内心十分善良還樂於助人，雖然看起來是不良但從未做過什麽壞事（除了惡搞春原<br>對待感情十分的專一，每條綫對女主都是不離不棄的好男人
+    </p>
+  </div>
 </div>
 
 ### 古河 渚（cv：中原 麻衣）
 <br>
 <div class="row">
-<div class="col-4">
-<img class="bg-transparent" src="../image/CLANNAD/ch_ng.webp" style="max-height:1000px"/>
-</div>
-<div class="col-8">
-<p>在櫻花飄散的坡道上與朋也相遇，堅強溫柔，樂觀向上，但同時性格也十分內向不自信，總是認爲自己不行<br>身體不好，經常因此休學，這也是造成她性格主要原因，還會開玩笑的稱自己也是個“不良” <br>在朋也的支持下，逐漸自信起來，最終也達成了自己重建演藝部的願望 <br>十分喜歡糰子大家族</p>
-</div>
+  <div class="col-4">
+    <img class="bg-transparent" src="../image/CLANNAD/ch_ng.webp" style="max-height:1000px" />
+  </div>
+  <div class="col-8">
+    <p>
+      在櫻花飄散的坡道上與朋也相遇，堅強溫柔，樂觀向上，但同時性格也十分內向不自信，總是認爲自己不行。
+    </p>
+    <p>
+      身體不好，經常因此休學，這也是造成她性格內向主要原因，還會開玩笑的稱自己也是個“不良”
+    </p>
+    <p>
+      在朋也的支持下，逐漸變得自信起來，最終也達成了自己重建演藝部的願望。 <br>十分喜歡糰子大家族
+    </p>
+  </div>
 </div>
 
 ### 藤林 杏（cv：廣橋 涼）
 <br>
 <div class="row">
-<div class="col-4">
-<img class="bg-transparent" src="../image/CLANNAD/ch_ky.webp" style="max-height:1000px"/>
-</div>
-<div class="col-8">
-<p>一頭飄逸的紫色長髮+豪爽的性格在校內自然是人氣王，無論在男生還是女生中都頗受歡迎<br>有一個雙胞胎妹妹，每天都騎着小電驢上學，還時不時把自己的寵物豬“牡丹”帶到學校，你比朋也還不良 <br>豪爽的外在內心確也十分細膩，擅長料理，察言觀色十分強 <br>扔字典是一絕，但對朋也無效</p>
-</div>
+  <div class="col-4">
+    <img class="bg-transparent" src="../image/CLANNAD/ch_ky.webp" style="max-height:1000px" />
+  </div>
+  <div class="col-8">
+    <p>
+      一頭飄逸的紫色長髮+豪爽的性格在校內自然是人氣王，無論在男生還是女生中都頗受歡迎
+    </p>
+    <p>
+      有一個雙胞胎妹妹，每天都騎着小電驢上學，還時不時把自己的寵物豬“牡丹”帶到學校，你比朋也還不良
+    </p>
+    <p>
+      豪爽的外在內心確也十分細膩，擅長料理，察言觀色十分強 <br>扔字典是一絕，但對朋也無效
+    </p>
+  </div>
 </div>
 
 ### 藤林 椋（cv：神田 朱未）
 <br>
 <div class="row">
-<div class="col-4">
-<img class="bg-transparent" src="../image/CLANNAD/ch_ry.webp" style="max-height:1000px"/>
-</div>
-<div class="col-8">
-<p>杏的雙胞胎妹妹，爲了區分剪了短髮，同時也是朋也班上的班長<br>彷彿和姐姐是正負極一樣，性格內向，不擅長料理，運動也不行，典型的弱女子 <br>喜歡占卜，且占卜的非常準</p>
-</div>
+  <div class="col-4">
+    <img class="bg-transparent" src="../image/CLANNAD/ch_ry.webp" style="max-height:1000px" />
+  </div>
+  <div class="col-8">
+    <p>杏的雙胞胎妹妹，爲了區分剪了短髮，同時也是朋也班上的班長
+    </p>
+    <p>彷彿和姐姐是正負極一樣，性格內向，不擅長料理，運動也不行，典型的弱女子 <br>喜歡占卜，且占卜的非常準</p>
+  </div>
 </div>
 
 ### 一之瀨 琴美（cv：能登 麻美子）
 <br>
 <div class="row">
-<div class="col-4">
-<img class="bg-transparent" src="../image/CLANNAD/ch_kt.webp" style="max-height:1000px"/>
-</div>
-<div class="col-8">
-<p>總是獨自呆在閱覽室的文學少女，似乎不上課也沒人會管她，還時不時要把書上某些部分剪下來<br>其實是天才少女，所以上不上課無所謂 <br>對朋也一見如故，十分依賴朋也 <br>喜歡拉小提琴，但其音色是殺傷性武器</p>
-</div>
+  <div class="col-4">
+    <img class="bg-transparent" src="../image/CLANNAD/ch_kt.webp" style="max-height:1000px" />
+  </div>
+  <div class="col-8">
+    <p>總是獨自呆在閱覽室的文學少女，似乎不上課也沒人會管她，還時不時要把書上某些部分剪下來<br>其實是天才少女，所以上不上課無所謂    </p>
+    <p>對朋也一見如故，十分依賴朋也 <br>喜歡拉小提琴，但其音色是殺傷性武器</p>
+  </div>
 </div>
 
 ### 坂上 智代（cv：桑島 法子）
 <br>
 <div class="row">
-<div class="col-4">
-<img class="bg-transparent" src="../image/CLANNAD/ch_tm.webp" style="max-height:1000px"/>
-</div>
-<div class="col-8">
-<p>朋也的學妹，因爲家庭原因成爲不良少女，在小鎮上四處教訓不良，成爲傳說<br>爲了保護學校前的櫻花坡道，競選學生會長 <br>性格十分正經，勢要把朋也和春原帶回正規，每天都去叫這兩人上學拒絕遲到 <br>人氣非常高，key社爲其做了專門的番外遊戲智代after</p>
-</div>
+  <div class="col-4">
+    <img class="bg-transparent" src="../image/CLANNAD/ch_tm.webp" style="max-height:1000px" />
+  </div>
+  <div class="col-8">
+    <p>朋也的學妹，因爲家庭原因成爲不良少女，在小鎮上四處教訓不良，成爲傳說。</p>
+    <p>爲了保護學校前的櫻花坡道，競選學生會長 <br>性格十分正經，勢要把朋也和春原帶回正規，每天都去叫這兩人上學拒絕遲到
+    </p>
+    <p>人氣非常高，key社爲其做了專門的番外遊戲智代after</p>
+  </div>
 </div>
 
 ### 伊吹 風子（cv：野中 藍）
 <br>
 <div class="row">
-<div class="col-4">
-<img class="bg-transparent" src="../image/CLANNAD/ch_fu.webp" style="max-height:1000px"/>
-</div>
-<div class="col-8">
-<p>每天都在舊校舍雕刻木海星的蜜汁少女，只有朋也和渚能夠看到她的身影<br>據她本人說法木海星是爲了當姐姐婚禮上的請帖，請大家都來參加姐姐的婚禮 <br>性格古靈精怪，完全就是個小孩子，喜歡幻想</p>
-</div>
+  <div class="col-4">
+    <img class="bg-transparent" src="../image/CLANNAD/ch_fu.webp" style="max-height:1000px" />
+  </div>
+  <div class="col-8">
+    <p>每天都在舊校舍雕刻木海星的蜜汁少女，只有朋也和渚能夠看到她的身影。</p>
+    <p>據她本人說法木海星是爲了當姐姐婚禮上的請帖，請大家都來參加姐姐的婚禮。</p>
+    <p>性格古靈精怪，完全就是個小孩子，喜歡幻想</p>
+  </div>
 </div>
 
 
