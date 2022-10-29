@@ -1,5 +1,5 @@
 ---
-title: 'Muv-Luv系列：被譽爲立於兩萬部 Galgame 之上的作品'
+title: 'Muv-Luv 系列：被譽爲立於兩萬部 Galgame 之上的作品'
 date: 2022-10-29 00:30:00
 keywords: 'Muv, âge, 校园, 燃, 抹布'
 banner_img: ''
