@@ -278,7 +278,7 @@ p {
 
 ![](../image/note-makeEbook/steps/12.webp)
 
-忘裏面加上一個屬性 page-progression-direction="rtl" 就可以從右往左翻頁了，別問我是怎麼知道的，我網上查的，，，
+往裏面加上一個屬性 page-progression-direction="rtl" 就可以從右往左翻頁了，別問我是怎麼知道的，我網上查的，，，
 
 ```HTML
   <spine toc="ncx" page-progression-direction="rtl">
