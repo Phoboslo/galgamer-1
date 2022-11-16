@@ -15,6 +15,7 @@ excerpt: 貫徹到歷史盡頭的忠義、跨越千年的戀歌
 author: Hiyatoki
 banner_img: ''
 index_img: ../image/Senmomo/cover.webp
+abbrlink: 53635
 date: 2022-09-17 00:30:00
 ---
 
