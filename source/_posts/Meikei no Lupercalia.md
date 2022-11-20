@@ -13,7 +13,8 @@ categories:
 abbrlink: 484747456
 excerpt: 悲伤也不能持久，甚至痛苦也丧失了意义
 index_img: ../image/MeikeinoLupercalia/Cover.jpg
-date: 2022-11-30 00:30:00
+date: 2022-11-19 00:30:00
+author: ling
 ---
 
 `作者：ling`
@@ -41,7 +42,7 @@ date: 2022-11-30 00:30:00
 
 在欧罗巴的一个小家庭中(错乱)，单亲的**濑和兄妹**被从小接受着戏剧方面的英才教育，母亲相互比较二人所展现的才能，会惩罚那个不优秀的。
 注定不合的的二人，因无知与爱恋，依旧有着幸福的兄妹日常。
-但是这份无知又能持续多久...
+但是这份无知与爱恋又能持续多久...
 
 ---
 
@@ -49,11 +50,9 @@ date: 2022-11-30 00:30:00
 
 **马卡里奥斯学院**，坐落于被称为"创造与艺术之都"的**尼克斯**。
 **你**与你的青梅竹马**仓科双叶**在四月步了这所学校。
-剧团**labyrinth**将举行欢迎新生的欢迎公演，由于**仓科双叶**的缘故，你将陪同她一起观看剧团**labyrinth**接下来所出演的戏剧**哈姆雷特**。
+剧团**labyrinth**突然举行欢迎新生的欢迎公演，由于**仓科双叶**是女同，没抗住美少女的劝诱，你将陪同她一起观看剧团**labyrinth**接下来所出演的戏剧**哈姆雷特**。
 反响来看是失败的演出，但是却让**仓科双叶**对戏剧产生了兴趣，然而在面对**天乐来来**的面试中，给出加入剧团的条件是--俩周的时间去准备演出**红房子**，展示出自己的能力。
 当下，首先是要寻找**红房子**演出所还欠缺的演员...
-
-演习的才能并不会局限于舞台之上，被称为**天才童星**的**你**，将会演出什么样的(成长)故事...
 
 ## 主要登场人物
 (由于在不剧透的情况下很难写京子这个角色，所以不会出现)
@@ -78,7 +77,7 @@ date: 2022-11-30 00:30:00
       </div>
         <p>你的青梅竹马，是个阴沉的女同。</p>
         <p>在labyrinth的公演中对哈姆雷特痴情，因此戏剧有所兴趣，拉着你陪她进labyrinth。</p>
-        <p>本作最重要的演员-芬里尔(谜语式剧透)。</p>
+        <p>注:不可攻略。</p>
     </div>
   </div>
   <img src="../image/MeikeinoLupercalia/character/s1.webp">
@@ -150,7 +149,7 @@ date: 2022-11-30 00:30:00
 ## 游戏 OP
 
 <video controls preload="metadata" width='100%' poster="../image/MeikeinoLupercalia/op.webp">
-    <source src="" type="video/mp4">
+    <source src="https://s3static-zone0.galgamer.eu.org/video-2d35/meikei/op.mp4" type="video/mp4">
 </video>
 
 
@@ -167,9 +166,9 @@ date: 2022-11-30 00:30:00
 ---
 
 剧情方面:
-本作在多视角下(群像)，拼凑出了一个完成度极高的故事，设定方面也很出众。而且剧情方面几乎没有太多糖分，老少适宜!
+本作在多视角下(群像)，拼凑出了一个完成度极高的故事，设定方面也很出众。而且剧情方面几乎没有太多糖分，老少适宜!(rukuru的剧情，一贯的亮点)
 但是本作有不少前作的影子，如果你游玩过**纸上的魔法使**，那么请一定不要错过这作。结尾部分的剧发展仓促，转变有点突然(可能是我没好好推?)。
-由于是戏剧题材，也引入了不少文学要素(例:加缪的卡里古拉)。
+由于是戏剧题材，也引入了不少文学要素(例:加缪的卡利古拉)。
 
 音乐方面:
 Metomate的音乐挺好听的，无论是她的游戏配乐还是她的个人专辑(Metomate厨路过)，特别是游戏中的ライムライトの残火piano_version这首，但是这首只会在结尾部分出现一次。
@@ -178,7 +177,7 @@ CG和立绘方面本作有一定的争议，但我肯定是属于桐叶警察那
 
 综上，本作属于抛开cg立绘方面来说，一个各方面都不错的剧情向的作品。如果你是妹控，这部作品一定能够给你带来不少欢乐(妹控限定)。
 你看这少许有些扭曲的爱恋，不比那白开水强一百倍(错乱)。
-不用怕刀子，结局大家都成长了，可喜可贺的结局。
+不用怕刀子，结局大家都成长了。
 
 
 
@@ -193,9 +192,9 @@ CG和立绘方面本作有一定的争议，但我肯定是属于桐叶警察那
 | :---------------- | :--- |
 | **人设**          | 9   |
 | **cg&立绘**       | ?  |
-| **音乐&声优表现** | 8   |
-| **剧情**          | 7   |
-| **综合**          | 6 +- ?/4  |
+| **音乐&声优表现** | 9   |
+| **剧情**          | 8   |
+| **综合**          | 6.4 +- ?/4  |
 
 ## 游戏 CG (警告:桐叶玉图)
 
@@ -212,11 +211,10 @@ CG和立绘方面本作有一定的争议，但我肯定是属于桐叶警察那
 {% gallery part2 %}
 ../image/MeikeinoLupercalia/cg/CG03_1.webp
 ../image/MeikeinoLupercalia/cg/CG12.webp
-../image/MeikeinoLupercalia/cg/CG12.webp
+../image/MeikeinoLupercalia/cg/CG13_0.webp
 {% endgallery %}
 </br>
 {% gallery part21 %}
-../image/MeikeinoLupercalia/cg/CG13_0.webp
 ../image/MeikeinoLupercalia/cg/CG15_2.webp
 ../image/MeikeinoLupercalia/cg/CG44_2.webp
 ../image/MeikeinoLupercalia/cg/CG45_2.webp
@@ -243,13 +241,13 @@ CG和立绘方面本作有一定的争议，但我肯定是属于桐叶警察那
 ## 还在犹豫是否下载？
 
 <video controls preload="metadata" width='100%' poster="../image/MeikeinoLupercalia/movie.webp">
-    <source src="" type="video/mp4">
+    <source src="https://s3static-zone0.galgamer.eu.org/video-2d35/meikei/17min-know.mp4" type="video/mp4">
 </video>
 
 
 ## 资源和下载 
 
-
+https://www.ryuugames.com/meikei-no-lupercalia-free-download/
 
 
 <style> /* 调整页面的 CSS */
