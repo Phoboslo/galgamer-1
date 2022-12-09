@@ -67,9 +67,13 @@ excerpt: '居然能追查到這裏，果然你也是“機關”的人嗎！？'
 ## 故事梗概
 
 當代大學生典範，整日無所事事的東京電機大學大學生***岡部 倫太郎***和他的朋友***橋田 至一***，再拉上自己的青梅竹馬***稚名 真由理***在一家二手顯像管工房的樓上成立了“未來發明研究所”，每日的活動目標就是發明奇奇怪怪的東西以賺錢。
+
 2010年7月28日，爲了混學分和打發時間的岡部和橋田去聼講座，在那遇到了年僅18嵗就隨便發 paper 的天才少女***牧瀨紅莉栖***並爭吵了起來，但令岡部奇怪的是，幾個小時前他剛在其他地方看到這個紅髮少女倒在血泊當中，更離譜的是，這一切在橋田一周前收到的短信上都寫的清清楚楚。
+
 ![](../image/SG/01.webp)
+
 經過查驗后，岡部發現他們在無意間發明了可以向過去發送短信的“時間機器”！就這樣，時間綫開始變動……
+
 ![](../image/SG/02.webp)
 
 ## 人物介紹
@@ -139,7 +143,7 @@ excerpt: '居然能追查到這裏，果然你也是“機關”的人嗎！？'
     }
     .sp-character .char-overlay {
       min-height: unset;
-      background-size: 150px;
+      background-size: contain;
       background-position: top 0px right 0px;
     }
     :root { /* 配色 */
@@ -175,6 +179,7 @@ excerpt: '居然能追查到這裏，果然你也是“機關”的人嗎！？'
   <p>
     本作男主，都上大學了還中二到無可救藥，可以説是 ACG 最著名的中二病角色。<br>
   </p>
+  <p>
     每天就穿個白大褂，不修邊幅，看起來邋邋遢遢的，再加上時不時的中二語錄，不是熟人鬼才想靠近。<br>
   </p>
   <p>
@@ -190,6 +195,7 @@ excerpt: '居然能追查到這裏，果然你也是“機關”的人嗎！？'
   <p>
     岡部的青梅竹馬，口頭禪是“嘟嘟嚕”，16嵗，JK。<br>
   </p>	
+  <p>
     濃眉大眼，説話不緊不慢，平時在女僕咖啡廳打工，沒事就在研究所吃喝玩樂陪著岡部，是個愛吃不胖的天然少女。<br>
   </p>
   <p>
@@ -205,6 +211,7 @@ excerpt: '居然能追查到這裏，果然你也是“機關”的人嗎！？'
   <p>
     岡部的高中兼大學同學，標准的肥宅。<br>
   </p>
+  <p>
     發言輕浮且充滿著各種讓人聽不懂的2ch用語，時不時還會忽悠女角色們說色色的臺詞，因此經常被助手罵，可以對著任何他覺得萌的事物原地發情，口味非常的廣。<br>
   </p>
   <p>
@@ -218,8 +225,9 @@ excerpt: '居然能追查到這裏，果然你也是“機關”的人嗎！？'
 
 <sp-character no=3 name="LabMem No.004:牧瀨 紅莉栖" yomi="CV: 今井 麻美" uid="a">
   <p>
-    11嵗就前往海外留學，跳級進入美國的維克多·康德利亞大學的天才少女，18嵗就可以在《science》上發paper的級別。<br>
+    11嵗就前往海外留學，跳級進入美國的維克多·康德利亞大學的天才少女，18嵗就可以在《Science》上發paper的級別。<br>
   </p> 
+  <p>
 	在秋葉原上關於時間旅行的講座上被岡部懟后相識，並被岡部各種騷話忽悠進了研究所，一起研究時光機器。<br>
   </p>
   <p>
@@ -235,6 +243,7 @@ excerpt: '居然能追查到這裏，果然你也是“機關”的人嗎！？'
   <p>
     一家小報紙的編輯，爲了取材而尋找傳説中的PC“IBN5100”與岡部結識。<br>
   </p>
+  <p>
     十分抗拒與別人交流，幾乎不説話，即使和人面對面也要通過手機短信的方式與人溝通，打字速度非常快，被岡部稱之爲“閃光的指壓師”，但短信的語句卻十分的開朗與其外在形成了鮮明的反差。<br>
   </p>
   <p>
@@ -247,6 +256,7 @@ excerpt: '居然能追查到這裏，果然你也是“機關”的人嗎！？'
   <p>
     秋葉原柳林神社當家的兒子，但被父親當女兒養了。<br>、
   </p>
+  <p>
     畫女硬説男系列，極度缺乏自信，很容易臉紅嬌羞，沒有主見別人説啥就是啥。<br>
   </p>
   <p>
@@ -286,9 +296,11 @@ excerpt: '居然能追查到這裏，果然你也是“機關”的人嗎！？'
 
 ## 遊戲 OP & TV OP
 
-動畫來自被牆的油管和steam，請翻牆
+動畫來自被牆的油管和 Steam，請翻牆
 
 {% steam_player 256662886 %}
+
+<br>
 
 <style>
   #y2b {
@@ -394,7 +406,16 @@ body {
 }
 </style>
 <script>
-window.addEventListener('DOMContentLoaded', function() {
-
-});
+  document.addEventListener("DOMContentLoaded", function(){
+    let pclefts = document.querySelectorAll('.pc-left');
+    pclefts.forEach((el) => {
+      el.addEventListener('touchstart', function(){
+        el.classList.add('touch');
+      })
+      el.addEventListener('touchend', function(){
+        el.classList.remove('touch');
+      })
+    });
+    //setTimeout(() => document.documentElement.setAttribute('data-user-color-scheme', 'light'), 1000)
+  })
 </script>
