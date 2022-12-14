@@ -25,6 +25,7 @@ const beforeUnloadListener = (e) => {
 
 async function main(){
     //showBetaAlert();
+    
     allMusic = await getAllMusic();
     initPlayer();
     buildPlaylist();
@@ -38,6 +39,18 @@ async function main(){
     }else{
         addState(nowPlaying);
     }
+    setTimeout(setUpBg, 4000);
+}
+
+function setUpBg(){
+    //plog('Setting up classlist.');
+    let bgMask = document.createElement('div');
+    bgMask.id = 'bgMask';
+    document.body.appendChild(bgMask);
+    document.querySelector('body').classList.add('playerpatch');
+    document.querySelector('#banner').classList.add('playerpatch');
+    document.querySelector('#board').classList.add('playerpatch');
+    document.querySelector('.full-bg-img > .mask').classList.add('playerpatch');
 }
 
 function reverseL(index){
@@ -234,6 +247,7 @@ function updatePage(index){
     title.content = allMusic[index].name + ' - ' + allMusic[index].artist;
     document.title = allMusic[index].name + ' - ' + allMusic[index].artist;
     insertToast('info', 'Now Playing: <strong>' + allMusic[index].name + '</strong>', 2000);
+    document.documentElement.style.setProperty('--bg-url', `url('${allMusic[index].poster}')`);
     if(doNotNavigate){
         doNotNavigate = false;
     }else{

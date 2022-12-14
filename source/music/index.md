@@ -21,6 +21,44 @@ banner_img: '/image/music/banner.jpg'
 #detailsCard, #playlist img {
   box-shadow: 0 5px 11px 0 rgb(0 0 0 / 18%), 0 4px 15px 0 rgb(0 0 0 / 15%);
 }
+body {
+  transition: background-image 0.8s ease-in-out;
+}
+body.playerpatch {
+    background: var(--bg-url) no-repeat fixed;
+    background-position: right 50% top 20%;
+    background-size: cover;
+    /*-webkit-font-smoothing: unset;*/
+}
+#banner.playerpatch {
+    background: url('')!important;
+    background-color: transparent!important;
+}
+#board.playerpatch {
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    background-color: var(--board-bg-color2);
+}
+.full-bg-img > .mask.playerpatch {
+  background-color: rgba(0,0,0,0) !important;
+}
+:root {
+  --board-bg-color2: rgba(255,255,255,0.75);
+  --bg-url: url('')
+}
+[data-user-color-scheme='dark'] {
+  --board-bg-color2: rgba(0,0,0,0.75);
+  /* --bg-url: url('../image/Natsunoiro/bg-d.webp') */
+}
+#bgMask {
+  width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(5px);
+    z-index: -99;
+}
 </style>
 
 <div class="container">
