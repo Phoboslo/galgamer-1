@@ -63,9 +63,7 @@ body.playerpatch {
 
 <div class="container">
     <div class="row">
-        <div class="col-xs-12 col-sm-5 mt-2 col" style="max-width:450px">
-            <div id="mPlayer"></div>
-        </div>
+        
         <div id="detailsCard" class="col-xs-12 card col-sm-7 col-md-6 mt-2 mx-3 text-white bg-secondary border-white">
           <div class="card-header">
             <strong>Details</strong>
@@ -95,14 +93,20 @@ body.playerpatch {
     </div>
     <div class="my-1">
         <ul class="row list-unstyled" id="playlist">
-        
 
-          
         </ul>
     </div>
 </div>
 
+
+
 <script src="/js/cplayer.min.js"></script>
 <script defer src="/js/music_page.js?1205"></script>
+
+<style id="PlayerCSS">
+  .cp-mainbody .cp-poster {
+    display: none;
+  }
+</style>
 
 {% endraw %}

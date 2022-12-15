@@ -1,8 +1,8 @@
 /*
     Simple music page for Galgamer
-    by GUREHA
+    by Kiriha@galgamer.eu.org
 */
-let mPlayer = document.getElementById('mPlayer');
+let mPlayer;// = document.getElementById('mPlayer');
 let mDetails = document.getElementById('details');
 let neteaseGo = document.getElementById('neteaseGo');
 let qqGo = document.getElementById('qqGo');
@@ -27,10 +27,11 @@ async function main(){
     //showBetaAlert();
     
     allMusic = await getAllMusic();
+    
     initPlayer();
     buildPlaylist();
     setupBtn();
-    
+    setTimeout(setUpBg, 3000);
     // Find ID from URL
     let id = parseInt(getIdByUrl());
     if(id >= 0 && id < allMusic.length){
@@ -39,7 +40,7 @@ async function main(){
     }else{
         addState(nowPlaying);
     }
-    setTimeout(setUpBg, 4000);
+    
 }
 
 function setUpBg(){
@@ -97,12 +98,21 @@ window.onpopstate = function(e){
 };
 
 function initPlayer(){
+    mPlayer = document.createElement('div');
+    mPlayer.id = 'mPlayer';
+    mPlayer.classList.add('fixed-bottom', 
+     'col-sm-12', 'col-md-8', 'col-lg-6', 'col-xl-4',
+     'mb-2', 'mx-auto', 'col');
+    document.querySelector('main').appendChild(mPlayer);
+
     playerEl = new cplayer({
         element: mPlayer,
         playlist: allMusic,
         big: true,
         width: '100%',
-        volume: 0.5
+        volume: 0.5,
+        showPlaylistButton: 'false',
+        dropDownMenuMode: 'none'
     })
     playerEl.on('openaudio', function(ev){
         updatePage(this.nowplaypoint, true);
@@ -110,6 +120,10 @@ function initPlayer(){
 
     // 增加 正在播放中的關閉頁面確認
     window.addEventListener('beforeunload', beforeUnloadListener);
+    // custom player CSS
+    let playerCSS = document.getElementById('PlayerCSS');
+    playerCSS.parentElement.removeChild(playerCSS);
+    document.body.appendChild(playerCSS);
 }
 
 function setupBtn(){
@@ -246,7 +260,7 @@ function updatePage(index){
     let title = document.querySelectorAll('meta[property="og:title"]')[0];
     title.content = allMusic[index].name + ' - ' + allMusic[index].artist;
     document.title = allMusic[index].name + ' - ' + allMusic[index].artist;
-    insertToast('info', 'Now Playing: <strong>' + allMusic[index].name + '</strong>', 2000);
+    //insertToast('info', 'Now Playing: <strong>' + allMusic[index].name + '</strong>', 2000);
     document.documentElement.style.setProperty('--bg-url', `url('${allMusic[index].poster}')`);
     if(doNotNavigate){
         doNotNavigate = false;
