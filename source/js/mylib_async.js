@@ -508,29 +508,31 @@ function createShareBtn() {
     let insertTo = document.getElementById('navbar-toggler-btn');
     insertTo.parentNode.insertBefore(btn, insertTo);
     // 按鈕點擊事件
-    btn.addEventListener('click', function (e){
-        // url and text for TG share
-        
-        let title = document.querySelectorAll('meta[property="og:title"]')[0].content;
-        let tags = document.querySelectorAll('meta[property="article:tag"]');
-        let tagStr = '';
-        if(tags.length) {
-            //tags.forEach(function (tag){
-            //    tagStr += '#' + tag.content + ' ';
-            //});
-            for(let i = 0; i < tags.length; i++){
-                tagStr += '#' + tags[i].content + ' ';
-            }
+    btn.addEventListener('click', shareHandler);
+}
+
+function shareHandler(e){
+    // url and text for TG share
+    
+    let title = document.querySelectorAll('meta[property="og:title"]')[0].content;
+    let tags = document.querySelectorAll('meta[property="article:tag"]');
+    let tagStr = '';
+    if(tags.length) {
+        //tags.forEach(function (tag){
+        //    tagStr += '#' + tag.content + ' ';
+        //});
+        for(let i = 0; i < tags.length; i++){
+            tagStr += '#' + tags[i].content + ' ';
         }
-        let url = title;
-        let desc = tagStr + '\n🔗️' + window.location;
-        //nielog(url);
-        //nielog(desc);
-        url = encodeURIComponent(url);
-        desc = encodeURIComponent(desc);
-        // TG call
-        window.location = 'tg://msg_url?url=' + url + '&text=' + desc;
-    });
+    }
+    let url = title;
+    let desc = tagStr + '\n🔗️' + window.location;
+    //nielog(url);
+    //nielog(desc);
+    url = encodeURIComponent(url);
+    desc = encodeURIComponent(desc);
+    // TG call
+    window.location = 'tg://msg_url?url=' + url + '&text=' + desc;
 }
 
 // 友情链接加入首页

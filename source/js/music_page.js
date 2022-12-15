@@ -3,7 +3,10 @@
     by Kiriha@galgamer.eu.org
 */
 let mPlayer;// = document.getElementById('mPlayer');
-let mDetails = document.getElementById('details');
+let mDetailsTitle = document.getElementById('text-title');
+let mDetailsArtist = document.getElementById('text-artist');
+let mDetailsDesc = document.getElementById('text-details');
+
 let neteaseGo = document.getElementById('neteaseGo');
 let qqGo = document.getElementById('qqGo');
 let kugouGo = document.getElementById('kugouGo');
@@ -166,7 +169,8 @@ function setupBtn(){
     kugouGo.addEventListener('click', function(ev){
         insertToast('danger', '無法打開酷狗音樂', 3000);
     })
-    shareInfo.addEventListener('click', function(ev){
+    document.getElementById('shareBtn').removeEventListener('click', shareHandler);
+    document.getElementById('shareBtn').addEventListener('click', function(_){
         insertToast('success', '正在調用 Telegram', 3000);
         let link = window.location.origin + '/api/music/' + reverseL(nowPlaying);
         
@@ -186,6 +190,17 @@ function setupBtn(){
         
         window.addEventListener('beforeunload', beforeUnloadListener);
     })
+    let onetimeplaybtn = document.createElement('a');
+    onetimeplaybtn.classList.add("play-btn");
+    onetimeplaybtn.addEventListener('click', playAndRemoveOneTimePlay)
+    let div = document.getElementById("onetimeplay");
+    div.appendChild(onetimeplaybtn);
+}
+
+function playAndRemoveOneTimePlay(){
+    playerEl.play();
+    let div = document.getElementById("onetimeplay");
+    div.parentElement.removeChild(div);
 }
 
 function makePlaylistItem(index){
@@ -200,7 +215,7 @@ function makePlaylistItem(index){
     */
     let mh5 = document.createElement('h5');
     mh5.setAttribute('class', 'mt-1 mb-2 font-weight-bold');
-    mh5.innerText = allMusic[index].name + ' ▶️️';
+    mh5.innerText = allMusic[index].name;// + ' ▶️️';
     let ah5 = document.createElement('a');
     ah5.setAttribute('href', 'javascript:;');
     ah5.addEventListener('click',() => switchTo(index));
@@ -242,7 +257,10 @@ function buildPlaylist(){
 }
 
 function setDetailsCard(){
-    mDetails.innerHTML = allMusic[nowPlaying].details;
+    mDetailsDesc.innerHTML = allMusic[nowPlaying].details;
+    mDetailsArtist.innerText = '🎤️' + allMusic[nowPlaying].artist;
+    mDetailsTitle.innerText = allMusic[nowPlaying].name;
+    document.documentElement.style.setProperty('--right-bg', `url('${allMusic[nowPlaying].poster}')`);
 }
 
 function switchTo(index, notPlay){
