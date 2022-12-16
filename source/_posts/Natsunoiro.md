@@ -1,5 +1,5 @@
 ---
-title: '追憶夏色年華：那是回不去的友情'
+title: '追憶夏色年華：MOONSTONE 特色鬼片拔作道路'
 date: 2022-12-17 00:30:00
 keywords: "追憶夏色年華, 夏の色のノスタルジア, MOONSTONE" 
 banner_img: ''
@@ -57,12 +57,16 @@ body {
   /* --bg-url: url('../image/Natsunoiro/bg-d.webp') */
 }
 ::selection {
-    /*background-color: #f00;*/
+    background-color: #fc0;
 }
 .page-header .mt-1 span.post-meta {
     /* 隱藏嚇人的字數統計 */
     display: none;
 }
+rt {
+	font-size: 0.7rem;
+}
+
 </style>
 
 `作者：桐遠暮羽`
@@ -86,8 +90,8 @@ body {
 | **開發商**   | MOONSTONE           |
 | **遊戲時長** | 25H（估計）                     |
 | **攻略人數** | 4                     | 
-| **類型**     | 懸疑 拔作          |
-| **難度**     | 中              |
+| **類型**     | 懸疑 拔作            |
+| **難度**     | 中                   |
 | **分級**     | R-18（性行爲，恐怖）      |
 | **遊戲引擎** | ExHIBIT           |
 
@@ -96,7 +100,7 @@ body {
 
 男主角 **折口諒人** 和妹妹 **美羽** 有着一群兒時玩伴。
 
-說是兒時玩伴，其實也只是一群由於種種原因在家裏失去了容身之所的少年少女們，
+說是兒時玩伴，其實也只是一群由於種種原因在家裏待不下去的少年少女們，
 出於逃避現實的目的不約而同地聚集在一起。
 他們的家庭都有各種變故，導致他們的內心都有着不爲人知的陰暗面。
 *（人話：一群無處可去的失足兒童聚在一起，正所謂物以類聚，，，）*
@@ -105,7 +109,7 @@ body {
 
 ![](../image/Natsunoiro/story-01.webp)
 
-這也使得這個貴物玩伴小團體七零八落。
+這也使得這個貴物玩伴小團體四分五裂。
 
 然而三年之後伯母去世，無依無靠的男主角和妹妹又搬回了父母生前的老家，灰土町。
 
@@ -117,7 +121,8 @@ body {
 ![](../image/Natsunoiro/story-02.webp)
 
 兒時玩伴們因爲主角二人的回歸再次團聚，失去了容身之處的少年少女們似乎又有了能容納自己的樂園。
-然而，這也不過是現實逃避而已。因爲接納他們的樂園是一個無法脫出的巨大迷宮。
+就像三年前那個快樂的夏天一樣。
+然而，這也不過只是一種現實逃避。因爲接納他們的樂園是一個無法脫出的巨大迷宮。
 
 
 ## 登場人物
@@ -186,9 +191,9 @@ body {
     backdrop-filter: unset;*/
     }
     .sp-character .char-overlay {
-      min-height: unset;
+      min-height: 375px;
       /* background-size: contain;*/
-      background-position: bottom -90px right 0px; 
+      background-position: top 30px right 0px; 
     }
     :root { /* 配色 */
       --chara-card-color: #ffffff87;
@@ -264,7 +269,7 @@ body {
   </p>
   <p>
     有群友非常喜歡她的黑絲，<br>
-    俺卻覺得這個角色有點湊數捏，，，
+    俺卻覺得這個角色有點湊數，，，
   </p>
 </sp-character>
 
@@ -328,6 +333,13 @@ body {
 
 {% steam_player 256766682 %}
 
+<p class="font-italic" style="letter-spacing: 0.5rem;">
+  這裏，就是那個夏日的<ruby>樂園<rp>(</rp><rt style="letter-spacing: normal;">伊甸園</rt><rp>)</rp></ruby>
+  <br>
+  抑或是，內心深處的<ruby>迷宮<rp>(</rp><rt style="letter-spacing: normal;">無限迴廊</rt><rp>)</rp></ruby>
+</p>
+
+
 <br>
 
 下面是遊戲的最終 ED 曲。當我披荊斬棘（指在大量的 H 場景中瘋狂穿梭）
@@ -383,7 +395,7 @@ MOONSTONE 作爲一家以鬼片聞名的遊戲公司，近年來的恐怖懸疑�
 
 ## 資源和下載
 
-Steam 版由 Hikari Field 發行，支持簡體中文。
+Steam 版由 Hikari Field 發行，只支持中文。
 前往 Hikari Field 商店購買還可以更便宜。
 
 {% steam_widget 1161190 %}
@@ -398,7 +410,14 @@ magnet:?xt=urn:btih:b226bf94cf73318eb45f82f8cf3e600bca1da67e
 
 文件名：夏の色のノスタルジア
 
-注意：日文版受到 AlphaROM 保護，請自行使用 AlphaROMdie 進行破解。
+注意：日文版有 AlphaROM 保護，請自行使用 AlphaROMdie 進行破解。
+你也可以下載我打好補丁的文件：{% telegram_channel 969 %}
+
+## Linux 玩家體驗
+
+ExHIBIT 的 WINE 兼容性很爛，不僅 OP 播放不了不說，一點存檔/讀檔就卡死，可以不用試了。
+
+![](../image/Natsunoiro/wine.webp)
 
 <script>
   //document.documentElement.setAttribute('data-user-color-scheme', 'dark');
