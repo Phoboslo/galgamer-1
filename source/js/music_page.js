@@ -34,7 +34,7 @@ async function main(){
     initPlayer();
     buildPlaylist();
     setupBtn();
-    setTimeout(setUpBg, 3000);
+    setTimeout(setUpBg, 1000);
     // Find ID from URL
     let id = parseInt(getIdByUrl());
     if(id >= 0 && id < allMusic.length){
