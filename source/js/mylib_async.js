@@ -228,10 +228,18 @@ async function insertToast(type, data, last){
         await new Promise(r => setTimeout(r, 500));
     }
 
+    if(typeof TOAST_LOC !== 'string'){
+        TOAST_LOC = 'bottom';
+    }else if(TOAST_LOC.toLowerCase() !== 'top'){
+        TOAST_LOC = 'bottom'
+    }else{
+        TOAST_LOC = 'top'
+    }
+
     let toast = document.createElement('div');
     toast.setAttribute('id', 'mytoast');
     //toast.setAttribute('class', 'border border-light fixed-bottom text-light col-lg-4 col-md-10 col-sm-9 w-75 mx-auto py-2 my-2 rounded-lg' + ' bg-' + type);
-    toast.setAttribute('class', 'alert border border-primary fixed-bottom col-lg-4 col-md-10 col-sm-9 w-75 mx-auto py-2 mb-5 my-2 rounded-lg' + ' alert-' + type);
+    toast.setAttribute('class', `alert border border-primary toast-${TOAST_LOC} col-lg-5 col-md-8 col-10 mx-auto py-2 rounded-lg alert-${type}`);
     toast.innerHTML = data;
     // 漸變進入
     toast.style.transition = "opacity 0.5s ease";

@@ -225,5 +225,8 @@ body.playerpatch {
     display: none;
   }
 </style>
+<script>
+  TOAST_LOC = 'top';
+</script>
 
 {% endraw %}

@@ -200,7 +200,7 @@ function setupBtn(){
 function playAndRemoveOneTimePlay(){
     playerEl.play();
     let div = document.getElementById("onetimeplay");
-    div.parentElement.removeChild(div);
+    removeFadeOut(div, 135);
 }
 
 function makePlaylistItem(index){
@@ -278,7 +278,14 @@ function updatePage(index){
     let title = document.querySelectorAll('meta[property="og:title"]')[0];
     title.content = allMusic[index].name + ' - ' + allMusic[index].artist;
     document.title = allMusic[index].name + ' - ' + allMusic[index].artist;
-    //insertToast('info', 'Now Playing: <strong>' + allMusic[index].name + '</strong>', 2000);
+    insertToast('info', 
+    `Now Playing: <br>
+    <strong><em>${allMusic[index].name}</em></strong>
+    <br>
+    comes from the game:<br>
+    <strong><em>${allMusic[index].game}</em></strong>
+    `, 
+    4500);
     document.documentElement.style.setProperty('--bg-url', `url('${allMusic[index].poster}')`);
     if(doNotNavigate){
         doNotNavigate = false;

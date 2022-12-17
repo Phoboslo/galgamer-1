@@ -138,3 +138,23 @@ article {
 #banner {
   transition: background-image 0.3s ease-in-out;
 }
+
+/* for toast */
+.toast-top {
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+  z-index: 1030;
+  margin-top: 5rem!important;
+  margin-bottom: 0.5rem!important;
+}
+.toast-bottom {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+  margin-top: .5rem!important;
+  margin-bottom: 3rem!important;
+}
