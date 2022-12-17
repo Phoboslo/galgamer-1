@@ -205,46 +205,41 @@ function playAndRemoveOneTimePlay(){
 
 function makePlaylistItem(index){
     /*
-              <li class="media my-2">
-            <img src="..." width=100px class="align-self-center mr-3" alt="...">
-            <div class="media-body" >
-              <a><h5 class="mt-1 mb-2">歌曲名稱</h5></a>
-              <p class="my-1 align-self-center">一些信一些信息</p>
-            </div>
-          </li>
+<li class="media my-3 mx-1 col-lg-auto col-md-12">
+  <a href="javascript:;"><img class="align-self-center mr-3 rounded-lg"
+      width="100px" alt="さくら雫"
+      src="..."></a>
+  <div class="media-body">
+    <a href="javascript:;">
+      <h5 class="mt-1 mb-2 font-weight-bold">...</h5>
+    </a>
+    <p class="my-1 align-self-center">...</p>
+  </div>
+</li>
     */
-    let mh5 = document.createElement('h5');
-    mh5.setAttribute('class', 'mt-1 mb-2 font-weight-bold');
-    mh5.innerText = allMusic[index].name;// + ' ▶️️';
-    let ah5 = document.createElement('a');
-    ah5.setAttribute('href', 'javascript:;');
-    ah5.addEventListener('click',() => switchTo(index));
-    ah5.appendChild(mh5);
-    
-    let dp = document.createElement('p');
-    dp.setAttribute('class', 'my-1 align-self-center');
-    dp.innerHTML = allMusic[index].details;
-    
-    let mediaBody = document.createElement('div');
-    mediaBody.setAttribute('class', 'media-body');
-    mediaBody.appendChild(ah5);
-    mediaBody.appendChild(dp);
-    
-    let coverImg = document.createElement('img');
-    coverImg.setAttribute('class', 'align-self-center mr-3 rounded-lg');
-    coverImg.setAttribute('width', '100px');
-    coverImg.setAttribute('alt', allMusic[index].name);
-    coverImg.setAttribute('src', allMusic[index].poster);
-    let aimg = document.createElement('a');
-    aimg.setAttribute('href', 'javascript:;');
-    aimg.addEventListener('click',() => switchTo(index));
-    aimg.appendChild(coverImg);
-    
+
     let mediaEl = document.createElement('li');
     mediaEl.setAttribute('class', 'media my-3 mx-1 col-lg-auto col-md-12');
-    mediaEl.appendChild(aimg);
-    mediaEl.appendChild(mediaBody);
-    
+
+    mediaEl.innerHTML = `
+<div class="media-frame row align-content-center mr-3">
+    <div class="media-poster mr-3 d-flex">
+        <img class="align-self-center rounded-lg"
+        width="100px"
+        alt="${allMusic[index].name}"
+        src="${allMusic[index].poster}">
+    </div>
+    <div class="media-body">
+        <a href="javascript:;">
+            <h5 class="mt-1 mb-2 font-weight-bold">${allMusic[index].name}</h5>
+        </a>
+        <p class="my-1 align-self-center">${ allMusic[index].details}</p>
+    </div>
+</div>
+    `
+    //mediaEl.addEventListener('click',() => switchTo(index));
+    mediaEl.querySelector('.media-poster').addEventListener('click',() => switchTo(index));
+    mediaEl.querySelector('h5').addEventListener('click',() => switchTo(index));
     return mediaEl;
 }
 
@@ -285,7 +280,7 @@ function updatePage(index){
     comes from the game:<br>
     <strong><em>${allMusic[index].game}</em></strong>
     `, 
-    4500);
+    4000);
     document.documentElement.style.setProperty('--bg-url', `url('${allMusic[index].poster}')`);
     if(doNotNavigate){
         doNotNavigate = false;

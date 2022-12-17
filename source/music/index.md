@@ -12,12 +12,18 @@ banner_img: '/image/music/banner.jpg'
 {% raw %}
 
 <style>
-#detailsCard {
-  padding: 0;
-}
-#detailsCard, #playlist img {
+#playlist img {
   box-shadow: 0 5px 11px 0 rgb(0 0 0 / 18%), 0 4px 15px 0 rgb(0 0 0 / 15%);
 }
+.media-poster {
+  /* max-width: 100px; */
+  cursor: pointer;
+  transition: all 0.1s linear;
+}
+.media-poster:hover, .media-poster:active {
+  opacity: 0.5;
+}
+
 body {
   transition: background-image 0.8s ease-in-out;
 }
@@ -129,6 +135,9 @@ body.playerpatch {
   }
   [data-user-color-scheme='dark'] {
     --chara-card-color: #1a1a1aa6;
+  }
+  .page-content, .post-content {
+      overflow-x: visible;
   }
 }
 
