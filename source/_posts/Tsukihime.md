@@ -23,7 +23,6 @@ date: 2022-02-05 00:30:00
     transition: background 0.5s ease-in-out, padding 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
     backdrop-filter: blur(0px);
 }
-
 .navbar.top-nav-collapse,
 .navbar.navbar-col-show {
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 12%), 0 2px 10px 0 rgb(0 0 0 / 16%);
@@ -331,9 +330,8 @@ UI界面倒是感觉原版吧,不好也不差.
 
 ### 重点在此：高清重制版
 
-汉化：目前还没弄好.
-复刻版汉化进度可查看萌娘百科大佬百科[🔗️Letdo1945/月姬REMAKE汉化进度](https://zh.moegirl.org.cn/User:Letdo1945/%E6%9C%88%E5%A7%ACREMAKE%E6%B1%89%E5%8C%96%E8%BF%9B%E5%BA%A6)
-进度查询[🔗️二线汉化中](https://www.91tvg.com/thread-260813-1-1.html)
+汉化：它来辣!!!!!!! 
+[🔗️汉化补丁+汉化rom](https://tsukihimecn.github.io/),
 
 啃生肉的话...
 
