@@ -123,14 +123,6 @@ date: 2022-12-24 00:30:00
   }
 </style>
 
-<style>
-.infoarea,
-  .namearea,
-  .yomi{
-    color: black;
-    text-shadow: 0 0 10px white ;
-  }
-</style>
 
 {% template sp-character name no yomi uid html %}
 <div class={`row sp-character ${uid}`} style={`--this-bg: url(../image/12eve/chars/${no}b.webp)`}>
@@ -152,6 +144,17 @@ date: 2022-12-24 00:30:00
 </div>
 {% endtemplate %}
 
+<sp-character no=0 name="降旗 直人" yomi="huruhata naoto" uid="naoto">
+  <p>
+    本作无脸男主。
+  </p>
+  <p>
+    亚萨西大法持有者，但是人并不渣(不多开)，也不死板(该上就上)，<br>
+    椎名姐妹的青梅竹马，彼此父母都不在家，大小节日都是一起过的。 <br>
+    察觉到了椎名姐妹对自己的好感，试图找出不会让三人决裂的方法。
+  </p>
+</sp-character>
+<br>
 <sp-character no=1 name="宇奈原 由紀" yomi="unahara yuki" uid="yuki">
   <p>
     元气活泼的学妹。
