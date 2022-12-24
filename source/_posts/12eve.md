@@ -1,20 +1,21 @@
 ---
-title: '圣诞节特别篇：无尽的平安夜(12月的夏娃)'
-date: 2022-12-24 00:30:00
-keywords: "中二社, minori, 无尽的平安夜, 12月的夏娃"
+title: 圣诞节特别篇：无尽的平安夜(12月的夏娃)
+keywords: '中二社, minori, 无尽的平安夜, 12月的夏娃'
 banner_image: ''
-index_img: '../image/12eve/cover.webp'
+index_img: ../image/12eve/cover.webp
 tags:
   - 拔作
   - 剧情
   - 治愈
   - 巨乳
 categories:
-  - [R-18]
-  - [游戏公司, minori] 
-author: 'SacalWiki'
-abbrlink: 
-excerpt: '漫长的孤独后，我终于等到了幸福'
+  - - R-18
+  - - 游戏公司
+    - minori
+author: SacalWiki
+abbrlink: 21466
+excerpt: 漫长的孤独后，我终于等到了幸福
+date: 2022-12-24 00:30:00
 ---
 
 <img src="../image/12eve/tg-preview.jpg" class="d-none"/>
