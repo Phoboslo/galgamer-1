@@ -216,8 +216,12 @@ date: 2022-12-24 00:30:00
 
 ## 资源和下载
 
+[🔗️Telegram下载地址](https://t.me/ACGNyouxifenxiang/320)
+
+百度网盘秒传链接：(需使用秒传补丁，请自行搜索下载，解压密码：tmhtmiao.com)
+
 ```
-https://t.me/ACGNyouxifenxiang/320
+618CA51112E9C8EBABCB4821B1E867B9#EA30B7BE0AA582165D08C093561E9D58#8226522910#无尽的平安夜[12月EVE,12月的夏娃][汉化硬盘版].wim
 ```
 
 <style>
@@ -258,6 +262,5 @@ details[open] summary {
     //setTimeout(() => document.documentElement.setAttribute('data-user-color-scheme', 'light'), 1000)
   })
 </script>
-
 
 
