@@ -123,6 +123,15 @@ date: 2022-12-24 00:30:00
   }
 </style>
 
+<style>
+.infoarea,
+  .namearea,
+  .yomi{
+    color: black;
+    text-shadow: 0 0 10px white ;
+  }
+</style>
+
 {% template sp-character name no yomi uid html %}
 <div class={`row sp-character ${uid}`} style={`--this-bg: url(../image/12eve/chars/${no}b.webp)`}>
   <div class="col-12 char-overlay row" style={`--right-bg: url(../image/12eve/chars/${no}.webp)`}>
