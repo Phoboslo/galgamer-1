@@ -252,9 +252,8 @@ minori社的特色就是角色会在播放语音的时候嘴唇与语音同步�
 </video>
 
 <video controls preload="metadata" width='100%' poster='../image/12eve/out3.webp'>
-<source src="https://s3tatic-zone0.galgamer.eu.org/video-2d35/12eve/out3.mp4" type="video/mp4">
+<source src="https://s3static-zone0.galgamer.eu.org/video-2d35/12eve/out3.mp4" type="video/mp4">
 </video>
-
 
 ## 资源和下载
 
