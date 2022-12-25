@@ -1,5 +1,5 @@
 ---
-title: 平安夜特别篇：无尽的平安夜(12月的夏娃)
+title: 圣诞节特别篇：无尽的平安夜(12月的夏娃)
 keywords: '中二社, minori, 无尽的平安夜, 12月的夏娃'
 banner_image: ''
 index_img: ../image/12eve/cover.webp
