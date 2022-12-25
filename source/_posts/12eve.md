@@ -210,17 +210,17 @@ date: 2022-12-24 00:30:00
 
 ## 游戏 CG（含有 R-18）
 
-![](../image/12eve/cg/1.webp)
+![](../image/12eve/cg/01.webp)
 
-![](../image/12eve/cg/2.webp)
+![](../image/12eve/cg/02.webp)
 
-![](../image/12eve/cg/3.webp)
+![](../image/12eve/cg/03.webp)
 
-![](../image/12eve/cg/4.webp)
+![](../image/12eve/cg/04.webp)
 
-![](../image/12eve/cg/5.webp)
+![](../image/12eve/cg/05.webp)
 
-![](../image/12eve/cg/6.webp)
+![](../image/12eve/cg/06.webp)
 
 ![](../image/12eve/cg/7.webp)
 
