@@ -247,7 +247,7 @@ minori社的特色就是角色会在播放语音的时候嘴唇与语音同步�
 
 这里有一个OP
 
-<video controls preload="metadata" width='100%' poster='../image/Bishoujo_Mangekyou-Tsumi_to_Batsu_no_Shoujo-/movie.webp'>
+<video controls preload="metadata" width='100%' poster='../image/12eve/op.webp'>
 <source src="https://s3static-zone0.galgamer.eu.org/video-2d35/12eve/op.mp4" type="video/mp4">
 </video>
 
