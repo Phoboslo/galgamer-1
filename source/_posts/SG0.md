@@ -51,6 +51,8 @@ excerpt: '世界是可以欺騙的，去欺騙世界吧'
   <span style="color:red;"   >請務必通關 SG 后再閲讀該文/游玩該作</span><br>
 </p>
 
+[👉🔗前作文章鏈接](/article/10020)
+
 ![](../image/SG0/post.jpg)
 
 | 資訊一覽     |                  |
@@ -136,9 +138,9 @@ excerpt: '世界是可以欺騙的，去欺騙世界吧'
     backdrop-filter: unset;*/
     }
     .sp-character .char-overlay {
-      min-height: unset;
+      min-height: 450px;
       background-size: contain;
-      background-position: top 0px right 0px;
+      background-position: top 150px right 0px;
     }
     :root { /* 配色 */
       --chara-card-color: #ffffff87;
@@ -243,17 +245,17 @@ excerpt: '世界是可以欺騙的，去欺騙世界吧'
 
  * 根據廣播劇和小説補全了 SG 的許多大坑，在玩家都知道結局是怎樣的情況下依然將懸疑感做得很好。
  * 很好的繼承了 SG 的高質量音樂和畫風，並適當降低了通關難度。
- * “僞科學”(口胡)上的處理依然十分優秀，在前作世界綫的基礎上增添了 AI 等。
+ * “僞科學”(口胡)上的處理依然十分優秀，在前作世界綫的基礎上增添了 AI 等設定。
  
 <div class="row align-items-center">
   <p class="col" style="font-size:200%;">缺點：</p>
   <img class="align-right ml-auto bg-transparent" width="200px" src="../image/Atri/no.webp" alt=""></img>
 </div>
 
- * 部分情節節奏過度有些快，前作部分角色邊緣化，内容略顯單薄（畢竟文本量大約只有前作的一半
+ * 部分情節節奏過渡有些快，前作部分角色邊緣化，内容略顯單薄（畢竟文本量大約只有前作的一半
  * 有些情節有 bug ，但都是爲了不吃前作的書。
 
-前作過於耀眼，導致這部續作自然會被部分人評價爲狗尾續貂。從一部 ADV 的角度來説該作絕對是優秀水準的，但誰讓它叫 SG0 呢。通關 SG 后該作是絕對不可以錯過的，但請不要用 SG 的水準去要求，稍稍降低一點點期待，SG0也能帶給你大滿足。（這裏不得不提一嘴動畫組真的盡心盡力，SG0 的 TV 依然是超神發揮，完全不輸 SG 的 TV。）
+前作過於耀眼，這部續作自然會被部分人評價爲狗尾續貂。從一部 ADV 的角度來説該作絕對是優秀水準的，但誰讓它叫 SG0 呢。通關 SG 后該作是絕對不可以錯過的，但請不要用 SG 的水準去要求，稍稍降低一點點期待，SG0也能帶給你大滿足。（這裏不得不提一嘴動畫組真的盡心盡力，SG0 的 TV 依然是超神發揮，完全不輸 SG 的 TV。）
 
 | 評分        |      |
 |:---------:|:----- |
