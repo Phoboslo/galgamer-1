@@ -375,11 +375,10 @@ https://www.ryuugames.com/meikei-no-lupercalia-free-download/
       /*-webkit-backdrop-filter: unset;
     backdrop-filter: unset;*/
     }
-    .sp-character .char-overlay {
+      .sp-character .char-overlay {
       min-height: 350px;
-      background-size: 200px;
-      /* background-position: bottom 0px right 0px; */
-      background-size: auto;
+      background-size: 300px;
+      background-position: top 0px right 0px;
     }
     :root { /* 配色 */
       --chara-card-color: #ffffff87;
