@@ -68,7 +68,7 @@ author: Sacal & ling
 
 ## 主要登场人物
 
-(由于在不剧透的情况下很难写京子这个角色，所以不会出现)
+注：由于在不剧透的情况下很难写 **折原京子** 这个角色，所以这里不作介绍。可以在此处👉<a href="#游戏-CG-警告-桐叶玉图" class="tocbot-link node-name--H2  tocbot-active-link" one-link-mark="yes">🔗鉴赏 CG</a>
 
 <div class="row sp-character"> 
 <!--- 最外層的圓角卡片 -->
@@ -168,17 +168,17 @@ author: Sacal & ling
 ## 简评(无剧透)
 
 ### 剧情
-本作大体上可以分为俩部分，前面以剧团**labyrinth(迷途)**为中心，围绕着戏剧演出，随着《菲利亚》公演的结束，天乐来来一行人的离场，开始讲述各自的过往。
+本作大体上可以分为俩部分，前面以剧团 **labyrinth(迷途)** 为中心，围绕着戏剧演出，随着《菲利亚》公演的结束，天乐来来一行人的离场，开始讲述各自的过往。
 剧情方面主要的亮点都在群像群像，所以玩的话一定要玩到群像部分！在多视角下(群像)，拼凑出了一个完成度极高的故事！
 剧情设定方面也很出众。而且剧情总体上没有太多糖分，老少适宜!(rukuru 的剧情，一贯的亮点)
 但是在结尾部分的剧情感觉有点都和主义了(可能是我没好好推?)
 
-但是本作有不少 rukuru 之前作品的影子，如果你游玩过 [**纸上的魔法使**](/article/9474) ，那么请一定不要错过这作。
+但是本作有不少 rukuru 之前作品的影子，如果你游玩过 [🔗**纸上的魔法使**](/article/9474) ，那么请一定不要错过这作。
 由于是戏剧题材，也引入了一点文学要素(例:阿尔贝•加缪 的《卡利古拉》(Caligula))，本作虽然围绕戏剧，但戏剧演出只是为了过渡到群像部分的，想通过黄油代替原著是不可能的，并且非常建议先阅读《卡利古拉》。
 
 ### 音乐
 作曲仍是由出道一直负责的 Metomate 制作，有着几首特别耐听的bgm，并且bgm很贴合剧情，游戏中的 **ライムライトの残火piano_version** 这首超好听，但是这首只会在结尾部分出现一次。
-当然无论是她的游戏配乐还是她的个人专辑(Metomate 厨路过)都很好听，容我附上 Metomate 的<a href="https://music.youtube.com/playlist?list=OLAK5uy_k3VYjCPMCNKQZf8O4qFfFOT7TgsNL9-RY">Collection</a> (Youtube Music)
+当然无论是她的游戏配乐还是她的个人专辑(Metomate 厨路过)都很好听，容我附上 Metomate 的<a href="https://music.youtube.com/playlist?list=OLAK5uy_k3VYjCPMCNKQZf8O4qFfFOT7TgsNL9-RY">🔗Collection</a> (Youtube Music)
 值得一提 meto 在 fanbox 上进行的 **2022年末の雑談回** 中透露 她也是 rukuru 厨!
 
 #### 以下是 meto 的原文
