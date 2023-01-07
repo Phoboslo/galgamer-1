@@ -168,8 +168,9 @@ author: Sacal & ling
 ## 简评(无剧透)
 
 ### 剧情
-本作大体上可以分为俩部分，前面以剧团 **labyrinth(迷途)** 为中心，围绕着戏剧演出，随着《菲利亚》公演的结束，天乐来来一行人的离场，开始讲述各自的过往。
-剧情方面主要的亮点都在群像群像，所以玩的话一定要玩到群像部分！在多视角下(群像)，拼凑出了一个完成度极高的故事！
+本作大体上可以分为俩部分，前面以剧团 **labyrinth(迷途)** 为中心，围绕着戏剧演出，随着《菲利亚》公演的结束、天乐来来一行人的离场，开始讲述各自的过往。
+剧情方面主要的亮点之一是群像视角的描写手法，所以玩的话一定要玩到群像部分！在多视角下(群像)，拼凑出了一个完成度极高的故事！
+另一个亮点是剧情上虚构与现实的模糊，玩家带着违和感和不真实感一点点地看清整个故事的原貌。
 剧情设定方面也很出众。而且剧情总体上没有太多糖分，老少适宜!(rukuru 的剧情，一贯的亮点)
 但是在结尾部分的剧情感觉有点都和主义了(可能是我没好好推?)
 
@@ -261,8 +262,28 @@ author: Sacal & ling
 
 ## 资源和下载 
 
-https://www.ryuugames.com/meikei-no-lupercalia-free-download/
+- 運行原版可能需要` Locale Emulator `進行轉區
 
+冥契的牧神节 **日文原版** 
+
+1.🔗[ryuugames](https://www.ryuugames.com/meikei-no-lupercalia-free-download/)
+
+2.磁力鏈接：
+
+```
+magnet:?xt=urn:btih:11485b9e9eddfbeaf9789a523a3a01280c43d554
+```
+---
+
+漢化補丁:
+<p>
+  {% telegram_channel 997 %}
+</p>
+
+Kirikiroid2：
+<p>
+{% telegram_channel 9526  RhineLibrary %}
+</p>
 
 <style> /* 调整页面的 CSS */
   body {
@@ -350,6 +371,11 @@ https://www.ryuugames.com/meikei-no-lupercalia-free-download/
     .namearea hr {
       margin: 1rem 0;
     }
+    .infoarea ,
+    .sp-character{
+    -webkit-user-select: none;
+    -webkit-touch-callout: none
+    }
     .pc-right {
       -webkit-backdrop-filter: blur(3px);
       backdrop-filter: blur(3px);
@@ -365,7 +391,7 @@ https://www.ryuugames.com/meikei-no-lupercalia-free-download/
       /*-webkit-backdrop-filter: unset;
     backdrop-filter: unset;*/
     }
-      .sp-character .char-overlay {
+    .sp-character .char-overlay {
       min-height: 350px;
       background-size: 300px;
       background-position: top 0px right 0px;
