@@ -274,11 +274,7 @@ author: Sacal & ling
 
 - 運行原版可能需要` Locale Emulator `進行轉區
 
-冥契的牧神节 **日文原版** 
-
-1.🔗[ryuugames](https://www.ryuugames.com/meikei-no-lupercalia-free-download/)
-
-2.磁力鏈接：
+冥契的牧神节 **日文原版** 磁力鏈接：
 
 ```
 magnet:?xt=urn:btih:11485b9e9eddfbeaf9789a523a3a01280c43d554
