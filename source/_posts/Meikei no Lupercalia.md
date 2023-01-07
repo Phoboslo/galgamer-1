@@ -19,6 +19,8 @@ author: Sacal & ling
 
 `作者：Sacal & ling`
 
+<img src="../image/subahibi/Cover.jpg" loading="lazy" class="d-none">
+
 ![Cover](../image/MeikeinoLupercalia/Cover.jpg)
 
 | 资讯一览     |                     |
