@@ -19,7 +19,7 @@ author: Sacal & ling
 
 `作者：Sacal & ling`
 
-<img src="../image/subahibi/tg-preview.jpg" loading="lazy" class="d-none">
+<img src="../image/MeikeinoLupercalia/tg-preview.jpg" loading="lazy" class="d-none">
 
 ![Cover](../image/MeikeinoLupercalia/Cover.webp)
 
