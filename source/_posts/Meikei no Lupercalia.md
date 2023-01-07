@@ -188,7 +188,7 @@ author: Sacal & ling
 由于是戏剧题材，也引入了一点文学要素(例:阿尔贝•加缪 的《卡利古拉》(Caligula))，本作虽然围绕戏剧，但戏剧演出只是为了过渡到群像部分的，想通过黄油代替原著是不可能的，并且非常建议先阅读《卡利古拉》。
 
 ### 音乐
-作曲仍是由出道一直负责的 Metomate 制作，有着几首特别耐听的bgm，并且bgm很贴合剧情，游戏中的 **ライムライトの残火piano_version** 这首超好听，但是这首只会在结尾部分出现一次。
+作曲仍是由 ウグイスカグラ 的御用作曲家 **Metomate** 负责，有着几首特别耐听的bgm，并且bgm很贴合剧情，游戏中的 **ライムライトの残火piano_version** 这首超好听，但是这首只会在结尾部分出现一次。
 当然无论是她的游戏配乐还是她的个人专辑(Metomate 厨路过)都很好听，容我附上 Metomate 的<a href="https://music.youtube.com/playlist?list=OLAK5uy_k3VYjCPMCNKQZf8O4qFfFOT7TgsNL9-RY">🔗Collection</a> (Youtube Music)
 值得一提 meto 在 fanbox 上进行的 **2022年末の雑談回** 中透露 她也是 rukuru 厨!
 
@@ -290,7 +290,7 @@ magnet:?xt=urn:btih:11485b9e9eddfbeaf9789a523a3a01280c43d554
   {% telegram_channel 997 %}
 </p>
 
-Kirikiroid2：
+Kirikiri 模拟器移植版本：
 <p>
 {% telegram_channel 9526  RhineLibrary %}
 </p>
