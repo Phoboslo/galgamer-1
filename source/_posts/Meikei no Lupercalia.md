@@ -12,16 +12,16 @@ categories:
   - [游戏公司,ウグイスカグラ]
 abbrlink: 4847475454
 excerpt: 若是你能变得幸福的话
-index_img: ../image/MeikeinoLupercalia/Cover.jpg
+index_img: ../image/MeikeinoLupercalia/Cover.webp
 date: 2023-01-07 00:30:00
 author: Sacal & ling
 ---
 
 `作者：Sacal & ling`
 
-<img src="../image/subahibi/Cover.jpg" loading="lazy" class="d-none">
+<img src="../image/subahibi/tg-preview.jpg" loading="lazy" class="d-none">
 
-![Cover](../image/MeikeinoLupercalia/Cover.jpg)
+![Cover](../image/MeikeinoLupercalia/Cover.webp)
 
 | 资讯一览     |                     |
 | :----------- | :------------------ |
