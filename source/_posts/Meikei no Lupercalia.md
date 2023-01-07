@@ -34,7 +34,7 @@ author: Sacal & ling
 
 ---
 
-<p class="text-center">
+<p class="_intro">
   <span>真正的天才，是令普通人绝望的存在， </span><br>
   <span>其压倒性的演技会将同台的演员乃至同时代出道的同行的存在感吃干抹净。</span>
 </p>
@@ -45,7 +45,7 @@ author: Sacal & ling
 但随着时间的推移，一切也都逐渐趋于平静。
 经历种种变故的男主放弃了演剧之路，迎来了平静的高中生的生活。
 
-<p class="text-center">
+<p class="_intro">
   <span>随着一个舞台的落幕， </span><br>
   <span>一个新的舞台开始呈现在众人的目光下...</span>
 </p>
@@ -61,14 +61,24 @@ author: Sacal & ling
 **折原京子**，有着与**折原氷狐**相同的样貌。她的出现，唤醒了众人关于曾经那位天才少女的过往记忆。
 与此同时，一位少女的存在证明被抹去，她的身影在世人眼中逐渐褪去，甚至家人都将其遗忘。**環**也开始寻找着这位少女。
 
-<p class="text-center">
+<p class="_intro">
   <span>真实与虚构的界限开始模糊， </span><br>
   <span>而剧团之所以会命名为 <b>labyrinth(迷途)</b> 的缘由开始显现...</span>
 </p>
 
+<style>
+  ._intro{
+    text-shadow: 0 0 5px #DAA520 ;
+  }
+</style>
+
 ## 主要登场人物
 
-注：由于在不剧透的情况下很难写 **折原京子** 这个角色，所以这里不作介绍。可以在此处👉<a href="#游戏-CG-警告-桐叶玉图" class="tocbot-link node-name--H2  tocbot-active-link" one-link-mark="yes">🔗鉴赏 CG</a>
+
+<div class="alert alert-success" role="alert">
+  <p class="alert-heading" style="font-size:150%;">注：由于在不剧透的情况下很难写 <b>折原京子</b> 这个角色，所以这里不作介绍。</p>
+  <p class="mb-0 text-right">可以在此处👉<a href="#游戏-CG-警告-桐叶玉图" class="tocbot-link node-name--H2  tocbot-active-link" one-link-mark="yes">🔗鉴赏 CG</a></p>
+</div>
 
 <div class="row sp-character"> 
 <!--- 最外層的圓角卡片 -->
