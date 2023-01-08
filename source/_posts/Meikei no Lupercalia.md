@@ -284,12 +284,10 @@ magnet:?xt=urn:btih:11485b9e9eddfbeaf9789a523a3a01280c43d554
 
 ---
 
-漢化補丁:
-{% telegram_channel 998 %}
+漢化補丁：{% telegram_channel 998 %}
 
 
-Kirikiri 模拟器移植版本：
-{% telegram_channel 9526  RhineLibrary %}
+Kirikiri 模拟器移植版本：{% telegram_channel 9526 RhineLibrary %}
 
 <style> /* 调整页面的 CSS */
   body {
