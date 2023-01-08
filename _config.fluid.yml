@@ -618,7 +618,7 @@ post:
   # Copyright, will be displayed at the end of each post
   copyright:
     enable: true
-    content: '对于原创内容，文章作者保留所有权利。转载需要许可，如有需要请前往 <a class="text-primary" href="https://telega.one/Galgamer_Channel"> 🔗️Galgame 频道 </a> 留言。<br>另外，复制链接自由，请随意分享。'
+    content: '对于原创内容，文章作者保留所有权利。转载需要许可，如有需要请前往 <a class="text-primary" href="https://t.me/Galgamer_Channel"> 🔗️Galgame 频道 </a> 留言。<br>另外，复制链接自由，请随意分享。'
 
   # 文章底部上一篇下一篇功能
   # Link to previous/next post
@@ -644,7 +644,7 @@ post:
     </p>
     <p>
       欢迎关注 Telegram 频道
-      <a class="text-primary" href="https://telega.one/Galgamer_Channel"> 🔗️@Galgamer_Channel </a>
+      <a class="text-primary" href="tg://resolve?domain=Galgamer_channel"> 🔗️@Galgamer_Channel </a>
     </p>'
 
 
@@ -962,19 +962,19 @@ links:
     - {
       title: "Galgame 交流群",
       intro: "我們的討論區",
-      link: "https://telega.one/Galgamer",
+      link: "https://t.me/Galgamer",
       avatar: "/image/main/galgroup.webp"
     }
     - {
-      title: "Hikari Field 棺方頻道",
+      title: "桐遠暮羽頻道",
       intro: "編輯部的碎碎念（接受文章投稿！）",
-      link: "https://telega.one/KiritouKureha",
-      avatar: "/image/main/kiriha.webp"
+      link: "https://t.me/KiritouKureha",
+      avatar: "/image/main/kiriha2.webp"
     }
     - {
       title: "莱茵图书馆",
       intro: "上谷歌之前先去這裏看一看...？",
-      link: "https://telega.one/RhineLibrary",
+      link: "https://t.me/RhineLibrary",
       avatar: "/image/main/rhine.webp"
     }
     - {
@@ -987,13 +987,13 @@ links:
       title: "谷歌搜索",
       intro: "找資源不求人 上谷歌自己搜",
       link: "https://www.google.com.hk/",
-      avatar: "https://www.google.cn/favicon.ico"
+      avatar: "/image/main/google.webp"
     }
     - {
       title: "真・蒸汽平臺",
       intro: "什麼遊戲都能買到的境外勢力商店",
       link: "https://store.steampowered.com/",
-      avatar: "https://store.steampowered.com/favicon.ico"
+      avatar: "/image/main/steam.ico"
     }
     - {
       title: "光之領域",
@@ -1013,7 +1013,7 @@ links:
     enable: true
     content: '
     <hr>
-    <p>在 <a class="text-primary" href="https://telega.one/Galgamer_channel" target="_blank">🔗️Galgame 频道</a> 留言申请加入我的友链，请按如下格式提供信息：</p>
+    <p>在 <a class="text-primary" href="https://t.me/Galgamer_channel" target="_blank">🔗️Galgame 频道</a> 留言申请加入我的友链，请按如下格式提供信息：</p>
     <ul>
     <li>网站名称：MOONSTONE</li>
     <li>简介：PC 游戏制作商 MOONSTONE 官方网站</li>
