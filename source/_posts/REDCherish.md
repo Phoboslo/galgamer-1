@@ -10,12 +10,13 @@ tags:
   - 赛博朋克
   - 搞笑
   - 玩枪
+  - 电脑中级高手
 categories:
   - [R-18]
   - [游戏公司, CRYSTALiA]
 abbrlink: 20020
 author: '桐遠暮羽'
-excerpt: ''
+excerpt: '看賽博朋克美少女用大槍槍和榴彈發射器跟黑幫火併，然後一把子幹爛電子吸血鬼的老家'
 ---
 
 <style>
@@ -51,11 +52,11 @@ body {
 }
 :root {
   --board-bg-color: rgba(255,255,255,0.85);
-  --bg-url: url('../image/REDCherish/bg.webp')
+  --bg-url: url('../image/REDCherish/bg-l.webp')
 }
 [data-user-color-scheme='dark'] {
   --board-bg-color: rgba(0,0,0,0.85);
-  /* --bg-url: url('../image/REDCherish/bg-d.webp') */
+  --bg-url: url('../image/REDCherish/bg-d.webp') 
 }
 ::selection {
     background-color: #fc0;
@@ -76,25 +77,22 @@ rt {
 
 ## At A Glance
 
-失去容身之所的少年少女們，會前往只屬於他們的樂園——又或者是前往永遠無法脫出的迷宮。
+看賽博朋克美少女用大槍槍和榴彈發射器跟黑幫火併，然後一把子幹爛電子吸血鬼的老家。
 
 <p id="coverimage-warp">
-  <img id="coverimage" src="../image/REDCherish/cover.webp" loading="lazy" class="img-lazy" alt="Cover" originimg="https://s3static-zone0.galgamer.eu.org/video-2d35/Natsunoiro/cover.webp">
+  <img id="coverimage" src="../image/REDCherish/cover.webp" loading="lazy" class="img-lazy" alt="Cover" />
 </p>
-<p id="changesrc">
-  <a href="javascript:loadbigimg();" id="changebtn" class="btn btn-primary btn-sm" role="button">加載原圖（9258x12790, 4.0MB）⬆️️</a>
-<p>
 
 
 | 資訊一覽     |                 |
 | :----------- | :------------------------------------ |
-| **開發商**   | MOONSTONE           |
+| **開發商**   | CRYSTALiA           |
 | **遊戲時長** | 25H（估計）                     |
-| **攻略人數** | 4                     | 
-| **類型**     | 懸疑 拔作            |
-| **難度**     | 中                   |
+| **攻略人數** | 3                     | 
+| **類型**     | 賽博朋克 戰鬥            |
+| **難度**     | 低（直接選人）                   |
 | **分級**     | R-18（性行爲，恐怖）      |
-| **遊戲引擎** | ExHIBIT           |
+| **遊戲引擎** | Softpal ADV System           |
 
 
 ## 故事
