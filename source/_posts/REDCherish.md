@@ -16,7 +16,7 @@ categories:
   - [游戏公司, CRYSTALiA]
 abbrlink: 20020
 author: '桐遠暮羽'
-excerpt: '看賽博朋克美少女用大槍槍和榴彈發射器跟黑幫火併，然後一把子幹爛電子吸血鬼的老家'
+excerpt: '賽博朋克美少女的人生夙願就是拿反器材狙擊步槍和火箭發射器 把城市黑幫、電腦中級嗨客和電子吸血鬼全部 #繩之以法！'
 ---
 
 <style>
@@ -77,16 +77,16 @@ rt {
 
 ## At A Glance
 
-看賽博朋克美少女用大槍槍和榴彈發射器跟黑幫火併，然後一把子幹爛電子吸血鬼的老家。
+賽博朋克美少女的人生夙願就是拿反器材狙擊步槍和火箭發射器 把城市黑幫、電腦中級嗨客和電子吸血鬼全部 #繩之以法！
 
 <p id="coverimage-warp">
-  <img id="coverimage" src="../image/REDCherish/cover.webp" loading="lazy" class="img-lazy" alt="Cover" />
+  <img id="coverimage" src="../image/REDCherish/cover.webp" loading="lazy" class="img-lazy ar16x9" alt="Cover" />
 </p>
 
 
 | 資訊一覽     |                 |
 | :----------- | :------------------------------------ |
-| **開發商**   | CRYSTALiA           |
+| **開發商**   | CRYSTALiA                 |
 | **遊戲時長** | 25H（估計）                     |
 | **攻略人數** | 3                     | 
 | **類型**     | 賽博朋克 戰鬥            |
@@ -94,9 +94,32 @@ rt {
 | **分級**     | R-18（性行爲，恐怖）      |
 | **遊戲引擎** | Softpal ADV System           |
 
+*提示：由於本作無官方漢化且外來語過多，俺將根據俺的經驗和譯音表進行恰當翻譯。*
 
 ## 故事
  
+這是 2066 年，雖然距離賽博元年 2077 年還有 11 年，
+然而賽博朋克之風早已席捲世界，到處都能看到做了義體移植手術的人。
+
+大洋上的島國 ***Eleutheria***（希臘語「自由」；下文簡稱自由城），是賽博改造人們的聖地。
+無論是想要在大腦中植入電腦，還是器官癢癢了想要換器官，或者是想要加裝戰鬥義體，
+各種各樣的需求在自由城都可以得到滿足。
+
+男主角 ***雪光*** 原本隸屬於日本的特務機關「烏拉格」，但是在一次保鏢任務中他犯了致命錯誤導致目標死亡，
+在要遭受烏拉格的審判甚至是追殺的時候，他毅然放棄了在日本的一切，隻身一人逃往了自由城。
+
+![](../image/REDCherish/story/00.webp)
+
+自由城，是一個可以實現一切夢想，甚至是可以爲所欲爲的地方。
+剛踏上了自由城的男主角，遭遇了一個白髮少女 ***尤妮卡***，
+尤妮卡也是一個苦命人，她的父親在保護自己經營的賽博餐館的戰鬥中被黑道所殺，
+在那之後她也一直被黑幫不斷糾纏。
+
+然而，尤妮卡並沒有放棄「讓賽博餐館東山再起，圓父親的遺願」的夢想。
+失去了一切的男主角雪光，爲尤妮卡的心靈所打動（指要脅），決定獻出一切，甚至是生命，
+爲實現尤妮卡的夢想掃清所有障礙。
+
+無論是黑幫，還是潛藏在自由城後面的更大的陰暗。
 
 
 ## 登場人物
@@ -276,15 +299,15 @@ magnet:?xt=urn:btih:
 
 <script>
   //document.documentElement.setAttribute('data-user-color-scheme', 'dark');
-  function loadbigimg(){
-    let cover = document.getElementById('coverimage');
-    let btn =  document.getElementById('changesrc');
-    let bigurl = cover.getAttribute('originimg');
-    cover.setAttribute('src', '');
-    cover.setAttribute('src', bigurl);
-    cover.parentElement.setAttribute('href', bigurl);
-    btn.parentElement.removeChild(btn);
-  }
+  // function loadbigimg(){
+  //   let cover = document.getElementById('coverimage');
+  //   let btn =  document.getElementById('changesrc');
+  //   let bigurl = cover.getAttribute('originimg');
+  //   cover.setAttribute('src', '');
+  //   cover.setAttribute('src', bigurl);
+  //   cover.parentElement.setAttribute('href', bigurl);
+  //   btn.parentElement.removeChild(btn);
+  // }
   document.addEventListener("DOMContentLoaded", function(){
     let pclefts = document.querySelectorAll('.pc-left');
     pclefts.forEach((el) => {
