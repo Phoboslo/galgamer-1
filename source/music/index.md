@@ -64,6 +64,7 @@ body.playerpatch {
     position: fixed;
     top: 0;
     left: 0;
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     z-index: -99;
 }
