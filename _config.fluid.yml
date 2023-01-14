@@ -966,6 +966,12 @@ links:
       avatar: "/image/main/galgroup.webp"
     }
     - {
+      title: "Galgamer Discord",
+      intro: "🆕️ Discord 上的討論區",
+      link: "https://discord.gg/6RaztntJ2N",
+      avatar: "/image/main/Gdiscord.webp"
+    }
+    - {
       title: "桐遠暮羽頻道",
       intro: "編輯部的碎碎念（接受文章投稿！）",
       link: "https://t.me/KiritouKureha",
