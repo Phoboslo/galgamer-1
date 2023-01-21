@@ -232,3 +232,12 @@ hexo.extend.tag.register(
   () =>
     `<script>docReady(() => { setInterval(() => document.documentElement.setAttribute('data-user-color-scheme', 'dark'), 1000); insertToast('dark', '已啟用暗色模式', 2000); })</script>`,
 );
+
+/** force_dark_mode
+ * 自动暗色模式
+ */
+hexo.extend.tag.register(
+  "force_light_mode",
+  () =>
+    `<script>docReady(() => { setInterval(() => document.documentElement.setAttribute('data-user-color-scheme', 'light'), 1000); insertToast('light', '已启用亮色模式', 2000); })</script>`,
+);
