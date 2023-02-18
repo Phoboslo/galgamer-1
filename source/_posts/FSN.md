@@ -156,7 +156,7 @@ CV: 川澄 綾子
 <div class="col-7">
 <p>
 <div class="BIGNAME">
-遠坂 凜
+遠坂 凛
 </div>
 <div class="CV">
 CV: 植田 佳奈
