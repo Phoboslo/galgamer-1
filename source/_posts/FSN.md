@@ -107,105 +107,109 @@ font-family:serif
 ## 人物介紹（只介紹早期角色，中後期角色難免劇透
 
 <div class="row">
-<div class="col-5">
-<img class="bg-transparent" src="../image/FSN/Emiya_shiro.webp" style="max-height:1000px"/>
-</div>
-<div class="col-7">
-<p>
+<div class="col-12">
+    <div class="col-5" style="float: left; clear: both;" align="left">
+        <img src="../image/FSN/Emiya_shiro.webp" alt="">
+    </div>
+    
 <div class="BIGNAME">
 衛宮 士郎
 </div>
 <div class="CV">
 CV: 杉山 紀彰
 </div>
+<p>
 <br>
 繼承了去世老爹遺產，一個人住在大宅子裏，眼神直率、人生目標是“成爲正義的夥伴”的紅髮少年，究極老好人，對任何弱勢群體都無法坐視不管，女難之相。<br>
 會一點點魔術，僅僅只能强化手中的物品，因爲沒人教而無法進步。<br>
 危急時刻召喚出了“SSR”Saber，稀里糊塗毫無準備的參加了聖杯戰爭。<br>
-<span class="heimu" title="你知道的太多了">
-奈須：『Fate』存在有三條路線。雖然通盤來說有著“與自己的戰鬥”這個主題，但每條路線也存在各自的主題。第一條路線是「理想的形態」。下一條路線是「與理想的自己對決、並且打破」。第三條是「理想與現實的摩擦、並且歸還」。在本作當中，每條路線都有一名獨自的女主角，但男主角始終只有衛宮士郎一人。某種意義上，士郎是作品中精神上最有問題的人物，我們想具體描寫出他成長的過程。先用最初的路線展示出士郎凝固的思想，然後用接下來的路線描寫出對這種思想的解決，再在最後的路線中提示出作為“人類”對這種思想的另一種解答。當然，《Fate》是一個在遊戲層面上構築的故事，每條路線的結局都是等價的，認為它們是對同一個問題形式不同的解答就好了。
- </span>
 </p>
+<p class="heimu" title="你知道的太多了">
+奈須：『Fate』存在有三條路線。雖然通盤來說有著“與自己的戰鬥”這個主題，但每條路線也存在各自的主題。第一條路線是「理想的形態」。下一條路線是「與理想的自己對決、並且打破」。第三條是「理想與現實的摩擦、並且歸還」。在本作當中，每條路線都有一名獨自的女主角，但男主角始終只有衛宮士郎一人。某種意義上，士郎是作品中精神上最有問題的人物，我們想具體描寫出他成長的過程。先用最初的路線展示出士郎凝固的思想，然後用接下來的路線描寫出對這種思想的解決，再在最後的路線中提示出作為“人類”對這種思想的另一種解答。當然，《Fate》是一個在遊戲層面上構築的故事，每條路線的結局都是等價的，認為它們是對同一個問題形式不同的解答就好了。
+ </p>
 </div>
 </div>
 
 <div class="row">
-<div class="col-5">
-<img class="bg-transparent" src="../image/FSN/Saber.webp" style="max-height:1000px"/>
-</div>
-<div class="col-7">
-<p>
+<div class="col-12">
+    <div class="col-5" style="float: left; clear: both;" align="left">
+        <img src="../image/FSN/Saber.webp" alt="">
+    </div>
+    
 <div class="BIGNAME">
 Saber
 </div>
 <div class="CV">
 CV: 川澄 綾子
 </div>
+<p>
 <br>
 本作可攻略女主之一，小巧的金髮美少女騎士，但劍術十分精湛很能打，似乎是西洋的流派。<br>
 劍上總是纏繞著風的加護看起來就像無形一般，這讓敵人在交戰時無法判斷劍的攻擊距離。面板能力非常全面且優秀，似乎因爲士郎魔力稀缺無法發揮全部實力。<br>
 性格和士郎很合得來，信仰騎士道，對歪門邪道十分痛恨，很欣賞士郎的做事風格，同時也是個大胃王被家政EX的士郎牢牢地抓住了胃。
+
 </p>
 </div>
 </div>
 
 <div class="row">
-<div class="col-5">
-<img class="bg-transparent" src="../image/FSN/Tohsaka_rin.webp" style="max-height:1000px"/>
-</div>
-<div class="col-7">
-<p>
+<div class="col-12">
+    <div class="col-5" style="float: left; clear: both;" align="left">
+        <img src="../image/FSN/Tohsaka_rin.webp" alt="">
+    </div>
+    
 <div class="BIGNAME">
 遠坂 凛
 </div>
 <div class="CV">
 CV: 植田 佳奈
 </div>
+<p>
 <br>
 士郎的同学，本作可攻略女主之一，标志是黑色双马尾以及驰名二次元的绝对领域和黑丝美腿。<br>
 继承父亲的遗志参加圣杯战争，本来想召唤最强Servent-Saber，但召唤出的却是自己真名都不记得的Archer。<br>
 冬木御三家远坂的正统继承人，魔术天分极高，但要借宝石发动故经费十分紧张，本人也因此十分爱财。在學校是品學兼優的好學生，但在熟人面前偶爾會展現出脫綫的一面，標准的傲嬌性格還帶有一點小惡魔屬性。
-</p>
+ </p>
 </div>
 </div>
-
 <div class="row">
-<div class="col-5">
-<img class="bg-transparent" src="../image/FSN/Archer.webp" style="max-height:1000px"/>
-</div>
-<div class="col-7">
-<p>
+<div class="col-12">
+    <div class="col-5" style="float: left; clear: both;" align="left">
+        <img src="../image/FSN/Archer.webp" alt="">
+    </div>
+    
 <div class="BIGNAME">
 Archer
 </div>
 <div class="CV">
 CV: 諏訪部 順一
 </div>
+<p>
 <br>
 遠坂凜所召喚出的英靈，身著紅色緊身衣，聲稱自己召喚時出了問題也不記得自己是誰。<br>
 作爲弓兵自然擅長弓箭，同時近戰也十分精通，但在神仙打架的聖杯戰爭中他的各項能力值都顯得不怎麽夠看。<br>
 但意外的擅長家務，最開始似乎和凜相性不夠，但後來這對主僕可以説是最佳CP。
-</p>
+ </p>
 </div>
 </div>
-
 <div class="row">
-<div class="col-5">
-<img class="bg-transparent" src="../image/FSN/Matou_sakura.webp" style="max-height:1000px"/>
-</div>
-<div class="col-7">
-<p>
+<div class="col-12">
+    <div class="col-5" style="float: left; clear: both;" align="left">
+        <img src="../image/FSN/Matou_sakura.webp" alt="">
+    </div>
+    
 <div class="BIGNAME">
 間桐 桜
 </div>
 <div class="CV">
 CV: 下屋 則子
 </div>
+<p>
 <br>
 士郎的學妹，本作可攻略女主之一，一襲紫色的長髮和傲人的身材，但著裝除了校服就是樸素的長裙，十分保守。<br>
 性格十分的沉穩且亞薩西，每天就在士郎家做家務，純純的士郎小嬌妻，看似隨波逐流，但在士郎的問題上會意外的堅持自己的主張。<br>
 每天的日常就是弓道部練習弓道，去士郎家中待一會幫忙做做家務，回家休息的規律生活，似乎和暗地中的聖杯戰爭毫無關聯……
-</p>
+ </p>
 </div>
 </div>
 
