@@ -196,7 +196,7 @@ CV: 諏訪部 順一
 <div class="col-7">
 <p>
 <div class="BIGNAME">
-閒桐 櫻
+間桐 桜
 </div>
 <div class="CV">
 CV: 下屋 則子
