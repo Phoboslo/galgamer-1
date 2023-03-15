@@ -66,6 +66,10 @@ date: 2023-03-01 00:30:00
     --navbar-bg-color: #3a8fb7;
     --navbar-text-color: #d0d0d0;
   }
+  .book-cover img {
+    box-shadow: 0 5px 11px 0 rgb(0 0 0 / 18%), 0 4px 15px 0 rgb(0 0 0 / 15%);
+    border-radius: 6px;
+  }
 </style>
 
 <img class="d-none" src='images/index/tg-preview.jpg' />
@@ -338,7 +342,7 @@ OpenDrawing Project 是一個開源項目，因此我們在電腦上作畫。使
 第一個是 Galgame 公司 MOONSTONE 公開的遊戲立繪的 PSD 文件，如圖。
 
 <p>
-  <a class="fancybox fancybox.image" href="images/index/moonstone-psd.webp" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url" data-fancybox="default" rel="default" title="みさき立ち絵" data-caption="みさき立ち絵"><img src="images/index/moonstone-psd.webp" alt="みさき立ち絵"><p class="image-caption">みさき立ち絵</p></a>
+  <img src="images/index/moonstone-psd.webp" alt="みさき立ち絵">
 </p>
 
 建議親自分析一下這個 PSD 的結構，弄清楚每一個圖層的作用，就可以極大地加深對 Galgame 立繪上色手法的了解。
@@ -348,7 +352,9 @@ OpenDrawing Project 是一個開源項目，因此我們在電腦上作畫。使
 
 第二個是著名插畫家 torino 的 fanbox 上的文章。
 
+
 <img class="img-fluid bg-transparent" src="images/index/torino-fanbox.webp" alt="torino fanbox" />
+
 
 上面還有 PSD 文件，如果你想要一窺大師的作畫世界，那麼捐贈 500 塊錢解鎖這些資料絕對是物超所值。出於對大師的尊重我無法公開這些資料，但是之後有機會可能會分享一篇使用 torino style 上色的博客文章。
 
@@ -387,7 +393,7 @@ Happy Open Drawing！
 {% template book-info title no author cover uid html %}
 <div class={`row book-info ${uid}`}>
   <div class="title-author col-12 my-1 pb-2">
-    <div class="col font-weight-bold book-title" style="font-size: 125%;">
+    <div class="col font-weight-bold book-title font-serif" style="font-size: 125%;">
       {title}
     </div>
     <div class="col">
@@ -397,11 +403,11 @@ Happy Open Drawing！
       </span>
     </div>
   </div>
-  <div class="cover-desc row my-0">
-    <div class="book-cover col-12 col-lg-5 rounded">
+  <div class="cover-desc row my-0 mx-1">
+    <div class="book-cover col-12 col-lg-5">
       <img class="img-fluid" src={cover} />
     </div>
-    <div class="book-desc col 12 col-lg-7" html={html}>
+    <div class="book-desc col 12 col-lg-7 my-1" html={html}>
     </div>
   </div>
 </div>
