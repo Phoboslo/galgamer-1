@@ -6,6 +6,7 @@ tags:
 excerpt: 歡迎來到美少女製造計劃 OpenDrawing Project
 banner_img: images/banner.jpg
 date: 2023-03-01 00:30:00
+banner_img_height: 90
 ---
 
 <style>
@@ -27,9 +28,9 @@ date: 2023-03-01 00:30:00
       background-size: unset;
     } */
   }
-  .page-header  {
+  .page-header span {
     background-color: rgba(0,0,0,0.5);
-    padding: 3px;
+    padding: 10px;
     border-radius: 5px;
   }
   .page-header .mt-1 span.post-meta {
@@ -69,6 +70,12 @@ date: 2023-03-01 00:30:00
   .book-cover img {
     box-shadow: 0 5px 11px 0 rgb(0 0 0 / 18%), 0 4px 15px 0 rgb(0 0 0 / 15%);
     border-radius: 6px;
+  }
+  .book-cover .image-caption {
+    margin: .75rem auto 2rem;
+  }
+  .markdown-body {
+    overflow-x: visible;
   }
 </style>
 
@@ -380,10 +387,17 @@ OpenDrawing Project 是一個開源項目，因此我們在電腦上作畫。使
 
 ------
 
-## 插畫師作畫 Workflow
+## 插畫 Workflow 🚧
 
 下面介紹繪製一張插畫的完整流程。
 
+## 像寫程序一樣作畫 🚧
+
+身爲技術人員多少都會染上一些職業病。沒有註釋 + 亂糟糟的圖層，不同部分不解耦合的畫一看是不是會血壓飆升？
+當畫技跟不上的時候是不是就會想濫用科技？
+如何繪製可維護的插畫？
+
+這一小節將介紹一些編程習慣。厚塗高手請繞道，，，
 
 ## 寫在最後
 
@@ -403,9 +417,9 @@ Happy Open Drawing！
       </span>
     </div>
   </div>
-  <div class="cover-desc row my-0 mx-1">
-    <div class="book-cover col-12 col-lg-5">
-      <img class="img-fluid" src={cover} />
+  <div class="cover-desc row my-0 mx-1 justify-content-center">
+    <div class="book-cover col-11 col-lg-5 my-1">
+      <img class="img-fluid" src={cover} alt={title}/>
     </div>
     <div class="book-desc col 12 col-lg-7 my-1" html={html}>
     </div>
