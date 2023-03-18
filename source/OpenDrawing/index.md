@@ -4,7 +4,6 @@ tags:
   - OpenDrawing
   - 绘画
 excerpt: 歡迎來到美少女製造計劃 OpenDrawing Project
-banner_img: images/banner.jpg
 date: 2023-03-01 00:30:00
 banner_img_height: 90
 ---
@@ -19,6 +18,9 @@ banner_img_height: 90
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
+  }
+  #banner {
+    background: unset!important
   }
   @media screen and (max-width: 767px) { /* 手機版佈局 */
     /* body {
@@ -53,6 +55,7 @@ banner_img_height: 90
     --link-hover-bg-color: #f8f9fa;
     --navbar-bg-color: #3a8fb7;
     --navbar-text-color: #fff;
+    --book-info-bg-color: #fff;
   }
   [data-user-color-scheme='dark'] {
     --body-bg-color: #182841;
@@ -66,13 +69,18 @@ banner_img_height: 90
     --link-hover-bg-color: #364151;
     --navbar-bg-color: #3a8fb7;
     --navbar-text-color: #d0d0d0;
+    --book-info-bg-color: #2b2b3e;
+  }
+   .book-info {
+    box-shadow: 0 5px 11px 0 rgb(0 0 0 / 18%), 0 4px 15px 0 rgb(0 0 0 / 15%);
+    border-radius: 12px;
+    background-color: var(--book-info-bg-color); 
   }
   .book-cover img {
-    box-shadow: 0 5px 11px 0 rgb(0 0 0 / 18%), 0 4px 15px 0 rgb(0 0 0 / 15%);
     border-radius: 6px;
   }
   .book-cover .image-caption {
-    margin: .75rem auto 2rem;
+    margin: .75rem auto .75rem;
   }
   .markdown-body {
     overflow-x: visible;
@@ -81,10 +89,15 @@ banner_img_height: 90
 
 <img class="d-none" src='images/index/tg-preview.jpg' />
 
-<div class="alert alert-success" role="alert">
-  <span class="font-weight-bold font-italic alert-heading" style="font-size: 125%;">頁面施工中，，，</span>
+<div class="alert alert-warning font-weight-bold" role="alert">
+  一切的一切都緣起於一位叫做 sora 的群友和一款叫做「你畫我猜」的神必遊戲。<br>
+  <a href="tg://resolve?domain=Galgamer&post=479902">🔗查看 sora 事蹟</a>
+</div>
+
+<div class="alert alert-info" role="alert">
+  <span class="font-weight-bold font-italic alert-heading" style="font-size: 125%;">我們需要你的幫助！</span>
   <br>
-  🚧本頁面仍在製作中。
+  請向我們分享你的繪畫經驗和推薦的書籍！
 </div>
 
 請熱愛美少女的你一起來體驗美少女插畫的樂趣！
@@ -100,8 +113,8 @@ banner_img_height: 90
     * [👗 高級美少女繪製技術](#高級美少女繪製技術)
     * [🎨 上色技術](#上色技術)
     * [🤯 硬核作畫技術](#硬核作畫技術)
+    * [🏞️ 背景繪製技術](#插畫背景繪製技術)
 
-  * [🏞️ 背景繪製技術](#插畫背景繪製技術)
   * [🛰️ 插畫繪製流程](#插畫-Workflow)
   * [⌨️ 程序員的怪癖](#像寫程序一樣作畫)
 
@@ -143,9 +156,19 @@ OpenDrawing Project 是一個開源項目，因此我們在電腦上作畫。使
 
 ### 繪畫入門
 
+<div class="alert alert-warning" role="alert">
+  <span class="font-weight-bold font-italic alert-heading" style="font-size: 125%;">請注意！</span>
+  <br>
+  1. 這裏的電子版書籍全部收集於 Z-library，僅供學習之用，請支持正版。
+  <br>
+  2. 這裏的書籍一本中文的都沒有！因爲找不到，，，所以讀者需要具備一定的英語和日語閱讀能力。
+  <br>
+  3. 你可以在你的當地書城購買類似的書籍。
+</div>
+
+
 這本書介紹了繪畫的一些基礎知識和需要注意的方面。
 
-------
 
 <book-info no=1 title="Keys to Drawing" author="Bert Dodson" uid="ktd" cover="images/index/KeysToDrawing-Cover.webp">
   <p>
@@ -160,7 +183,6 @@ OpenDrawing Project 是一個開源項目，因此我們在電腦上作畫。使
   </p>
 </book-info>
 
-------
 
 就這？就這！此時講太多理論無用，看完這個就已經可以開始畫畫了。
 先從臨摹別人的畫開始，比如說找一些結構簡單的黑白漫畫然後臨摹，畫上那麼十張二十張，建立好捕捉形狀的能力，，，
@@ -174,7 +196,7 @@ OpenDrawing Project 是一個開源項目，因此我們在電腦上作畫。使
 
 |             | **Photoshop** | **SAI 2** | **Clip Studio Paint** | **Krita** | **GIMP** |
 | :--------- | :------------- |:--------- |:---------------------|:--------- |:--------- |
-| **功能**    |     頂級       |    畫畫夠用 |      很強            |   還行    |   還行   |
+| **功能**    |     頂級       |    夠用    |      很強            |   還行    |   還行   |
 | **使用手感** |    頂級       |    很爽    |      有點卡           | 依託答辯   |  依託答辯 |
 | **畫筆引擎** |   依託答辯     |   很強      |     還行             |  還行     | 依託答辯  |
 | **性能**     |     還行      |      很強   |         依託答辯     |   還行     |   還行    |
@@ -201,8 +223,6 @@ OpenDrawing Project 是一個開源項目，因此我們在電腦上作畫。使
 
 下面是透視的畫法。雖然學習這個並不緊迫，但是稍微了解之後能讓你免於觸犯一些視角安排上的低級錯誤，因此列於基礎知識的分類。
 
-------
-
 <book-info no=2 title="The Art of Perspective" author="Phil Metzger" uid="pers" cover="images/index/Perspective-Cover.webp">
   <p>
     本書介紹了透視的畫法，具有相當工程製圖的味道，是在繪製 3D 空間的時候的必備知識。
@@ -217,13 +237,9 @@ OpenDrawing Project 是一個開源項目，因此我們在電腦上作畫。使
   </p>
 </book-info>
 
-------
-
 ### 漫畫美少女繪製技術
 
 畫畫就是不停地 Copy，Copy！！下面介紹幾本魔法書供你 Copy！
-
-------
 
 <book-info no=3 title="360°どんな角度もカンペキマスター！ マンガキャラデッサン入門" author="藤井英俊" uid="360d" cover="images/index/360-Cover.webp">
   <p>
@@ -239,22 +255,19 @@ OpenDrawing Project 是一個開源項目，因此我們在電腦上作畫。使
   </p>
 </book-info>
 
-------
-
 <book-info no=4 title="メルヘンでかわいい女の子の衣装デザインカタログ" author="佐倉おりこ" uid="kawai" cover="images/index/Clothes1-Cover.webp">
   <p>
     美少女服裝的速查手冊，內容包括了各種日常常見衣服和各種幻想系的奇妙衣服的畫法，另外還有各種飾品的畫法。
   </p>
   <p>
-    找到你喜歡的 Copy 就完事了。
+    找到你喜歡的 Copy 就完事了。<br>
+    不過我覺得畫衣服最快最準的方法還是對着實物畫。
   </p>
   <p>
     只有日文版，文字不多，基本上都是插圖，一般人也能看懂。<br>
     下載地址：{% telegram_channel 1061 %}
   </p>
 </book-info>
-
-------
 
 <book-info no=5 title="How to Create Manga Drawing Clothing and Accessories" author="Studio Hard Deluxe" uid="mangacl" cover="images/index/MangaClothes-Cover.webp">
   <p>
@@ -270,13 +283,9 @@ OpenDrawing Project 是一個開源項目，因此我們在電腦上作畫。使
   </p>
 </book-info>
 
-------
-
 ### 高級美少女繪製技術
 
-讓我們的美少女更加 fancy！畫技跟不上就一起來濫用科技吧！！
-
-------
+讓我們的美少女更加 fancy！
 
 <book-info no=6 title="かがやく瞳の描き方" author="玄光社" uid="hitomi" cover="images/index/hitomi-Cover.webp">
   <p>
@@ -292,7 +301,19 @@ OpenDrawing Project 是一個開源項目，因此我們在電腦上作畫。使
   </p>
 </book-info>
 
-------
+<book-info no=12 title="ParyiParyiが全力で教える「髪」の描き方 ヘアスタイルにこだわる作画流儀" author="ParyiParyi" uid="kami" cover="images/index/kami-Cover.webp">
+  <p>
+    美少女的頭髮作畫百科全書。
+  </p>
+  <p>
+    頭髮的作畫令我非常頭痛，因爲牠具有特殊的物理和光影效果，很難拿捏。而且無法拿照片直接 Copy，因爲二次元的頭髮具有一套抽象畫法。<br>
+    這本書詳細介紹了頭髮的各種特性以及不同髮型和演出效果的畫法，同時介紹了上色方法。
+  </p>
+  <p>
+    只有日文版。<br>
+    書籍和附帶筆刷下載地址：{% telegram_channel 1066 %}
+  </p>
+</book-info>
 
 <book-info no=7 title="ファンタジー衣装の描き方" author="もくり" uid="fantasy" cover="images/index/fantasy-Cover.webp">
   <p>
@@ -308,13 +329,9 @@ OpenDrawing Project 是一個開源項目，因此我們在電腦上作畫。使
   </p>
 </book-info>
 
-------
-
 ### 上色技術
 
 學習專業畫師的上色工作流。
-
-------
 
 <book-info no=8 title="とことん解説 キャラクターの「塗り」入門教室" author="乃樹坂 くしお" uid="coloring1" cover="images/index/coloring-Cover.webp">
   <p>
@@ -330,8 +347,6 @@ OpenDrawing Project 是一個開源項目，因此我們在電腦上作畫。使
   </p>
 </book-info>
 
-------
-
 <book-info no=9 title="mignonがしっかり教える「肌塗り」の秘訣 おなかに見惚れる作画流儀。" author="mignon" uid="skin" cover="images/index/skin-Cover.webp">
   <p>
     膚色上色教程。一開始的作畫用不到這麼高級的技術，因爲需要人體繪畫知識的配合。
@@ -346,8 +361,6 @@ OpenDrawing Project 是一個開源項目，因此我們在電腦上作畫。使
   </p>
 </book-info>
 
-------
-
 除了教材之外，還有兩個很有用的資料。
 
 第一個是 Galgame 公司 MOONSTONE 公開的遊戲立繪的 PSD 文件，如圖。
@@ -359,8 +372,6 @@ OpenDrawing Project 是一個開源項目，因此我們在電腦上作畫。使
 建議親自分析一下這個 PSD 的結構，弄清楚每一個圖層的作用，就可以極大地加深對 Galgame 立繪上色手法的了解。
 下載：{% telegram_channel 1052 %}
 
-------
-
 第二個是著名插畫家 torino 的 fanbox 上的文章。
 
 
@@ -369,19 +380,18 @@ OpenDrawing Project 是一個開源項目，因此我們在電腦上作畫。使
 
 上面還有 PSD 文件，如果你想要一窺大師的作畫世界，那麼捐贈 500 塊錢解鎖這些資料絕對是物超所值。出於對大師的尊重我無法公開這些資料，但是之後有機會可能會分享一篇使用 torino style 上色的博客文章。
 
+劇透一下：我有研究過 PSD，torino 的手法實在是過於高級，沒有兩百年作畫經驗是達不到這種水準的。喜歡 torino 畫風的可以採取別的 approach 也能夠畫出相近的風格（確信）
+
 ### 硬核作畫技術
 
 任何一種藝術都離不開勤懇的練習，包括繪畫，因此放一本素描的教材。
-
-------
-
 
 <book-info no=10 title="The Natural Way to Draw" author="Nicolaides" uid="natural" cover="images/index/natural-Cover.webp">
   <p>
     素描和速寫教程。
   </p>
   <p>
-    專業畫師和每一個美術生的必經之路，但是 OpenDrawing 的新手可以先不用考慮。<br>
+    專業畫師和每一個美術生的必經之路，但是 OpenDrawing 小鬼可以先不用考慮。<br>
     當然如果你有興趣的話。
   </p>
   <p>
@@ -389,17 +399,54 @@ OpenDrawing Project 是一個開源項目，因此我們在電腦上作畫。使
   </p>
 </book-info>
 
-------
+### 插畫背景繪製技術
 
-## 插畫背景繪製技術
+畫完美少女就該畫背景辣！但是背景也不是那麼好欺負的。除了上面提到的透視畫法教材之外，這裏再放一本插畫用背景教程。
 
-(🚧 TODO)
+<book-info no=11 title="ステップアップ式 SAI×Photoshopで描く 背景レッスン" author="garnet" uid="PSbackg" cover="images/index/bglesson-Cover.webp">
+  <p>
+    使用 SAI 和 PS 進行背景繪製的教材，可以拿來認真學，也可以拿來 Copy。
+  </p>
+  <p>
+    本書內包含了多個插畫背景案例，詳細介紹了從頭到尾的繪製流程。
+    作爲基礎知識，牠還簡單介紹了透視的原理和軟件的操作方法。
+  </p>
+  <p>
+    電子版只有日文版，但是牠好像是有中文翻譯版的，群友手上就有一本。
+    下載地址：{% telegram_channel 1065 %}
+  </p>
+</book-info>
 
 ## 插畫 Workflow
 
-下面介紹繪製一張插畫的完整流程。
+本來想介紹繪製一張插畫的完整流程的，但是看了看我畫得 想想還是簡單講兩句算了。
 
-(🚧 TODO)
+**一般插畫師的工作流程：**
+
+ * 確定題材和 idea
+ * 通過照片，模特或者 3D 模型起一個草稿，然後不斷修改到自己滿意
+ * 對草稿上色，確定大概顏色
+ * 對着草稿勾線
+ * 上色。此過程可長可短。
+ * 畫背景和給背景上色，此過程可長可短。
+ * 做最終處理（套濾鏡等）
+
+當然這也只是一般論，每個人的喜好可能都不一樣。
+
+**torino 的工作流程：**
+
+ * 確定題材和 idea
+ * 通過大面積的色塊來起稿，稍微改改直到覺得差不多得了
+ * 細化各種色塊，然後在需要的地方勾線
+ * 一邊重複第三步一邊施加魔法，直到畫完
+ * 做最終處理（加特效等）
+
+**寫這個網頁的人的工作流程：**
+
+ * 確定題材和 idea
+ * 通過照片，模特或者 3D 模型起一個草稿，這個過程基本是亂畫一通
+ * 完蛋，不會畫了，趕緊翻書或者上網抄襲別人的設計
+ * 重複上述操作直到畫完
 
 ## 像寫程序一樣作畫
 
@@ -407,19 +454,37 @@ OpenDrawing Project 是一個開源項目，因此我們在電腦上作畫。使
 當畫技跟不上的時候是不是就會想濫用科技？
 如何繪製可維護的插畫？
 
-這一小節將介紹一些編程習慣。厚塗高手請繞道，，，
+這一小節將介紹一些編程習慣。大師繞道。
 
-(🚧 TODO)
+1. 熟悉你的美少女集成開發環境（指 Photoshop）。開發的時候連環境都不知道怎麼操作是非常致命的。
+
+2. 將每個身體部位分開在不同的文件夾中作畫。
+
+3. 使用 填充圖層/mask 上色，一次只調一個顏色。這會將你的顏色儲存在變量裏面方便後續隨時修改。
+👆🏻這個是解耦合的思想，所以厚塗就是全部都耦合在一起，修改只能繼續覆蓋，我不喜歡強耦合（也不會）。
+
+4. 拿不準的時候用快照功能做版本控制。
+
+5. 多使用非破壞性編輯和智能對象（僅限 Photoshop），儘量完整封裝你的歷史操作。
+
+6. 逆向別人的畫，猜測牠們的畫面結構。
 
 ## 寫在最後
+
+在最後我想說的是如何查找資料。當需要某一方面的知識的時候，推薦的知識來源是：
+
+書籍和教科書 > 維基百科 > 網上來歷不明的博客文章
+
+這是因爲寫書的人一般會寫得更加認真和詳細，讀者也更容易讀懂。而博客文章一般都比較隨便（比如說你正在看的這個網頁），也不一定具有可操作性。
+所以你正在看的這個來歷不明的網頁並不教作畫技術（我也不會），而是直接推薦群友們指定的好書。
 
 Happy Open Drawing！
 
 
 {% template book-info title no author cover uid html %}
-<div class={`row book-info ${uid}`}>
+<div class={`row my-4 book-info ${uid}`}>
   <div class="title-author col-12 my-1 pb-2">
-    <div class="col font-weight-bold book-title font-serif" style="font-size: 125%;">
+    <div class="col font-weight-bold book-title font-serif pt-2" style="font-size: 125%;">
       {title}
     </div>
     <div class="col">
@@ -428,7 +493,9 @@ Happy Open Drawing！
          {author}
       </span>
     </div>
+    <hr style="margin: 3px"/>
   </div>
+  
   <div class="cover-desc row my-0 mx-1 justify-content-center">
     <div class="book-cover col-11 col-lg-5 my-1">
       <img class="img-fluid" src={cover} alt={title}/>
