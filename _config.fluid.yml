@@ -978,6 +978,12 @@ links:
       avatar: "/image/main/kiriha2.webp"
     }
     - {
+      title: "OpenDrawing Project",
+      intro: "OpenDrawing 學習資料",
+      link: "/OpenDrawing",
+      avatar: "/image/main/Sakuya.webp"
+    }
+    - {
       title: "莱茵图书馆",
       intro: "上谷歌之前先去這裏看一看...？",
       link: "https://t.me/RhineLibrary",
