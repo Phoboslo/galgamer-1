@@ -520,6 +520,7 @@ Happy Open Drawing！
   'images/index/bg-2.webp',
   'images/index/bg-3.webp',
   'images/index/bg-4.webp',
+  'images/index/bg-5.webp',
 ];
 let url = urls[Math.floor(Math.random() * urls.length)];
 document.documentElement.style.setProperty('--my-bg-url', "url('" + url + "')");
