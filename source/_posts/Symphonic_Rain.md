@@ -295,13 +295,11 @@ dlsite链接
   }
   .sp-character .char-overlay {
     background-color: var(--chara-card-color);
-    min-height: 400px;
+    min-height: 380px;
     background-image: var(--left-bg);
     background-repeat: no-repeat;
-    /*background-position: left calc(100%* .2 - 120px) bottom 0; */
-    background-size: auto;
-    margin: 0;
-    padding: 0;
+    background-size: 280px;
+    background-position: top 0px left calc(10px);
   }
   :root { /* 配色 */
     --chara-card-color: #ffffff6b;
@@ -330,9 +328,7 @@ dlsite链接
     }
     .sp-character .char-overlay {
       min-height: 350px;
-      background-size: 200px;
-      /*background-position: bottom 0px right 0px;*/
-      background-size: auto;
+      background-size:270px;
     }
     :root { /*配色*/
       --chara-card-color: #ffffff87;
