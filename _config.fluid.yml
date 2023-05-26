@@ -996,6 +996,12 @@ links:
       avatar: "/image/main/nekosc.png"
     }
     - {
+      title: "Cloudflare",
+      intro: "❤️️Host on Cloudflare☁️️",
+      link: "https://www.cloudflare.com/",
+      avatar: "/image/main/cloudflare.webp"
+    }
+    - {
       title: "谷歌搜索",
       intro: "找資源不求人 上谷歌自己搜",
       link: "https://www.google.com.hk/",
