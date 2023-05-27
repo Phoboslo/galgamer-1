@@ -73,8 +73,8 @@ excerpt: '吉里吉里作爲每天都要打交道的親密夥伴，俺們不應�
 
 <div class="alert alert-success" role="alert">
 <b>Contributor：</b><br>
-冬夜†  Hiyatoki†<br>
-†{kiriha, hiyatoki}@galgamer.eu.org
+冬夜†  Kikumo†<br>
+†{kiriha, kikumo}@galgamer.eu.org
 </div>
 
 吉里吉里作爲每天都要打交道的親密夥伴，俺們不應該對牠一無所知．
@@ -257,11 +257,11 @@ Hello, 我是一個文本文件 world
 ![Fig 3.1.2 GARbro 的解壓縮部分代碼](../image/xp3-research-1/garbro-zlib.webp)
 
   -  測試用文本文件單獨打包成 `gz` 格式后，與官方及 `GARbro` 的壓縮打包進行對比，壓縮算法基本可以確認是 gz 的 `deflate`
-  
+
 ![Fig 3.1.3 文件對比](../image/xp3-research-1/compress-compare.webp)
 
   -  壓縮文本文件使用工具為 `BandiZip`，進行兩次測試，只有選擇最大壓縮擋位才能和 `xp3` 匹配得上．
-  -  `zlib` 的壓縮等級一共有 0-9 十個等級，在 krkr-xp3 的代碼中可以看到如左圖所示片段
+  -  `zlib` 的壓縮等級一共有 0-9 十個等級，在 krkr-xp3 的代碼中可以看到如下圖所示片段
 
 ![Fig 3.1.4 krkr-xp3 的壓縮調用代碼](../image/xp3-research-1/zlib-level9.webp)
 
@@ -330,7 +330,7 @@ Pack1.xp3 🆚️ pack3.xp3:
 
 ![Fig 3.3.6 分別對上面兩個文件打包後的對比](../image/xp3-research-1/3-3compare2.webp)
 
-初步結論：只有路徑的儲存部分存在不同．
+- **初步結論**：只有路徑的儲存部分存在不同．
 
 **Step 4: 在 Step 3 的基礎上再次更改路徑，這次使用多層文件夾使得路徑長度變化，打包成 pack4.xp3:**
 
@@ -340,7 +340,7 @@ pack1.xp3 🆚️ pack4.xp3
 
 ![Fig 3.3.6 分別對上面兩個文件打包後的對比](../image/xp3-research-1/3-3compare3.webp)
 
-初步結論：有多處變化，最大的一處是文件路徑的部分，以及牠們上面的零星幾個字節的變化．
+- **初步結論**：有多處變化，最大的一處是文件路徑的部分，以及牠們上面的零星幾個字節的變化．
 
 Step 1 的路徑，長度 36 (0x24) 個字節，包含 18 (0x12) 個 ASCII 文字：
 
@@ -422,7 +422,7 @@ Shift-JIS
   1. 文件頭部的一些內容（暫時不知道含義）
   2. 索引中各個文件的偏移量
 
-**結論：**XP3 文件打包器能夠正確打包 2 字節的 UTF-16 文件名，不存在編碼問題．對於 4 字節的 UTF-16 字符，手頭上的打包器無法兼容，但是並不能直接確定 XP3 格式本身不支持 4 字節的 UTF-16 字符．
+- **結論：**XP3 文件打包器能夠正確打包 2 字節的 UTF-16 文件名，不存在編碼問題．對於 4 字節的 UTF-16 字符，手頭上的打包器無法兼容，但是並不能直接確定 XP3 格式本身不支持 4 字節的 UTF-16 字符．
 
 ## Chapter 4. XP3 索引項初步分析
 
@@ -452,11 +452,11 @@ https://github.com/crskycode/GARbro/blob/dd3d7069195ebbd36eeb97c4cc6e432e79bf568
 
 請看行`142-340` 
 
-這是一個超大型 `while` `if` `else` `switch`循環
+這是一個超大型 `while` `if` `else` `switch`循環，也是 GARbro 的代碼中讀取索引的部分。
 
-先講目前看得大概懂得部分：
+從最外層開始，我們一步一步來看：
 
-- 先看 行 `157`：這是一個 if 判斷，驗證`entry_signature` 是否爲我們前文所獲知的字段之一 “`File`”．
+- 行 `157`：這是一個 if 判斷，驗證`entry_signature` 是否爲我們前文所獲知的字段之一 “`File`”．
 - 判斷為 `false` 時則進入到下面的幾個 `else if` 判斷中，也就是行`288-336` ，可以看到有一些**其他廠商自定義的字段**
     - **推測**：
         - 每個<索引片段>具有一個`entry_signature` 作爲入口的標志，官方打包指定這個入口標志為一個 `File` 字段．
@@ -470,7 +470,7 @@ https://github.com/crskycode/GARbro/blob/dd3d7069195ebbd36eeb97c4cc6e432e79bf568
 - `header`是一個叫 **🔗[BinaryReader](https://learn.microsoft.com/en-us/dotnet/api/system.io.binaryreader?view=net-7.0)** 的東西，`ReadUInt32`的意思是：從當前 stream 的位置往後讀一個`uint32`（四個字節）, 並將 stream 的位置後移四個字節．
 👆🏻註：對 C 語言熟悉的同學，可以理解爲文件指針．讀取的相應的數據以後，指針將會自動向後移動，這樣就不需要讀取完力以後再手動移動力．
 - **然後緊接著往後讀了八個字節作爲** `section_size`．
-- 接下來的一段應該是規避 `info` 的長度大小對不上？
+- 接下來的一段應該是規避 `info` 的長度大小對不上.
 - 最後是`header.BaseStream.Position` + `section_size` 來儲存一個 `next_section_pos`．
 - **注意此時 `header`並沒有移動，只是提前記下了待會要移動的位置**．
     - **結論**：
@@ -488,7 +488,7 @@ https://github.com/crskycode/GARbro/blob/dd3d7069195ebbd36eeb97c4cc6e432e79bf568
         - 放一萬個 `adlr` 字段會發生什麽：`entry.Hash` 會是最後那個 `adlr`中的信息．
 
 - **總結/猜測/疑問**：
-    - `File` 這個字段應該比其他字段要高一個檔次，程序通過這個字段來識別一個索引片段的開頭．所以即使其他字段可以調換位置，`File` 字段必須在最前面．
+    - `File` 這個字段應該比其他字段要高一個檔次，程序通過這個字段來識別一段索引項的開頭．所以即使其他字段可以調換位置，`File` 字段必須在最前面．
     - `GARbro`并不是 `krkr`引擎，實際游戲運行時對 xp3 的讀取肯定會有一些出入．`GARbro`被設計為萬能解包器，可能適用於 `GARbro`的醜陋 `xp3`到了實際游戲并不一定 work，上述的自定義字段可能也是游戲廠商對 `krkr`引擎進行了一定程度的魔改．
 
 
@@ -510,9 +510,11 @@ https://github.com/crskycode/GARbro/blob/dd3d7069195ebbd36eeb97c4cc6e432e79bf568
 
 ![Fig 5.1.2 XP3 打包上面的文件結果](../image/xp3-research-1/5-1packed.webp)
 
-初步結論：
-- 文件内容貌似是連在一起的，那麽剩下的未知的部分還剩文件頭與文件内容、文件内容與索引之間的神必部分
-- <XP3Header> **<???>** <文件内容> ··· <文件内容> **<???>** <索引項> <索引項> ··· <索引項>
+- **初步結論**：
+  - 文件内容貌似是連在一起的，那麽剩下的未知的部分還剩文件頭與文件内容、文件内容與索引之間的神必部分
+```
+<XP3Header><???><文件内容><文件内容> ··· <文件内容><???><索引項><索引項> ··· <索引項>
+```
 
 如前文 3.3 節所述，XP3 中並沒有真正的目錄結構，牠的目錄信息是通過在索引中的 info 字段實現的，即只儲存一個字符串作爲路徑信息．因此當需要還原目錄結構的時候，就必須要完整讀取整個索引，拿到了所有文件的路徑以後才能重建整個目錄結構．
 
