@@ -109,14 +109,163 @@ excerpt: '讓我們再深入一些．這次我們研究的是帶有壓縮和加�
 
 ![Fig 7.1.1 索引項各個字段](../image/xp3-research-2/7-1-1-index-entry.webp)
 
+可见其中有四个字段与大小有关：
 
+- `entry.UnpackedSize`
+- `entry.Size`
+- `segment.Size`
+- `segment.PackedSize`
+
+在之前的测试中，这些字段都是一样的。这次我们来测试内容压缩的xp3文件中，这些信息会有什么变化。
 
 ### 7.2 文件內容的壓縮
 
+> 我们准备了两个简单的纯文本文件用于接下来的测试。
+
+![](../image/xp3-research-2/test-file-contents.webp)
+
+首先使用GARBro分别进行压缩与无压缩打包：
+
+![](../image/xp3-research-2/GARBro-switch-comporession-diff.webp)
+
+为了对比，使用 BandiZip 分别使用最高等级压缩：
+
+![](../image/xp3-research-2/bandizip-deflate-compressed.webp)
+
+接下来我们使用010 Editor进行文件比较，发现有重合部分，即压缩后数据。
+
+![`010 Editor` 的文件比较](../image/xp3-research-2/xp3-diff-gz.webp)
+
+![`010 Editor` 的文件比较](../image/xp3-research-2/xp3-diff-gz-1.webp)
+
+> ![](../image/xp3-research-1/5-3index2.webp)
+
+我们根据[前文](xp3-research-1.md#53-索引指針)探讨的 xp3 结构，得到的压缩后文件内容数据为：
+
+```
+0028h  78 DA [F3 48 CD C9 C9 57 08 CF 2F CA 49 51 04 00]  xÚóHÍÉÉW.Ï/ÊIQ.. 
+0038h  1C 49 04 3E 78 DA [0B 0A 42 02 89 00] 21 BF 04 8C  .I.>xÚ..B.‰.!¿.Œ
+```
+
+我们发现这两段文件相比于 .gz 中的压缩数据，分别在开头多了两个字节，结尾多了四个字节。
+
+其中 `78 DA` 是 zlib 的魔数，表示最大压缩。
+
+后面四个字节是ADLR字段的校验码
+
+![](../image/xp3-research-2/checksum.webp)
+![](../image/xp3-research-2/checksum-1.webp)
+
+让我们试试自己用原文件进行校验计算
+
+![](../image/xp3-research-2/manually-checksum.webp)
+
+我们再回来看看四个大小字段
+
+![](../image/xp3-research-2/index-fields.webp)
+
+看样子它们分别存储压缩前后的长度，但两组信息貌似是一样的？接下来我们尝试堆索引区域也进行压缩。
+
 ### 7.3 索引區域的壓縮
+
+同时启用内容与索引压缩后：
+
+![](../image/xp3-research-2/content-index-compressed.webp)
+
+根据第六章的整体结构结论，可以看到 `01`（索引已压缩）, `0x68`（压缩后索引大小），`0xF6`（压缩前索引大小）和其后 `78 DA` 前缀，压缩后的索引数据。
+
+> 冬夜叔叔编写了神必小程序解压文件索引，Voilà
+
+<details>
+  <summary>神必小程序</summary>
+
+```python
+import zlib
+import re
+
+def compress_data(data):
+    compressed_data = zlib.compress(data,level=9)
+    return compressed_data
+
+def decompress_data(data):
+    decompressed_data = zlib.decompress(data)
+    return decompressed_data
+
+def pad_text(text, length):
+    padded_text = text.ljust(length)
+    return padded_text
+
+def format_text(left_text, right_text):
+
+    left_lines = [left_text[i:i + 48] for i in range(0, len(left_text), 48)]
+    right_lines = [right_text[i:i + 16] for i in range(0, len(right_text), 16)]
+
+    max_lines = max(len(left_lines), len(right_lines))
+
+    formatted_lines = []
+
+    for i in range(max_lines):
+        left_line = left_lines[i] if i < len(left_lines) else ''
+        right_line = right_lines[i] if i < len(right_lines) else ''
+
+        left_line = pad_text(left_line, 48)
+
+        line_number = hex(i*16)[2:].zfill(4) + 'h'
+
+        formatted_line = '{:<6s} {:<48s}   {:<16s}'.format(line_number,left_line, right_line)
+        formatted_lines.append(formatted_line)
+
+    result = '\n'.join(formatted_lines)
+    return result
+
+def process_input(input,option):
+    bytes_object = bytes.fromhex(input)
+    processed_data = compress_data(bytes_object) if option else decompress_data(bytes_object)
+    hex_string_output = ' '.join(['{:02X}'.format(byte) for byte in processed_data])
+    printable = processed_data.decode('latin-1',errors='ignore')
+    printable = re.sub(r'[\x00-\x1F]', '.', printable)
+    print("\n結果為：\n")
+    print("       0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F     0123456789ABCDEF\n")
+    formatted_text = format_text(hex_string_output,printable)
+    print(formatted_text)
+    print("\n==========================================================================\n")
+    print("For copy to clipboard:\n")
+    print(hex_string_output+"\n\n"+printable)
+    print("\n==========================================================================\n")
+
+command = input("1. 壓縮\n2. 解壓\n")
+
+if(command=="1"):
+    while True:
+        hex_string_input = input("請輸入需要壓縮的十六進制字符串：\n")
+        process_input(hex_string_input,True)
+elif(command=="2"):
+    while True:
+        hex_string_input = input("請輸入需要解壓的十六進制字符串：\n")
+        process_input(hex_string_input,False)
+```
+
+</details>
+
+将文件索引压缩后的数据替换为解压后数据，再与未压缩索引的文件对比：
+
+![](../image/xp3-research-2/decompressed-diff-compressed.webp)
+
+结果符合第六章我们的结论。
+
+再比较检验和：
+
+![](../image/xp3-research-2/checksum-index.webp)
+
+`A1 17 19 13`，与前文压缩后数据中 `zlib` 添加的Adler32检验和一致。
+
+> 值得注意的是，Adler32 的校驗和在文件中儲存的字節序有兩種情況，`A1 17 19 13` 是 010editor 的計算結果，暫且把牠當作 `0xA1171913`，然後 `zlib` 在儲存的時候使用的是 `Big Endian`，即從前往後是 `A1 17 19 13` ，而 XP3 在打包時候針對原文件計算的校驗和，儲存在索引項中 `adlr` 字段中的時候是 `Little Endian`，即 `13 19 17 A1`。
 
 ### 7.4 小結
 
+在上文，我们验证了第六章的结论，即压缩后的索引信息结构如下：
+
+![](../image/xp3-research-2/conclusion.webp)
 
 ## Chapter 8. Kirikiri 加密系統
 
