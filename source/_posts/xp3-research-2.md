@@ -75,6 +75,7 @@ excerpt: '讓我們再深入一些．這次我們研究的是帶有壓縮和加�
 <b>Contributor：</b><br>
 <b>首席研究者：</b>不願意透露姓名的正經大學電腦系畢業前途光明的美少女<br>
 <b>助手：</b>辣妹系黑屁<br>
+<b>助手：</b>發情系富婆<br>
 <b>技術顧問：</b>偶像百合美少女
 </div>
 
@@ -101,13 +102,13 @@ excerpt: '讓我們再深入一些．這次我們研究的是帶有壓縮和加�
 
 在前篇中我們主要對沒有壓縮的 XP3 封包格式進行了分析，本章則將詳細分析 XP3 文件中使用的壓縮方式．
 
-本章的作者是電腦系美少女．
+本章的作者是發情系富婆．
 
 ### 7.1 緒論
 
 之前我們說道，XP3 包含的每一個文件都有一個對應的索引項來儲存該文件的 Metadata．現在重新將該索引項的結構總結如下圖所示．
 
-![Fig 7.1.1 索引項各個字段](../image/xp3-research-2/7-1-1-index-entry.webp)
+![Fig 7.1 索引項各個字段](../image/xp3-research-2/7-1-1-index-entry.webp)
 
 可见其中有四个字段与大小有关：
 
@@ -116,65 +117,66 @@ excerpt: '讓我們再深入一些．這次我們研究的是帶有壓縮和加�
 - `segment.Size`
 - `segment.PackedSize`
 
-在之前的测试中，这些字段都是一样的。这次我们来测试内容压缩的xp3文件中，这些信息会有什么变化。
+在之前的测试中，这些字段都是一样的．这次我们来测试内容压缩的 XP3 文件中，这些信息会有什么变化．
 
 ### 7.2 文件內容的壓縮
 
-> 我们准备了两个简单的纯文本文件用于接下来的测试。
+我们准备了两个简单的纯文本文件用于接下来的测试．
 
-![](../image/xp3-research-2/test-file-contents.webp)
+![Fig 7.2.1 準備的兩個文本文件](../image/xp3-research-2/test-file-contents.webp)
 
 首先使用GARBro分别进行压缩与无压缩打包：
 
-![](../image/xp3-research-2/GARBro-switch-comporession-diff.webp)
+![Fig 7.2.2 GARBro 的兩種打包結果](../image/xp3-research-2/GARBro-switch-comporession-diff.webp)
 
 为了对比，使用 BandiZip 分别使用最高等级压缩：
 
-![](../image/xp3-research-2/bandizip-deflate-compressed.webp)
+![Fig 7.2.3 BandiZip 的 GZ 壓縮結果](../image/xp3-research-2/bandizip-deflate-compressed.webp)
 
-接下来我们使用010 Editor进行文件比较，发现有重合部分，即压缩后数据。
+接下来我们使用010 Editor进行文件比较，发现有重合部分，即压缩后数据．
 
-![`010 Editor` 的文件比较](../image/xp3-research-2/xp3-diff-gz.webp)
+![Fig 7.2.4 用 010 Editor 比較第一個文件](../image/xp3-research-2/xp3-diff-gz.webp)
 
-![`010 Editor` 的文件比较](../image/xp3-research-2/xp3-diff-gz-1.webp)
+![Fig 7.2.5 用 010 Editor 比较第二個文件](../image/xp3-research-2/xp3-diff-gz-1.webp)
 
-> ![](../image/xp3-research-1/5-3index2.webp)
 
-我们根据[前文](xp3-research-1.md#53-索引指針)探讨的 xp3 结构，得到的压缩后文件内容数据为：
+我们根据 [🔗前篇](xp3-research-1.md#53-索引指針) 中探讨的 xp3 结构，得到的压缩后文件内容数据为：
 
 ```
 0028h  78 DA [F3 48 CD C9 C9 57 08 CF 2F CA 49 51 04 00]  xÚóHÍÉÉW.Ï/ÊIQ.. 
 0038h  1C 49 04 3E 78 DA [0B 0A 42 02 89 00] 21 BF 04 8C  .I.>xÚ..B.‰.!¿.Œ
 ```
 
-我们发现这两段文件相比于 .gz 中的压缩数据，分别在开头多了两个字节，结尾多了四个字节。
+我们发现这两段文件相比于 .gz 中的压缩数据，分别在开头多了两个字节，结尾多了四个字节．
 
-其中 `78 DA` 是 zlib 的魔数，表示最大压缩。
+其中 `78 DA` 是 zlib 的魔数，表示最大压缩．
 
-后面四个字节是ADLR字段的校验码
+后面四个字节是 zlib 添加的 Adler32 校验和，可以看到和 XP3 的 adlr 字段一致．
 
-![](../image/xp3-research-2/checksum.webp)
-![](../image/xp3-research-2/checksum-1.webp)
+![Fig 7.2.6 第一個文件的校驗和](../image/xp3-research-2/checksum.webp)
+
+![Fig 7.2.7 第二個文件的校驗和](../image/xp3-research-2/checksum-1.webp)
 
 让我们试试自己用原文件进行校验计算
 
-![](../image/xp3-research-2/manually-checksum.webp)
+![Fig 7.2.8 使用 010editor 對原數據計算校驗和](../image/xp3-research-2/manually-checksum.webp)
 
-我们再回来看看四个大小字段
+最後，我们再回来看看索引項中的四个大小字段．
 
-![](../image/xp3-research-2/index-fields.webp)
+![Fig 7.2.9 索引項中的字段說明](../image/xp3-research-2/index-fields.webp)
 
-看样子它们分别存储压缩前后的长度，但两组信息貌似是一样的？接下来我们尝试对索引区域也进行压缩。
+看样子這些大小字段分别存储压缩前后的长度，但两组信息貌似是一样的．
 
 ### 7.3 索引區域的壓縮
 
+接下来我们尝试对索引区域也进行压缩．
 同时启用内容与索引压缩后：
 
-![](../image/xp3-research-2/content-index-compressed.webp)
+![Fig 7.3.1 壓縮了文件數據和索引的 XP3 文件](../image/xp3-research-2/content-index-compressed.webp)
 
-根据第六章的整体结构结论，可以看到 `01`（索引已压缩）, `0x68`（压缩后索引大小），`0xF6`（压缩前索引大小）和其后 `78 DA` 前缀，压缩后的索引数据。
+根据第六章的整体结构结论，可以看到 `01`（索引已压缩）, `0x68`（压缩后索引大小），`0xF6`（压缩前索引大小）和其后 `78 DA` 前缀，压缩后的索引数据．
 
-> 冬夜叔叔编写了神必小程序解压文件索引，Voilà
+> 寫個神必小程序解壓文件索引，Voilà
 
 <details>
   <summary>神必小程序</summary>
@@ -249,27 +251,48 @@ elif(command=="2"):
 
 将文件索引压缩后的数据替换为解压后数据，再与未压缩索引的文件对比：
 
-![](../image/xp3-research-2/decompressed-diff-compressed.webp)
+![Fig 7.3.2 對比我們解壓的數據和未壓縮的數據](../image/xp3-research-2/decompressed-diff-compressed.webp)
 
-结果符合第六章我们的结论。
+结果符合第六章我们的结论．
 
 再比较检验和：
 
-![](../image/xp3-research-2/checksum-index.webp)
+![Fig 7.3.3 對未壓縮數據計算校验和](../image/xp3-research-2/checksum-index.webp)
 
-`A1 17 19 13`，与前文压缩后数据中 `zlib` 添加的Adler32检验和一致。
+`A1 17 19 13`，与前文压缩后数据中 `zlib` 添加的 Adler32 检验和一致．
 
-> 值得注意的是，Adler32 的校驗和在文件中儲存的字節序有兩種情況，`A1 17 19 13` 是 010editor 的計算結果，暫且把牠當作 `0xA1171913`，然後 `zlib` 在儲存的時候使用的是 `Big Endian`，即從前往後是 `A1 17 19 13` ，而 XP3 在打包時候針對原文件計算的校驗和，儲存在索引項中 `adlr` 字段中的時候是 `Little Endian`，即 `13 19 17 A1`。
+值得注意的是，Adler32 的校驗和在文件中儲存的字節序有兩種情況，`A1 17 19 13` 是 010editor 的計算結果，暫且把牠當作 `0xA1171913`，然後 `zlib` 在儲存的時候使用的是 `Big Endian`，即從前往後是 `A1 17 19 13` ，而 XP3 在打包時候針對原文件計算的校驗和，儲存在索引項中 `adlr` 字段中的時候是 `Little Endian`，即 `13 19 17 A1`．
 
 ### 7.4 小結
 
-在上文，我们验证了第六章的结论，即压缩后的索引信息结构如下：
+本章中我們驗證了文件內容的壓縮算法，牠使用了 zlib 進行最大程度的壓縮，並且 zlib 會在壓縮之後的數據中添加一個 `78 DA` 的頭部和一個 Adler32 校验和的尾部．
 
-![](../image/xp3-research-2/conclusion.webp)
+同時我們也驗證了索引區域的壓縮也使用了和文件數據壓縮完全一樣的壓縮算法．最後，總結壓縮後的索引區域的結構如下圖：
+
+![Fig 7.4 壓縮後的索引區域的結構](../image/xp3-research-2/conclusion.webp)
+
 
 ## Chapter 8. Kirikiri 加密系統
 
+XP3 文件的加密是 Kirikiri 的一個重要功能，是分析 XP3 文件時候的一個繞不開的部分．
+雖然有點中二，俺還是想說：
+
+<div class="alert alert-danger" role="alert">
+  <h4 class="alert-heading">我們要正式開始了．</h4>
+  <p>
+    接下來的內容可能會有點抽象，尤其是對於不是電腦系的羣友．我將盡我所能詳細解說，但是如果你還是覺得過於費解的話，你可以放心地跳過這篇文章——不董這些抽象玩意不會影響到你玩 Galgame！
+  </p>
+</div>
+
+本章的作者是辣妹系黑屁．
+
 ### 8.1 緒論
+
+到上章爲止我們介紹了 XP3 使用的數據壓縮方式．除此之外，krkr 還給 Galgame 公司提供了一個接入加密功能來保護 XP3 數據的機會，那就是本章要介紹的加密功能．
+
+雖然缺少官方的文檔和說明，但是 krkr 的加密是一個內置的功能，但是並不是完全內置，牠以外接加密算法的形式運行，如圖所示：
+
+
 
 ### 8.2 密碼學背景
 
