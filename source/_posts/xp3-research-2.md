@@ -278,7 +278,7 @@ XP3 文件的加密是 Kirikiri 的一個重要功能，是分析 XP3 文件時�
 雖然有點中二，俺還是想說：
 
 <div class="alert alert-danger" role="alert">
-  <h4 class="alert-heading">我們要正式開始了．</h4>
+  <span class="alert-heading font-weight-bold font-italic" style="font-size: 130%;">我們要正式開始了．</span>
   <p>
     接下來的內容可能會有點抽象，尤其是對於不是電腦系的羣友．我將盡我所能詳細解說，但是如果你還是覺得過於費解的話，你可以放心地跳過這篇文章——不董這些抽象玩意不會影響到你玩 Galgame！
   </p>
@@ -292,7 +292,11 @@ XP3 文件的加密是 Kirikiri 的一個重要功能，是分析 XP3 文件時�
 
 雖然缺少官方的文檔和說明，但是 krkr 的加密是一個內置的功能，但是並不是完全內置，牠以外接加密算法的形式運行，如圖所示：
 
+![Fig 8.1.1 外接加解密函數的想象](../image/xp3-research-2/)
 
+當需要啓用加密功能時，你需要自己實現一個加密函數和配套的解密函數，然後以某種方式遞給 krkrrel 或者 krkr 引擎．
+
+在 krkr 2 時代，一個比較常見的方法是把你的加密函數和解密函數分別製作成兩個 dll，然後 export 你的函數入口點（🈯️將你的 dll 內部函數暴露出來，供其他程序調用），這樣 krkrrel 和 krkr 就都可以調用你寫的代碼了．
 
 ### 8.2 密碼學背景
 
