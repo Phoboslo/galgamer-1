@@ -428,7 +428,7 @@ XOR   00101101
 我們關心的是流式加密．流指的是一串很長很長的字節流．想象把一個文件拉成長長的一串字節，然後字節可以繼續拉開成 bit，如下圖所示．
 
 <video class='mb-3' playsinline="" autoplay="" muted="" loop="" width='100%'>
-    <source src="https://s3static-zone0.galgamer.eu.org/video-2d35/xp3-2/filecontent.mp4" type="video/mp4">
+    <source src="https://s3static-zone0.galgamer.eu.org/video-2d35/xp3-2/filecontent2.mp4" type="video/mp4">
 </video>
 <p class="image-caption">Fig 8.2.6 文件可以看作字節流</p>
 
