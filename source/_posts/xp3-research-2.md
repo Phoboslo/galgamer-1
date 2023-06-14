@@ -278,7 +278,7 @@ XP3 文件的加密是 Kirikiri 的一個重要功能，是分析 XP3 文件時�
 雖然有點中二，俺還是想說：
 
 <div class="alert alert-danger" role="alert">
-  <span class="alert-heading font-weight-bold font-italic" style="font-size: 130%;">我們要正式開始了．</span>
+  <span class="alert-heading font-weight-bold font-italic" style="font-size: 130%;">我們要正式開始了</span>
   <p>
     接下來的內容可能會有點抽象，尤其是對於不是電腦系的羣友．我將盡我所能詳細解說，但是如果你還是覺得過於費解的話，你可以看完下面的緒論就放心地跳過——不董這些抽象玩意不會影響到你玩 Galgame！
   </p>
@@ -436,12 +436,29 @@ XOR   00101101
 然後再使用「密鑰流生成函數」，這個函數吸收一個密鑰，然後產生無限長的密钥流．這個密钥流也是一串字節．並且具有無限的長度．
 簡單地說，只要知道了密鑰，就可以生成那個唯一的密钥流．如同高中數學中的數列一樣，給定一個確定的生成規律，你就可以無限地往後遞推；或者直接給定一個通項公式，你就可以求出數列中的任意一位，如下圖所示．
 
-（動畫，產生密鑰流）
-<p class="image-caption">Fig 8.2.7 生成函數來產生密鑰流</p>
+<video class='mb-3' playsinline="" autoplay="" muted="" loop="" width='100%'>
+    <source src="https://s3static-zone0.galgamer.eu.org/video-2d35/xp3-2/genstream.mp4" type="video/mp4">
+</video>
+<p class="image-caption">Fig 8.2.7 生成函數產生密鑰流</p>
 
-最後，將密鑰流和需要加密的原文件進行逐個 XOR，完成加密，如圖．
+> 這個密鑰流生成函數來自 chacha20 流式加密算法，我使用的密鑰事
+> ```ascii
+00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+10 11 12 13 14 15 16 17 18 19 1A 1B 1C 1D 1E 1F
+> ```
+> 我使用的 nonce（一次性序列）事
+> ```ascii
+AA AA AA AA AA AA AA AA AA AA AA AA
+> ```
+> 牠的計數器從零開始．通過調整 chacha20 的計數器，可以一瞬 seek 到密鑰流的任意位置，牠事有「通項公式」的．
+> 這不重要，妳要是不董 chacha20 也不影響妳繼續閱讀本文．
 
-（插圖，流式加密）
+最後，將密鑰流和需要加密的原文件進行逐個 bit 的 XOR，完成加密，如圖．
+
+<video class='mb-3' playsinline="" autoplay="" muted="" loop="" width='100%'>
+    <source src="https://s3static-zone0.galgamer.eu.org/video-2d35/xp3-2/xorenc.mp4" type="video/mp4">
+</video>
+<p class="image-caption">Fig 8.2.8 流式加密過程</p>
 
 看到這裏你可能會匪夷所思，爲什麼這麼一個簡單的 XOR 也可以達到加密的效果．爲了說明這一點，讓我們再觀察一下表 8.2．
 
@@ -456,7 +473,7 @@ XOR   00101101
 
 假設第一個輸入是原文，第二個輸入是密鑰流，輸出是加密後的數據．現在我們拿到了加密後的數據，無論牠是 0 還是 1，對應的原文都有 0 或者 1 兩種可能．如果我們不知道密鑰流對應的位是 0 還是 1，那麼將無法猜測原文到底是 0 還是 1，因爲牠們各佔 50% 的可能性．
 
-解密時，根據上面介紹的雙重 XOR 恢復原文的性質，只需要把密文和密鑰流進行一下 XOR，就可以拿到原文了． 
+解密時，根據上面介紹的雙重 XOR 恢復原文的性質，只需要把密文和密鑰流再進行一下 XOR，就可以拿到原文了． 
 
 最後再來思考一下，如果要從把文件的正中間——比如說從第 1000 個字節開始到 1200 個字節爲止——進行解密，要怎麼做．
 可以把步驟列出來如下：
@@ -464,11 +481,6 @@ XOR   00101101
  - **來到文件流的第 1000 個字節**（fancy 一點的說法是：seek 到文件流的第 1000 個的位置）
  - **seek 到密鑰流的第 1000 個的位置**
  - **把上面兩個流開 XOR！直到第 1200 個字節爲止**
-
-如圖所示：
-
-（動畫，seek）
-<p class="image-caption">Fig 8.2.9 對文件流和密鑰流進行 seek</p>
 
 一步一步第來看，首先我們要 seek 文件，這很簡單，因爲告訴硬盤往後轉個 1000 個字節就完事了．但是要 seek 密鑰流就沒那麼簡單了，因爲密鑰流是生成函數生成的，並且具有無限的長度（你可以理解成無窮項的數列）．當然，如果這個生成函數有通項公式，那麼就可以一瞬計算出第 1000 項是什麼；但是如果不幸這個函數沒有通項公式的話，你就必須要從頭開始往後遞推了．
 
@@ -484,7 +496,7 @@ XOR   00101101
 
 然而，世界上有一些加密算法，牠們在解密的時候，不僅需要使用密鑰流進行 XOR，**並且還需要知道前一塊數據的內容**，如圖所示：
 
-![Fig 8.2.10 具有依賴關係的加密算法](../image/xp3-research-2/8-2-10-cbc.webp)
+![Fig 8.2.9 具有依賴關係的加密算法](../image/xp3-research-2/8-2-10-cbc.webp)
 
 這種解密下一塊數據要依賴上一塊數據的加密算法，會使得文件不能直接從中間開始解密，有的時候甚至必須要從頭開始運算．
 
@@ -496,7 +508,7 @@ XOR   00101101
 
 > 🔗Cryptography I Course (Stanford) | Coursera
 > https://www.coursera.org/learn/crypto
-> ![Fig 8.2.11 Cryptography I](https://s3.amazonaws.com/coursera_assets/meta_images/generated/XDP/XDP~COURSE!~crypto/XDP~COURSE!~crypto.jpeg)
+> ![Fig 8.2.10 Cryptography I](https://s3.amazonaws.com/coursera_assets/meta_images/generated/XDP/XDP~COURSE!~crypto/XDP~COURSE!~crypto.jpeg)
 
 我只看了一點沒看完，麻煩羣友學完了教我，嚶嚶，，，
 
