@@ -13,6 +13,9 @@ excerpt: '讓我們再深入一些．這次我們研究的是帶有壓縮和加�
 ---
 
 <style>
+  .ar8x3{
+    aspect-ratio: 8/3;
+  }
   :root {
     --my-bg-url: url('');
   }
@@ -571,7 +574,368 @@ XOR   00101101
 
 ### 8.3 加解密插件的實現
 
+好啦，上面鋪墊了老半天，重點終於要來啦．我們知道了 krkr 的加解密函數都要做成 dll 插件，並且分別暴露加解密函數的入口點．但是開始說明如何實現之前，讓我再鋪墊一下關於 Windows APP 編程的基礎知識．
+
+什麼是 DLL？DLL 內部是一大堆函數，你可以理解成一個函數庫．當把一些常用函數打包到 DLL 裏面以後，就可以從多個 EXE 程序裏面進行調用，這樣就節省了將完全一樣的代碼塞進多個 EXE 程序而浪費掉的儲存空間．然後使用 DLL 的另外一個優點就是主程序可以在需要的時候才進行調用，實現了類似於插件的效果，如圖 8.3.1 所示：
+
+![Fig 8.3.1 DLL 的使用](../image/xp3-research-2/8-3-1-dll.webp)
+
+DLL 裏面的函數必須要導出接口（暴露函數入口點），這樣才能被其他程序調用．
+而這個 krkr 的加解密函數內部如何實現，則是完全由插件作者自己決定的．
+
+幸運的是，krkr 2 的官方倉庫裏面提供了一個加解密插件的模板，我們可以觀察牠的代碼，來了解一下 krkr 的加解密插件的實現．
+
+首先牠有一個 readme 說明在這裏：
+
+> [🔗牠們的 GitHub 倉庫](https://github.com/krkrz/krkr2/blob/master/kirikiri2/branches/2.32stable/kirikiri2/src/plugins/win32/xp3filter/changes.txt)
+> ![Fig 8.3.2 加解密插件的 readme](../image/xp3-research-2/8-3-2-readme.webp)
+
+牠裏面提到，我們寫的加解密函數在接收參數的時候，不會接收到文件名和文件路徑，而是接收到文件的校驗和，從而使得對每個文件使用不同的加密方式成爲可能．
+
+- 讓我聯想到 Ambitious Mission 的 XP3 內部不再儲存文件名
+
+讓我們觀察一下解密插件（xp3dec）的 [🔗main.cpp](https://github.com/krkrz/krkr2/blob/master/kirikiri2/branches/2.32stable/kirikiri2/src/plugins/win32/xp3filter/xp3dec/main.cpp) 文件．
+
+在最開始的註釋處作者提到：這個解密函數是通過 krkr 的插件系統來加載的，因此如果要將解密函數打包成 dll 然後讓 krkr 進行動態連結，就必須要遵守『krkr 引擎插件開發規範』．這個規範在哪裏❓我暫時還沒有找到．但是我找到了官方文檔和一些別人寫的說明．
+
+> 🔗プラグインについて
+> https://krkrz.github.io/krkr2doc/kr2doc/contents/Plugins.html
+
+> 🔗吉里吉里プラグインの作り方
+> http://keepcreating.g2.xrea.com/DojinDOC/HowToWriteKrkrPlugin.html
+
+> 🔗吉里吉里トランジションプラグインの作り方
+> http://keepcreating.g2.xrea.com/DojinDOC/HowToWriteTransitionPlugin.html
+
+僅供參考，我沒有仔細看過．讓我們回到 main.cpp 文件，牠包括了兩個頭文件：
+
+```cpp
+#include <windows.h>
+#include "tp_stub.h"
+```
+
+第一個是 windows API，第二個應該是 krkr 內部定義的一些函數庫，這樣就可以在加解密過程中調用 krkr 的各種功能了．
+
+關於 krkr API 的函數庫之後再說．
+
+先拉到底下，可以看到一個 DllEntryPoint 的函數：
+
+```cpp
+int WINAPI DllEntryPoint(HINSTANCE hinst, unsigned long reason,	void* lpReserved)
+{
+	return 1;
+}
+```
+
+根據 AI 的解釋：
+
+> 根據網絡搜索結果，int WINAPI DllEntryPoint 是一個可選的動態鏈接庫（DLL）的入口點函數。
+> int 是函數的返回值類型，表示整數。
+
+> WINAPI 是一個宏，定義了函數的調用約定為 __stdcall 。這種調用約定要求函數的參數從右向左入棧，並由函數自身清理棧。WINAPI 和 CALLBACK 以及 APIENTRY 都是用來定義 __stdcall 調用約定的宏。
+
+> DllEntryPoint 是函數的名字，它是一個佔位符，您可以在構建DLL時指定實際使用的名字。
+
+> 這個函數有三個參數：hinstDLL 是DLL模塊的句柄，fdwReason 是調用函數的原因代碼，lpvReserved 是保留參數。
+> 這個函數的作用是在系統啟動或終止一個進程或線程時，為每個加載的DLL調用該函數。它也可以在使用 LoadLibrary 和 FreeLibrary 函數加載或卸載DLL時被調用。它可以用來執行一些簡單的初始化和清理任務。
+
+意思是，當 Windows 程序在加載或者卸載 DLL 時，如果有這麼一個入口點函數存在，那麼系統就會主動調用一次這個函數．這個函數可以執行一些初始化的任務之類的，但是完全沒有這個函數的 DLL 也是沒問題的．只是這個示例中，牠有這個入口函數．
+
+最底下是兩個函數：
+
+```cpp
+extern "C" HRESULT _stdcall V2Link(iTVPFunctionExporter *exporter)
+{
+	// V2Link は、吉里吉里本体とリンクされるときに呼び出される関数です
+	
+	// スタブの初期化(必ず記述する)
+	TVPInitImportStub(exporter);
+
+	// TVPSetXP3ArchiveExtractionFilter 関数に
+	// TVPXP3ArchiveExtractionFilter を指定し、コールバック関数を設定する
+	TVPSetXP3ArchiveExtractionFilter(TVPXP3ArchiveExtractionFilter);
+
+	return S_OK;
+}
+//---------------------------------------------------------------------------
+extern "C" HRESULT _stdcall V2Unlink()
+{
+	// V2Unlink は、吉里吉里本体から切り離されるときに呼び出される関数です
+
+	// 一応 TVPSetXP3ArchiveExtractionFilter に NULL を渡し、
+	// コールバック関数の登録を解除する
+	TVPSetXP3ArchiveExtractionFilter(NULL);
+
+	// スタブの使用終了(必ず記述する)
+	TVPUninitImportStub();
+
+	return S_OK; 
+}
+```
+
+根據和這個 cpp 文件同一個目錄下的 .def 文件，我們可以得知這個 dll 牠***導出***了兩個函數給操作系統，分別是 V2Link 和 V2Unlink．利用各種二進制分析工具（比如 IDA）查看編譯過後的 dll 的話，可以輕易地看見這兩個函數在***導出表***中．
+
+**在 krkr 加載插件的時候，krkr 會主動調用你編寫的 V2Link 函數，卸載時會調用你編寫的 V2Unlink 函數．**因此在 V2Link 的函數中，你可以通過調用 krkr 的 API 來進行一些函數替換，功能添加等操作，從而實現插件的效果．
+
+上面的代碼中，牠在 V2Link 函數中調用了 `TVPInitImportStub` 函數，這個函數的作用是初始化一個函數庫，這個函數庫的作用是將 krkr 的 API 封裝成一個個函數，方便插件開發者使用．但是 `TVPSetXP3ArchiveExtractionFilter` 很明顯就是在通知 krkr 主程序，接下來請使用我指定的濾鏡函數，名字叫做 `TVPXP3ArchiveExtractionFilter` 來進行 XP3 的解密喲！．
+
+至於爲什麼這兩個函數要叫做 Filter，可能牠是想把你的加解密比喻成一個**濾鏡**，當明文數據通過加密濾鏡之後就變成了加密數據，反過來則是變回明文．而這個過程對 krkrrel 和 krkr 透明，牠們並不關心你的內部實現，只要你保證了牠們能拿到想要的數據就行，因此才叫做 Filter．如下圖所示：
+
+![Fig 8.3.3 濾鏡函數](../image/xp3-research-2/8-3-3-filter.webp)
+
+哈哈這張圖完全是我意淫出來的，牠的數據流向根本不長這樣，但是我覺得這樣比較好理解，就這樣吧．
+
+現在我們來看真正的解密函數 `TVPXP3ArchiveExtractionFilter` 函數，牠裏面包含了很多註釋，妳可以去看看．
+
+```cpp
+void TVP_tTVPXP3ArchiveExtractionFilter_CONVENTION
+	TVPXP3ArchiveExtractionFilter(tTVPXP3ExtractionFilterInfo *info)
+{
+	// TVPXP3ArchiveExtractionFilter 関数は本体側から呼び出される
+	// コールバック関数です。
+	// 引数を一つ取り、それは tTVPXP3ExtractionFilterInfo 構造体へのポインタ
+	// です。
+
+	// TVPXP3ArchiveExtractionFilter は、後述の V2Link 関数内で
+	// TVPSetXP3ArchiveExtractionFilter により設定されます。
+
+	// ここでは単純に、xp3enc.dll のサンプルで作成された XP3 アーカイブを
+	// 復号すべく、データをすべて FileHash の最下位バイトで XOR
+	// することにします。
+
+	// この関数は複数のスレッドから同時に呼び出される可能性があるので
+	// 注意してください。
+
+	/*
+		tTVPXP3ExtractionFilterInfo のメンバは以下の通り
+		* SizeOfSelf        : 自分自身の構造体のサイズ
+		* Offset            : "Buffer" メンバが指し示すデータが、
+		*                   : アーカイブに格納されているそのファイルの先頭からの
+		*                   : どのオフセット位置からのものか、を表す
+		* Buffer            : データ本体
+		* BufferSize        : "Buffer" メンバの指し示すデータのサイズ(バイト単位)
+		* FileHash          : ファイルの暗号化解除状態でのファイル内容の32bitハッシュ
+	*/
+
+	// 一応構造体のサイズをチェックする
+	if(info->SizeOfSelf != sizeof(tTVPXP3ExtractionFilterInfo))
+	{
+		// 構造体のサイズが違う場合はここでエラーにした方がよい
+		TVPThrowExceptionMessage(TJS_W("Incompatible tTVPXP3ExtractionFilterInfo size"));
+			// TVPThrowExceptionMessage は例外メッセージを投げる関数
+			// この関数は戻らない ( もっと呼び出し元をさかのぼった位置で
+			// 例外が補足されるため )
+	}
+
+	// 復号
+	tjs_uint i;
+	for(i = 0; i < info->BufferSize; i++)
+		((unsigned char *)info->Buffer)[i] ^= info->FileHash;
+}
+```
+
+到目前爲止還是看不出牠加解密是不是以整個文件爲單位的．（很可能不是，詳細見下）
+
+<span class="alert-heading font-weight-bold text-danger" style="font-size: 110%;">👒 krkr 到底支持何種程度的加密？</span>
+
+之前我們說到 krkr 支持基於文件的加密，意思是 XP3 包裏面的每一個小文件都會獨立通過加解密濾鏡並單獨加解密．
+
+<div class="alert alert-warning" role="alert">
+  <p>
+    我很想知道 krkr 的加解密是一定要以整個文件爲單位，還是可以單獨加解密一個文件中的區區一部分的 byte．但是我覺得是前者（❓我不是完全確定，但是應該八九不離十）．
+  </p>
+  <span>👆🏻然後我就被打臉了，牠事支持隨機存取（從文件中間直接開始解密）的．</span>
+</div>
+
+先說我錯誤的意淫，以整個文件爲單位的加解密，私以爲可能是出於以下的考慮：
+
+  1. 避免讀取同一個文件的時候要重複調用解密函數．
+  2. krkr 的讀取文件的邏輯是重複利用一條文件流，
+  3. 從我貧瘠的密碼學理解來看，更安全的 CBC 式加密依賴於前面處理過的數據，因此要解密下一塊數據，就必須要知道上一塊數據的狀態，以此類推到第一塊數據．如果 krkr 的解密允許從文件的中間部分進行解密，那麼就不能使用 CBC❓，這樣加密安全性就會大打折扣，因此我覺得牠加解密應該是以文件爲單位的❓
+**👆🏻說得根本不對，而且小日子的加密，要甚麼安全...！！**
+
+於是讓我來仔細研究一下牠模板代碼裏面提供的解密函數（把註釋去掉再發一遍），
+仔細看好了...！！
+
+```cpp
+void TVP_tTVPXP3ArchiveExtractionFilter_CONVENTION
+	TVPXP3ArchiveExtractionFilter(tTVPXP3ExtractionFilterInfo *info)
+{
+	tjs_uint i;
+	for(i = 0; i < info->BufferSize; i++)
+		((unsigned char *)info->Buffer)[i] ^= info->FileHash;
+}
+```
+
+這個函數的作用就是對 XP3 文件中的每一個文件進行解密，解密的方式就是對每一個字節進行 XOR 運算．這個函數的參數是一個結構體，結構體中包含了一個指向要解密的數據的指針，以及數據的大小．
+
+👆🏻真是張口就來，要徹底理解這個函數，我們必須先弄清楚那個 info 結構體裏面到底是啥．
+
+經過檢查代碼，我找到了這個結構體的定義，我也懶得發 [🔗代碼](https://github.com/krkrz/krkrz/blob/fd5c4baa6a2ef5978db1bd043634351f48667daf/base/XP3Archive.h#L27) 了，直接上圖：
+
+![Fig 8.3.4 tTVPXP3ExtractionFilterInfo 結構體結構](../image/xp3-research-2/8-3-4-infostruct.webp)
+
+假設我們用的 krkr 是 32 位的，那麼裏面的指針或者 uint 啥的就是 32 位的整數．
+
+然後再回到剛才的代碼，牠寫道：
+
+```cpp
+((unsigned char *)info->Buffer)[i] ^= info->FileHash;
+```
+
+這是在幹嘛捏，首先牠先取出了緩衝區的第 i 個字節，然後對牠進行 XOR 運算，運算的對象是 info 結構體裏面的 FileHash．但是這個 FileHash 是 4 字節整數阿！那麼這個運算是怎麼進行的呢？直接給我看傻了．相信在座的各位如果不是 C++ 中級高手的話，應該也會被這個問題給搞傻．
+
+哈哈貼心的我偷偷替各位看了一眼彙編代碼，發現這個運算是這樣的：
+
+```x86asm
+MOV   ECX, [ESI+0Ch]
+MOV   DL, [ESI+14h]
+XOR   [ECX+EAX],  DL
+```
+
+再結合上面的結構體的圖，我們就可以大概猜到，ESI 是結構體的基地址，那麼 ESI+0Ch 就是結構體裏面的 Buffer 指針，ESI+14h 就是結構體裏面的 FileHash 數據．
+
+然後牠把 Hash 複製到了 DL 中，DL 事 1 個字節的寄存器．然後牠把 Buffer 指針加上了 EAX，EAX 是一個從 0 開始的計數器，每次循環都會加 1，
+
+所以最後參與 XOR 的就只有 FileHash 的低 8 位，即圖中的 0x14．
+
+這個加密事陽春不堪，但也沒辦法，這只是個示例而已．可是真的有一些小日子遊戲公司就直接拿來用了，這就有點慘了．
+
+（探討 krkr 加密的界限，引出 xp3enc）
+
 ### 8.4 Kirikiri 引擎的文件讀取邏輯
+
+<span class="alert-heading font-weight-bold text-danger" style="font-size: 110%;">👒 TVPInitImportStub 事甚麼</span>
+
+現在我們要弄清楚那個通知 krkr 的主程序的函數 TVPSetXP3ArchiveExtractionFilter 是怎麼個用法．首先牠的定義很明顯是來自 tp_stub 的頭文件和對應的 cpp 文件，跟過去一看：
+  
+```cpp
+inline void TVPSetXP3ArchiveExtractionFilter(tTVPXP3ArchiveExtractionFilter filter)
+{
+	if(!TVPImportFuncPtr52d30ac8479ef7e870b5aff076482799)
+	{
+		static char funcname[] = "void ::TVPSetXP3ArchiveExtractionFilter(tTVPXP3ArchiveExtractionFilter)";
+		TVPImportFuncPtr52d30ac8479ef7e870b5aff076482799 = TVPGetImportFuncPtr(funcname);
+	}
+	typedef void (__stdcall * __functype)(tTVPXP3ArchiveExtractionFilter);
+	((__functype)(TVPImportFuncPtr52d30ac8479ef7e870b5aff076482799))(filter);
+}
+```
+
+這個是一個 inline 函數，直接包含在了 .h 的頭文件裏面．inline 函數在編譯的時候會直接轉換成機器碼插入到被調用的地方，而不使用 CALL 指令．意思是，上面這一團代碼會在編譯後直接插到 DLL 的代碼中間．
+
+根據這裏的代碼，我可以大概猜測牠的功能：
+
+  1. 首先牠確定了一個 TVPImportFuncPtr52d30ac8479ef7e870b5aff076482799 變量有沒有值．至於這是個甚麼東西，我們可以在 🔗[stub.cpp](https://github.com/krkrz/krkr2/blob/master/kirikiri2/branches/2.32stable/kirikiri2/src/plugins/win32/tp_stub.cpp) 裏面看到如下的場面：
+
+<p>
+  <img alt="Fig 8.4.1 函數的停車位" src="../image/xp3-research-2/8-3-4-slots.webp" loading="lazy" class="ar8x3"/>
+</p>
+
+這麼一堆類似的變量會在 DLL 的一開始被聲明，並且填入一個 NULL 的值，就如同停車位一樣．
+提前預告一下，這些變量其實是函數指針，雖然現在是空值，但是在實際被使用的時候會裝入 krkr 主程序內部的 API 的函數地址．
+
+  2. 如果發現這個神必變量不存在，那麼牠就執行了：
+要求 `TVPGetImportFuncPtr` 函數查找一個叫做 `void ::TVPSetXP3ArchiveExtractionFilter(tTVPXP3ArchiveExtractionFilter)` 的名字的函數的指針，並且把這個地址設爲 TVPImportFuncPtr52d30ac8479ef7e870b5aff076482799 ．
+
+  3. 最後牠間接調用了這個地址的函數，就是
+`((__functype)(TVPImportFuncPtr52d30ac8479ef7e870b5aff076482799))(filter);`
+從而通告 krkr 主程序，使用這個濾鏡來解密 XP3．
+
+然後這個爲我們通過函數名查找函數地址的函數查找器（繞口令？）是長這樣的：
+
+```cpp
+void * TVPGetImportFuncPtr(const char *name)
+{
+	void *ptr;
+	if(TVPFunctionExporter->QueryFunctionsByNarrowString(&name, &ptr, 1))
+	{
+		// succeeded
+	}
+	else
+	{
+		// failed
+		static const char *funcname = "void ::TVPThrowPluginUnboundFunctionError(const char *)";
+		if(!TVPFunctionExporter->QueryFunctionsByNarrowString(&funcname, &ptr, 1))
+		{
+			*(int*)0 = 0; // causes an error
+		}
+		typedef void (__stdcall * __functype)(const char *);
+		((__functype)(ptr))(name);
+	}
+	return ptr;
+}
+```
+
+雖然寫得很亂，但是還是能看出來牠從 `TVPFunctionExporter` 裏面掏出了一個轉換函數，就是牠幫我們找到了 API 的真實地址．
+
+那麼 TVPFunctionExporter 從哪裏來？我們再看一眼解密插件中的代碼，在設置解密濾鏡的上一句，有一個 `TVPInitImportStub(exporter);`
+
+這個函數的定義如下：
+
+```cpp
+bool TVPInitImportStub(iTVPFunctionExporter * exporter)
+{
+	// set TVPFunctionExporter
+	TVPFunctionExporter = exporter;
+	return true;
+}
+```
+
+就是牠把給這個 TVPFunctionExporter 賦值了．
+
+現在一切都清楚了，解密插件的經過我註釋的代碼可以寫成下面這樣：
+
+```cpp
+#include <windows.h>  // 加載 Windows API
+#include "tp_stub.h"  // 加載 KRKR 的 API 原型
+
+void TVP_tTVPXP3ArchiveExtractionFilter_CONVENTION
+	TVPXP3ArchiveExtractionFilter(tTVPXP3ExtractionFilterInfo *info)
+{
+  // 這裏對 XP3 數據進行解密，我們先不管
+	tjs_uint i;
+	for(i = 0; i < info->BufferSize; i++)
+		((unsigned char *)info->Buffer)[i] ^= info->FileHash;
+}
+
+// krkr 主程序在加載插件的時候調用這個函數，並且傳進來一個 exporter 的參數
+// 這個函數使用 C 語言的函數名稱修飾導出到操作系統，
+// 這個函數使用 stdcall 調用約定．
+extern "C" HRESULT _stdcall V2Link(iTVPFunctionExporter *exporter)
+{
+	TVPInitImportStub(exporter);
+	// exporter 這個參數裏面包含了如何找到 krkr 的 API 的地址的足夠信息
+  // 使用這些信息，初始化一個 krkr 的 API 原型．
+
+	TVPSetXP3ArchiveExtractionFilter(TVPXP3ArchiveExtractionFilter);
+	// 使用剛才準備好的 API 原型，調用 krkr 的 API，設定解密濾鏡函數．
+
+	return S_OK;
+}
+
+extern "C" HRESULT _stdcall V2Unlink()
+{
+	TVPSetXP3ArchiveExtractionFilter(NULL);
+	TVPUninitImportStub();
+
+	return S_OK; 
+}
+```
+
+_stdcall 是「函數調用約定的聲明」．常見的調用約定有以下的幾種：
+
+| 約定類型👉🏻 | __cdecl（C 規範） | pascal | stdcall | Fastcall |
+| --- | --- | --- | --- | --- |
+| 參數傳遞順序 | 從右到左 |  從左到右 | 從右到左 | 使用寄存器和棧 |
+| 誰來平棧 | 調用者 | 子程序 | 子程序 | 子程序 |
+| 函數名稱修飾 C | _funcname |  | _funcname@參數尺寸 | @funcname@參數尺寸 |
+| 函數名稱修飾 C++ | ?funcname@@YA返回值和參數類型@Z |  | ?funcname@@YG返回值和參數類型@Z | ?funcname@@YI返回值和參數類型@Z |
+
+extern “C” 指的雖然這裏寫得代碼都是 C++，但是暴露給外面的時候，請編譯器使用 C 規範來修飾函數名稱．如果不這樣做，函數名稱將會變成 ?V2Link@@YGxxxxxxx@Z，導致 krkr 主程序無法正確定位這個函數，並且無法加載插件．
+
+
+
 
 ### 8.5 解密系統的全景圖
 
