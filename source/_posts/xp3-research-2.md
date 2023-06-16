@@ -799,15 +799,71 @@ XOR   [ECX+EAX],  DL
 
 所以最後參與 XOR 的就只有 FileHash 的低 8 位，即圖中的 0x14．
 
-這個加密事陽春不堪，但也沒辦法，這只是個示例而已．可是真的有一些小日子遊戲公司就直接拿來用了，這就有點慘了．
+這個加密事陽春不堪，但也沒辦法，這只是個示例而已．可是真的有一些小日子遊戲公司就直接拿來用了，可能是因爲牠們沒錢請磚家罷，這就有點慘了．
 
-（探討 krkr 加密的界限，引出 xp3enc）
+從上面這個示例中我們可以看到，krkr 的加密插件系統是可以支持像這種單個字節 XOR 或者其他以單個字節爲單位的算法的．那麼這個系統的上限在哪裏呢？換句話說，牠能用的蕞牛逼的加密算法能複雜到甚麼程度？
 
-### 8.4 Kirikiri 引擎的文件讀取邏輯
+要回答這個問題，我們需要再看看上圖 8.3.4 中的結構體，看看牠所提供的信息能讓我們製作出甚麼樣的加密算法來．
+
+![Fig 8.3.4 tTVPXP3ExtractionFilterInfo 結構體結構](../image/xp3-research-2/8-3-4-infostruct.webp)
+
+有用的信息就只有距離文件開頭的偏移量，緩衝區的內容和大小，以及文件的校验和．
+注意，在這個函數裏**我們無法讀取和這一塊數據相鄰的數據**，因此我們無法利用那些依賴前後數據的加密算法，比如 AES 的 CBC 模式．
+
+但是，如果我們使用流式加密的話，就可以利用這個偏移量 seek 到密鑰流的任意位置，然後就可以對這一塊數據進行隨意解密．所以說妳想到了甚麼？
+
+——ChaCha20...！！
+
+哈哈扯遠了，krkr 誕生的時候，ChaCha20 還沒有發明出來，也許牠們可以採用一些更老的加密方式，比如說 RC4？但是 RC4 的密鑰流沒法隨便 seek，所以當你需要前往任意一個位置的時候就必須要從頭開始計算整個密鑰流，這看起來太蠢了．
+
+而且，由於小日子的 IT 水平過於感人，牠們可能根本就不會想到這些，也不會想要去調用甚麼加密庫，所以小日子遊戲的上限就是 XOR 運算，或者是一些類似的簡單運算．當然，這並不是 krkr 的上限，因爲我們還有極其先進 ChaCha20 可以用呢．
+
+剛才我們只看了解密的部分，接下來讓我們來看看 krkr 提供的加密插件的模板，牠的代碼在這裏：
+
+> [🔗/xp3filter/xp3enc/main.cpp](https://github.com/krkrz/krkr2/blob/master/kirikiri2/branches/2.32stable/kirikiri2/src/plugins/win32/xp3filter/xp3enc/main.cpp)
+
+加密的部分跟解密一樣都是 XOR，所以我們來看看作者寫的註釋，我直接把重點摘錄出來了：
+
+<div class="alert alert-info" role="alert">
+  <span class="alert-heading font-weight-bold font-serif" style="font-size: 200%;">“</span>
+  <p>
+    暗号化は復号化時にパフォーマンス上の障害とならない程度に単純である
+	必要があります。
+  </p><p>
+	また、仕様上、復号関数 (TVPSetXP3ArchiveExtractionFilter で指定する
+	関数) は、一つのファイルに対し、任意のオフセットとサイズを伴って呼び
+	出され、復号化は一回の呼び出し内で完結しなければなりません。つまり、
+	その境界をまたがるような復号化、たとえばバイトの順序を入れ替えたり、
+	前の入力バイトに依存した復号化処理は行うことができません。
+  </p><p>
+	これは、暗号化関数にも言えます。
+	現実的には、バイトごとの XOR や 加算、減算程度のみ使用可能と考えてくだ
+	さい。
+  </p><p>
+	ただし、ファイル中におけるオフセットとファイルごとにほぼ異なる値(ハッ
+	シュ値)が与えられるので、ファイル中のオフセットに応じて局所的に暗号化
+	をかけたり、ファイルのハッシュを利用してファイルごとに異なる暗号化を
+	かけたりが可能です。
+  </p>
+</div>
+
+牠自己也說了，加解密必須在一個函數調用中完成，因此加密算法調用的數據不能超越提供的緩衝區的邊界，**因此使用單個字節的簡單運算是最好的選擇**．
+
+小日子，妳們的 IT 水平限制了妳們的想象力...！！
+
+然後牠又說，由於每一個文件都會有一個不同的校驗和，因此我們可以利用這個校驗和來對每一個文件進行不同的加密，這裏就是發揮各個廠商的創意的地方了．
+
+不過根據前文第 7.4 章的分析，就連柚子社這種大廠做出來的加密看上去就非常脆弱，就不要期待牠們能發揮出甚麼創意了（其實牠們事外包的，哈哈）．
+
+### 8.4 從插件內部來調用 Kirikiri API
+
+剛才我們探討了在 krkr 插件中使用各種加密算法的可行性，接下來我們來看看 krkr 的 API 是怎麼被插件進行調用的．
+
+牠的解密插件中，調用了一個 `TVPSetXP3ArchiveExtractionFilter` 函數，這是 krkr 主程序提供的 API，讓我們來看看身爲一個 dll 的插件是怎麼真正反過來調用到這個位於主程序內部的函數的．
 
 <span class="alert-heading font-weight-bold text-danger" style="font-size: 110%;">👒 TVPInitImportStub 事甚麼</span>
 
-現在我們要弄清楚那個通知 krkr 的主程序的函數 TVPSetXP3ArchiveExtractionFilter 是怎麼個用法．首先牠的定義很明顯是來自 tp_stub 的頭文件和對應的 cpp 文件，跟過去一看：
+我們先要弄清楚那個通知 krkr 的主程序的函數 TVPSetXP3ArchiveExtractionFilter 是怎麼個用法．首先牠的定義很明顯是來自 tp_stub 的頭文件和對應的 cpp 文件，跟過去一看：
   
 ```cpp
 inline void TVPSetXP3ArchiveExtractionFilter(tTVPXP3ArchiveExtractionFilter filter)
@@ -934,10 +990,23 @@ _stdcall 是「函數調用約定的聲明」．常見的調用約定有以下�
 
 extern “C” 指的雖然這裏寫得代碼都是 C++，但是暴露給外面的時候，請編譯器使用 C 規範來修飾函數名稱．如果不這樣做，函數名稱將會變成 ?V2Link@@YGxxxxxxx@Z，導致 krkr 主程序無法正確定位這個函數，並且無法加載插件．
 
-
-
+至此，我們知道了 krkr 主程序在調用 dll 插件的時候，會遞進去一個符號查找器，這樣 dll 就可以通過這個符號查找器來查找 krkr 主程序內部的 API 了．
 
 ### 8.5 解密系統的全景圖
+
+前文的 8.2 和 8.3 節說明了加密算法的原理和 krkr 的解密插件的實現，接下來我們來看看 krkr 是怎麼樣把這些東西組合起來的．
+
+關於這個研究，逆向工程專家 morkt，也就是 GARbro 的作者在一篇帖子中提到了一些重要的信息，妳可以先去看看：
+
+> [🔗Ask a question about decrypt · Issue #70 · morkt/GARbro](https://github.com/morkt/GARbro/issues/70)
+> ![Fig 8.5.1 morkt 的回答](https://opengraph.githubassets.com/ebd649f67ba3578b343b3a9f374c51f199c745a29a8a2ca1291e153172346c46/morkt/GARbro/issues/70)
+
+首先我們來看看 krkr 主程序是怎麼樣調用解密插件的，直接上代碼：
+
+> 你可以在 Kirikiri Z 的倉庫裏面看到這些代碼
+> https://github.com/krkrz/krkrz/blob/fd5c4baa6a2ef5978db1bd043634351f48667daf/base/XP3Archive.cpp#L978
+
+```cpp
 
 ### 8.6 小結
 
