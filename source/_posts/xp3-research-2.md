@@ -1075,7 +1075,7 @@ tjs_uint TJS_INTF_METHOD tTVPXP3ArchiveStream::Read(void *buffer, tjs_uint read_
 整個過程，忽略解壓的部分，的執行過程如下圖所示：
 
 <video class='mb-3' playsinline="" autoplay="" muted="" loop="" width='100%'>
-    <source src="https://s3static-zone0.galgamer.eu.org/video-2d35/xp3-2/wholeview.mp4" type="video/mp4">
+    <source src="https://s3static-zone0.galgamer.eu.org/video-2d35/xp3-2/wholeview2.mp4" type="video/mp4">
 </video>
 <p class="image-caption">Fig 8.5.2 解密系統的全景圖</p>
 
@@ -1097,7 +1097,7 @@ tjs_uint TJS_INTF_METHOD tTVPXP3ArchiveStream::Read(void *buffer, tjs_uint read_
 
 這篇文章的編寫對我來說事一趟很長的旅程，也是一次巨大的挑戰．當初我在網上查找資料的時候，發現可供參考的資料幾乎沒有，這令我大跌眼鏡，因爲 krkr 是如此地流行，我以爲隨手一搜就能找到的．
 
-然後我花了很多時間來 plan，來動員我們的首席研究員參與研究．我要再次感謝我們的首席研究員電腦系樂隊美少女，她承擔了至少一半以上的調查工作，讓我能有更多的時間來起草這篇文章．
+然後我花了很多時間來 plan，來動員我們的首席研究員參與研究．我要再次感謝我們的首席研究員電腦系樂隊美少女，她一人承擔了快一半的調查工作，讓我能有更多的時間來起草這篇文章．
 
 上了大學的人都知道，向別人介紹新知識是如此地難，要是別人很容易就能夠理解妳的話，大學裏面就不會有那麼多人掛科了...！！所以我最敬佩的人就是那些能夠把複雜的知識講得很簡單的人，他們是真正的大師．
 
