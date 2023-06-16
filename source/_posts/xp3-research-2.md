@@ -101,7 +101,9 @@ excerpt: '讓我們再深入一些．這次我們研究的是帶有壓縮和加�
 
 第七章將介紹 XP3 內部的文件壓縮方式和索引壓縮方式；
 第八章將首先介紹一些簡單的密碼學基礎知識，然後詳細介紹 Kirikiri 引擎的加解密方式，和牠的插件的代碼實現，最後給出該加密系統的整體概觀；
-第九章將使用逆向工程的方法對現實世界的 Kirikiri 遊戲的加密進行簡單分析．但是由於時間倉促，留下了許多懸而未決的問題，這些問題將一併列出．
+
+> 第九章將使用逆向工程的方法對現實世界的 Kirikiri 遊戲的加密進行簡單分析．但是由於時間倉促，留下了許多懸而未決的問題，這些問題將一併列出．
+👆🏻很遺憾，由於時間關係，第九章的內容將在後續的文章中進行補充．順便我還想把那些懸而未決的問題給解決了再把文章端上來，所以，下次再說罷．
 
 ## Chapter 7. 從非壓縮格式到壓縮格式
 
@@ -329,7 +331,7 @@ elif(command=="2"):
 
 ![Fig 7.5 壓縮後的索引區域的結構](../image/xp3-research-2/conclusion.webp)
 
-最後，我們驗證了日本人令人智熄的加密技術，牠們是先加密再壓縮的．
+最後，我們驗證了日本人令人智熄的加密方案，牠們是先加密再壓縮的．
 
 ## Chapter 8. Kirikiri 加密系統
 
@@ -1007,19 +1009,81 @@ extern “C” 指的雖然這裏寫得代碼都是 C++，但是暴露給外面�
 > https://github.com/krkrz/krkrz/blob/fd5c4baa6a2ef5978db1bd043634351f48667daf/base/XP3Archive.cpp#L978
 
 ```cpp
+tjs_uint TJS_INTF_METHOD tTVPXP3ArchiveStream::Read(void *buffer, tjs_uint read_size)
+{
+	EnsureSegment();
+
+	tjs_uint write_size = 0;
+	while(read_size)
+	{
+		while(SegmentRemain == 0)
+		{
+			// must go next segment
+			if(!OpenNextSegment()) // open next segment
+				return write_size; // could not read more
+		}
+
+		tjs_uint one_size =
+			read_size > SegmentRemain ? (tjs_uint)SegmentRemain : read_size;
+
+		if(CurSegment->IsCompressed)
+		{
+			// compressed segment; read from uncompressed data in memory
+			memcpy((tjs_uint8*)buffer + write_size,
+				SegmentData->GetData() + (tjs_uint)SegmentPos, one_size);
+		}
+		else
+		{
+			// read directly from stream
+			Stream->ReadBuffer((tjs_uint8*)buffer + write_size, one_size);
+		}
+
+		// execute filter (for encryption method)
+		if(TVPXP3ArchiveExtractionFilter)
+		{
+			tTVPXP3ExtractionFilterInfo info(CurPos, (tjs_uint8*)buffer + write_size,
+				one_size, Owner->GetFileHash(StorageIndex));
+			TVPXP3ArchiveExtractionFilter
+				( (tTVPXP3ExtractionFilterInfo*) &info );
+		}
+
+		// adjust members
+		SegmentPos += one_size;
+		CurPos += one_size;
+		SegmentRemain -= one_size;
+		read_size -= one_size;
+		write_size += one_size;
+	}
+
+	return write_size;
+}
+```
+
+可見，牠使用了一個循環來讀取數據，每次讀取一個數據塊，然後調用解密濾鏡來解密這個數據塊．
+請看代碼中的最後一個 if 的部分，牠把數據塊的偏移量 CurPos，數據塊的指針 buffer+write_size，數據塊的大小 one_size，以及文件的校驗和生成了一個 info 結構體，然後把這個結構體的指針傳進解密濾鏡函數中．
+
+之後，解密濾鏡函數就會對這個數據塊進行解密，然後把解密後的數據**原地寫回到這個 buffer 中**．
+
+整個過程，忽略解壓的部分，的執行過程如下圖所示：
+
+<video class='mb-3' playsinline="" autoplay="" muted="" loop="" width='100%'>
+    <source src="https://s3static-zone0.galgamer.eu.org/video-2d35/xp3-2/wholeview.mp4" type="video/mp4">
+</video>
+<p class="image-caption">Fig 8.5.2 解密系統的全景圖</p>
+
+有心的遊戲公司可以直接把解密邏輯寫在主程序裏面，這樣就不需要解密插件了．如此一來，攻擊者便難以找到解密的邏輯，也就難以進行破解了．當然，這需要重新對 krkr 的主程序進行編譯，不過這又是另一個故事了．
 
 ### 8.6 小結
 
+在這一章中，我們探討了 krkr 的加密系統．爲了說明牠們使用的加密方式，我首先介紹了簡單的密碼學背景（希望妳們都看懂了！），然後我們看了 krkr 的加密插件的示例代碼，分析了牠的加密方式，探討了牠的侷限性．
+
+接着我們在 8.4 章看到了 krkr 是怎麼用一種巧妙的方法把自身的 API 傳遞給插件的，這揭露了 krkr 插件編寫的冰山一角．然後 8.5 章介紹了 krkr 是怎麼樣把解密插件整合到文件讀取邏輯之中去的．
+
+在最後，我們向各位展示了 krkr 的解密系統的全景圖．
 
 ## Chapter 9. 現實世界中的逆向工程分析
 
-### 9.1 再回顧：解密部分邏輯中的數據結構
-
-### 9.2 基於 Kirikiri 2 的解密插件的簡單分析
-
-### 9.3 基於 Kirikiri Z 的嵌入式解密
-
-### 9.4 尚未解決的問題
-
+雖然我還想繼續下去，但是這篇文章 (Markdown 寫的！) 已經達到了一千行，再加上第九章中我還有許多問題沒有解決，因此我決定在這裏結束這篇文章...！！
 
 ## 總結
+
