@@ -1,5 +1,5 @@
 ---
-title: 'Uncover XP3 後篇：XP3 封包中的的壓縮和加密技術'
+title: 'Uncover XP3 後篇：揭祕 XP3 封包中的的壓縮和加密技術'
 date: 2000-6-10 00:30:00
 keywords: 'XP3, 吉里吉里, 解包, Archive File'
 banner_img: '../image/xp3-research-2/banner.webp'
