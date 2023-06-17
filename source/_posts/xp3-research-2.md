@@ -369,11 +369,11 @@ XP3 文件的加密是 Kirikiri 的一個重要功能，是分析 XP3 文件時�
 
 當需要啓用加密功能時，妳需要自己實現一個加密函數和配套的解密函數，然後以某種方式遞給 krkrrel 或者 krkr 引擎．
 
-在 krkr 2 時代，一個比較常見的方法是把妳的加密函數和解密函數分別製作成兩個 dll，然後 export 妳的函數入口點（🈯️將妳的 dll 內部函數暴露出來，供其他程序調用），這樣官方的 XP3 生成器 krkrrel 和 krkr 就都可以調用妳寫的代碼了．
+在 krkr 2 時代，一個比較常見的方法是把妳的加密函數和解密函數分別製作成兩個 DLL，然後 export 妳的函數入口點（🈯️將妳的 DLL 內部函數暴露出來，供其他程序調用），這樣官方的 XP3 生成器 krkrrel 和 krkr 就都可以調用妳寫的代碼了．
 
 就這樣，遊戲公司在發佈遊戲的 XP3 文件時，會使用 krkrrel 對遊戲數據進行打包，而此時 krkrrel 會調用遊戲公司提供的加密插件對數據進行加密．最後遊戲公司在發佈遊戲時，會將配套的解密插件連同遊戲一起發佈給玩家．玩家在遊玩的時候，krkr 會調用遊戲公司提供的解密插件完成對遊戲數據的解密和讀取．
 
-關於如何實現這麼一組插件 dll，我將在下面的 8.3 小節詳細說明．
+關於如何實現這麼一組插件 DLL，我將在下面的 8.3 小節詳細說明．
 這裏先列出一個參考文獻，牠對如何開發 krkr 的加解密插件進行了介紹．妳可以先不用看．
 
 > 🔗吉里吉里/KAGでのデータ暗号化方法例
@@ -409,7 +409,7 @@ password
 這個部分是密鑰↗️
 ```
 
-下文的加解密需要我們直接和密鑰打交道．最後再次提醒，不要用手機號和前女友的生日來做密碼，因爲知道這些的不只是妳一個人...！
+下文的加解密需要我們直接和密鑰打交道．最後再次提醒，不要用手機號和前女友的生日來做密碼，因爲知道這些的不只是妳一個人...！！
 
 <br>
 
@@ -534,7 +534,7 @@ XOR   00101101
 
 解密時，根據上面介紹的雙重 XOR 恢復原文的性質，只需要把密文和密鑰流再進行一下 XOR，就可以拿到原文了． 
 
-> 這裏的示例來自 chacha20 流式加密算法，牠簡單高效而且常用．
+> 這裏的示例來自 ChaCha20 流式加密算法，牠簡單高效而且常用．
 > 我使用的密鑰事
 > ```ascii
 > 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
@@ -544,8 +544,8 @@ XOR   00101101
 > ```ascii
 > AA AA AA AA AA AA AA AA AA AA AA AA
 > ```
-> 通過調整 chacha20 的計數器，可以一瞬 seek 到密鑰流的任意位置，意思是牠事有「通項公式」的．這裏把計數器初始化爲 0.
-> 上面這些只是我的示例！Galgame 公司也不一定使用 chacha20 進行加密，妳要是不董 chacha20 也不影響妳繼續閱讀本文．
+> 通過調整 ChaCha20 的計數器，可以一瞬 seek 到密鑰流的任意位置，意思是牠事有「通項公式」的．這裏把計數器初始化爲 0.
+> 上面這些只是我的示例！Galgame 公司也不一定使用 ChaCha20 進行加密，妳要是不董 ChaCha20 也不影響妳繼續閱讀本文．
 
 最後再來思考一下，如果要從把文件的正中間——比如說從第 1000 個字節開始到 1200 個字節爲止——進行解密，要怎麼做．
 可以把步驟列出來如下：
@@ -586,11 +586,11 @@ XOR   00101101
 
 ### 8.3 加解密插件的實現
 
-好啦，上面鋪墊了老半天，重點終於要來啦．我們知道了 krkr 的加解密函數都要做成 dll 插件，並且分別暴露加解密函數的入口點．但是開始說明如何實現之前，讓我再鋪墊一下關於 Windows APP 編程的基礎知識．
+好啦，上面鋪墊了老半天，重點終於要來啦．我們知道了 krkr 的加解密函數都要做成 DLL 插件，並且分別暴露加解密函數的入口點．但是開始說明如何實現之前，讓我再鋪墊一下關於 Windows APP 編程的基礎知識．
 
 什麼是 DLL？DLL 內部是一大堆函數，妳可以理解成一個函數庫．當把一些常用函數打包到 DLL 裏面以後，就可以從多個 EXE 程序裏面進行調用，這樣就節省了將完全一樣的代碼塞進多個 EXE 程序而浪費掉的儲存空間．然後使用 DLL 的另外一個優點就是主程序可以在需要的時候才進行調用，實現了類似於插件的效果，如圖 8.3.1 所示：
 
-![Fig 8.3.1 DLL 的使用](../image/xp3-research-2/8-3-1-dll.webp)
+![Fig 8.3.1 DLL 的使用](../image/xp3-research-2/8-3-1-DLL.webp)
 
 DLL 裏面的函數必須要導出接口（暴露函數入口點），這樣才能被其他程序調用．
 而這個 krkr 的加解密函數內部如何實現，則是完全由插件作者自己決定的．
@@ -608,7 +608,7 @@ DLL 裏面的函數必須要導出接口（暴露函數入口點），這樣才�
 
 讓我們觀察一下解密插件（xp3dec）的 [🔗main.cpp](https://github.com/krkrz/krkr2/blob/master/kirikiri2/branches/2.32stable/kirikiri2/src/plugins/win32/xp3filter/xp3dec/main.cpp) 文件．
 
-在最開始的註釋處作者提到：這個解密函數是通過 krkr 的插件系統來加載的，因此如果要將解密函數打包成 dll 然後讓 krkr 進行動態連結，就必須要遵守『krkr 引擎插件開發規範』．這個規範在哪裏❓我暫時還沒有找到．但是我找到了官方文檔和一些別人寫的說明．
+在最開始的註釋處作者提到：這個解密函數是通過 krkr 的插件系統來加載的，因此如果要將解密函數打包成 DLL 然後讓 krkr 進行動態連結，就必須要遵守『krkr 引擎插件開發規範』．這個規範在哪裏❓我暫時還沒有找到．但是我找到了官方文檔和一些別人寫的說明．
 
 > 🔗プラグインについて
 > https://krkrz.github.io/krkr2doc/kr2doc/contents/Plugins.html
@@ -685,11 +685,11 @@ extern "C" HRESULT _stdcall V2Unlink()
 }
 ```
 
-根據和這個 cpp 文件同一個目錄下的 .def 文件，我們可以得知這個 dll 牠***導出***了兩個函數給操作系統，分別是 V2Link 和 V2Unlink．利用各種二進制分析工具（比如 IDA）查看編譯過後的 dll 的話，可以輕易地看見這兩個函數在***導出表***中．
+根據和這個 cpp 文件同一個目錄下的 .def 文件，我們可以得知這個 DLL 牠***導出***了兩個函數給操作系統，分別是 V2Link 和 V2Unlink．利用各種二進制分析工具（比如 IDA）查看編譯過後的 DLL 的話，可以輕易地看見這兩個函數在***導出表***中．
 
 **在 krkr 加載插件的時候，krkr 會主動調用妳編寫的 V2Link 函數，卸載時會調用妳編寫的 V2Unlink 函數．**因此在 V2Link 的函數中，妳可以通過調用 krkr 的 API 來進行一些函數替換，功能添加等操作，從而實現插件的效果．
 
-上面的代碼中，牠在 V2Link 函數中調用了 `TVPInitImportStub` 函數，這個函數的作用是初始化一個函數庫，這個函數庫的作用是將 krkr 的 API 封裝成一個個函數，方便插件開發者使用．但是 `TVPSetXP3ArchiveExtractionFilter` 很明顯就是在通知 krkr 主程序，接下來請使用我指定的濾鏡函數，名字叫做 `TVPXP3ArchiveExtractionFilter` 來進行 XP3 的解密喲！．
+上面的代碼中，牠在 V2Link 函數中調用了 `TVPInitImportStub` 函數，這個函數的作用是初始化一個函數庫，這個函數庫的作用是將 krkr 的 API 封裝成一個個函數，方便插件開發者使用．但是 `TVPSetXP3ArchiveExtractionFilter` 很明顯就是在通知 krkr 主程序，接下來請使用我指定的濾鏡函數，名字叫做 `TVPXP3ArchiveExtractionFilter` 來進行 XP3 的解密喲！
 
 至於爲什麼這兩個函數要叫做 Filter，可能牠是想把妳的加解密比喻成一個**濾鏡**，當明文數據通過加密濾鏡之後就變成了加密數據，反過來則是變回明文．而這個過程對 krkrrel 和 krkr 透明，牠們並不關心妳的內部實現，只要妳保證了牠們能拿到想要的數據就行，因此才叫做 Filter．如下圖所示：
 
@@ -809,7 +809,7 @@ XOR   [ECX+EAX], DL
 
 然後牠把 Hash 複製到了 DL 中，DL 事 1 個字節的寄存器．然後牠把 Buffer 指針加上了 EAX，EAX 是一個從 0 開始的計數器，每次循環都會加 1，
 
-所以最後參與 XOR 的就只有 FileHash 的低 8 位，即圖中的 0x14．
+所以最後參與 XOR 的就只有 FileHash 的低 8 位，即圖中的 0x14 位置．
 
 這個加密事陽春不堪，但也沒辦法，這只是個示例而已．可是真的有一些小日子遊戲公司就直接拿來用了，可能是因爲牠們沒錢請磚家罷，這就有點慘了．
 
@@ -871,7 +871,7 @@ XOR   [ECX+EAX], DL
 
 剛才我們探討了在 krkr 插件中使用各種加密算法的可行性，接下來我們來看看 krkr 的 API 是怎麼被插件進行調用的．
 
-牠的解密插件中，調用了一個 `TVPSetXP3ArchiveExtractionFilter` 函數，這是 krkr 主程序提供的 API，讓我們來看看身爲一個 dll 的插件是怎麼真正反過來調用到這個位於主程序內部的函數的．
+牠的解密插件中，調用了一個 `TVPSetXP3ArchiveExtractionFilter` 函數，這是 krkr 主程序提供的 API，讓我們來看看身爲一個 DLL 的插件是怎麼真正反過來調用到這個位於主程序內部的函數的．
 
 <span class="alert-heading font-weight-bold text-danger" style="font-size: 110%;">👒 TVPInitImportStub 事甚麼</span>
 
@@ -904,7 +904,7 @@ inline void TVPSetXP3ArchiveExtractionFilter(tTVPXP3ArchiveExtractionFilter filt
 提前預告一下，這些變量其實是函數指針，雖然現在是空值，但是在實際被使用的時候會裝入 krkr 主程序內部的 API 的函數地址．
 
   2. 如果發現這個神必變量不存在，那麼牠就執行了：
-要求 `TVPGetImportFuncPtr` 函數查找一個叫做 `void ::TVPSetXP3ArchiveExtractionFilter(tTVPXP3ArchiveExtractionFilter)` 的名字的函數的指針，並且把這個地址設爲 TVPImportFuncPtr52d30ac8479ef7e870b5aff076482799 ．
+要求 `TVPGetImportFuncPtr` 函數查找一個名字叫做 `void ::TVPSetXP3ArchiveExtractionFilter(tTVPXP3ArchiveExtractionFilter)` 的函數的指針，並且把這個地址設爲 TVPImportFuncPtr52d30ac8479ef7e870b5aff076482799 ．
 
   3. 最後牠間接調用了這個地址的函數，就是
 `((__functype)(TVPImportFuncPtr52d30ac8479ef7e870b5aff076482799))(filter);`
@@ -974,7 +974,7 @@ extern "C" HRESULT _stdcall V2Link(iTVPFunctionExporter *exporter)
 {
 	TVPInitImportStub(exporter);
 	// exporter 這個參數裏面包含了如何找到 krkr 的 API 的地址的足夠信息
-  // 使用這些信息，初始化一個 krkr 的 API 原型．
+    // 使用這些信息，初始化一個 krkr 的 API 原型．
 
 	TVPSetXP3ArchiveExtractionFilter(TVPXP3ArchiveExtractionFilter);
 	// 使用剛才準備好的 API 原型，調用 krkr 的 API，設定解密濾鏡函數．
@@ -1004,7 +1004,7 @@ _stdcall 是「函數調用約定的聲明」，牠規定了函數在互相調�
 
 extern “C” 指的雖然這裏寫得代碼都是 C++，但是暴露給外面的時候，請編譯器使用 C 規範來修飾函數名稱．如果不這樣做，函數名稱將會變成 ?V2Link@@YGxxxxxxx@Z，導致 krkr 主程序無法正確定位這個函數，並且無法加載插件．
 
-至此，我們知道了 krkr 主程序在調用 dll 插件的時候，會遞進去一個符號查找器．這樣 dll 就可以通過這個符號查找器來查找 krkr 主程序內部的 API 了．
+至此，我們知道了 krkr 主程序在調用 DLL 插件的時候，會遞進去一個符號查找器．這樣 DLL 就可以通過這個符號查找器來查找 krkr 主程序內部的 API 了．
 
 ### 8.5 解密系統的全景圖
 
@@ -1072,11 +1072,11 @@ tjs_uint TJS_INTF_METHOD tTVPXP3ArchiveStream::Read(void *buffer, tjs_uint read_
 ```
 
 可見，牠使用了一個循環來讀取數據，每次讀取一個數據塊，然後調用解密濾鏡來解密這個數據塊．
-請看代碼中的最後一個 if 的部分，牠把數據塊的偏移量 CurPos，數據塊的指針 buffer+write_size，數據塊的大小 one_size，以及文件的校驗和生成了一個 info 結構體，然後把這個結構體的指針傳進解密濾鏡函數中．
+請看代碼中的最後一個 if 的部分，牠把數據塊的偏移量 CurPos，目的緩衝區的指針 buffer+write_size，數據塊的大小 one_size，以及文件的校驗和組合成了一個 info 結構體，然後把這個結構體的指針傳進了解密濾鏡函數中．
 
 之後，解密濾鏡函數就會對這個數據塊進行解密，然後把解密後的數據**原地寫回到這個 buffer 中**．
 
-整個過程，忽略解壓的部分，的執行過程如下圖所示：
+整個過程，忽略解壓的部分，的執行如下圖所示：
 
 <video class='mb-3' playsinline="" autoplay="" muted="" loop=""  controls="" width='100%'>
     <source src="https://s3static-zone0.galgamer.eu.org/video-2d35/xp3-2/wholeview2.mp4" type="video/mp4">
