@@ -1110,4 +1110,3 @@ tjs_uint TJS_INTF_METHOD tTVPXP3ArchiveStream::Read(void *buffer, tjs_uint read_
 點名表揚 YouTube 上的回形針頻道，edX 和 Coursera 上國外大學的公開課，是牠們一遍又一遍地教會了我．而今天輪到我了，爲此我花了大量時間來繪製各種圖表，竭盡全力把這些複雜的東西講明白．請問我有沒有向大師們靠近了那麼一點點呢...！！
 
 謝謝妳看到這裏，讓我們在番外篇中再會！還有樂隊美少女妳記好了，我還會去找妳玩樂隊的...！！
-（如果還有機會的話）
