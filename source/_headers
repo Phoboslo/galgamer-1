@@ -1,5 +1,4 @@
 /*
-  X-Frame-Options: DENY
   Access-Control-Allow-Origin: *.hikarifield.eu.org
   
 https://:project.pages.dev/*
@@ -17,11 +16,9 @@ https://galgamer.eu.org/*
 https://*.galgamer.eu.org/*
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   
-https://galgamer.eu.org/api/*
+/api/*
   X-Robots-Tag: noindex
   
-/playground/1G.gzip
-  Content-Encoding: gzip
    
 /img/*
   Cache-Control: public, max-age=2500000

@@ -7,4 +7,4 @@ Allow: /categories/
 Allow: /tags/
 Allow: /about/
 
-Sitemap: https://galgamer.eu.org/sitemap.xml
+Sitemap: https://galgamer.moe/sitemap.xml
