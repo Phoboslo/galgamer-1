@@ -160,7 +160,7 @@ PS：解锁つーちゃん（宮守睦月）线需要先通关其他四位角色
 <br>
 <sp-character no=1 name="小柴 杏奈" yomi="koshiba anna" uid="anna">
   <p>
-   陽菜的同桌，也是的邻居，单方面喜欢日向。
+   陽菜的同桌，也是从小到大的邻居，单方面喜欢日向。
   </p>
   <p>
    ensemble经典之温柔同桌， <br>
