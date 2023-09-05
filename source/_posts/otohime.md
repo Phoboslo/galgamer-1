@@ -1,20 +1,21 @@
 ---
-title: '少女之剑与秘密协奏曲'
-date: 2023-9-02 00:30:00
+title: 少女之剑与秘密协奏曲
 keywords: 'ensemble, 伪娘，乙女の剣と秘めごとコンチェルト'
 banner_img: ''
-index_img: '../image/otohime/index.webp'
+index_img: ../image/otohime/cover.webp
 tags:
-   - 女装潜入
-   - 治愈
-   - 校园
-   - 伪娘
+  - 女装潜入
+  - 治愈
+  - 校园
+  - 伪娘
 categories:
-   - [R-18]
-   - [游戏公司, ensemble]
-abbrlink: 
+  - - R-18
+  - - 游戏公司
+    - ensemble
+abbrlink: 47365
 author: PiloAmuy
-excerpt: 'ensemble首位双马尾主角，剧情也是相当的炸裂'
+excerpt: ensemble首位双马尾主角，剧情也是相当的炸裂
+date: 2023-09-02 00:30:00
 ---
 
 <img src="../image/otohime/cover.png" class="d-none"/>
