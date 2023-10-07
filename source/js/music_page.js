@@ -1,9 +1,12 @@
 /*
     Simple music page for Galgamer
-    by GUREHA
+    by Kiriha@galgamer.eu.org
 */
-let mPlayer = document.getElementById('mPlayer');
-let mDetails = document.getElementById('details');
+let mPlayer;// = document.getElementById('mPlayer');
+let mDetailsTitle = document.getElementById('text-title');
+let mDetailsArtist = document.getElementById('text-artist');
+let mDetailsDesc = document.getElementById('text-details');
+
 let neteaseGo = document.getElementById('neteaseGo');
 let qqGo = document.getElementById('qqGo');
 let kugouGo = document.getElementById('kugouGo');
@@ -25,11 +28,13 @@ const beforeUnloadListener = (e) => {
 
 async function main(){
     //showBetaAlert();
+    
     allMusic = await getAllMusic();
+    
     initPlayer();
     buildPlaylist();
     setupBtn();
-    
+    setTimeout(setUpBg, 1000);
     // Find ID from URL
     let id = parseInt(getIdByUrl());
     if(id >= 0 && id < allMusic.length){
@@ -38,6 +43,18 @@ async function main(){
     }else{
         addState(nowPlaying);
     }
+    
+}
+
+function setUpBg(){
+    //plog('Setting up classlist.');
+    let bgMask = document.createElement('div');
+    bgMask.id = 'bgMask';
+    document.body.appendChild(bgMask);
+    document.querySelector('body').classList.add('playerpatch');
+    document.querySelector('#banner').classList.add('playerpatch');
+    document.querySelector('#board').classList.add('playerpatch');
+    document.querySelector('.full-bg-img > .mask').classList.add('playerpatch');
 }
 
 function reverseL(index){
@@ -84,12 +101,21 @@ window.onpopstate = function(e){
 };
 
 function initPlayer(){
+    mPlayer = document.createElement('div');
+    mPlayer.id = 'mPlayer';
+    mPlayer.classList.add('fixed-bottom', 
+     'col-sm-12', 'col-md-8', 'col-lg-6', 'col-xl-4',
+     'mb-2', 'mx-auto', 'col');
+    document.querySelector('main').appendChild(mPlayer);
+
     playerEl = new cplayer({
         element: mPlayer,
         playlist: allMusic,
         big: true,
         width: '100%',
-        volume: 0.5
+        volume: 0.5,
+        showPlaylistButton: 'false',
+        dropDownMenuMode: 'none'
     })
     playerEl.on('openaudio', function(ev){
         updatePage(this.nowplaypoint, true);
@@ -97,6 +123,10 @@ function initPlayer(){
 
     // 增加 正在播放中的關閉頁面確認
     window.addEventListener('beforeunload', beforeUnloadListener);
+    // custom player CSS
+    let playerCSS = document.getElementById('PlayerCSS');
+    playerCSS.parentElement.removeChild(playerCSS);
+    document.body.appendChild(playerCSS);
 }
 
 function setupBtn(){
@@ -139,7 +169,8 @@ function setupBtn(){
     kugouGo.addEventListener('click', function(ev){
         insertToast('danger', '無法打開酷狗音樂', 3000);
     })
-    shareInfo.addEventListener('click', function(ev){
+    document.getElementById('shareBtn').removeEventListener('click', shareHandler);
+    document.getElementById('shareBtn').addEventListener('click', function(_){
         insertToast('success', '正在調用 Telegram', 3000);
         let link = window.location.origin + '/api/music/' + reverseL(nowPlaying);
         
@@ -159,50 +190,56 @@ function setupBtn(){
         
         window.addEventListener('beforeunload', beforeUnloadListener);
     })
+    let onetimeplaybtn = document.createElement('a');
+    onetimeplaybtn.classList.add("play-btn");
+    onetimeplaybtn.addEventListener('click', playAndRemoveOneTimePlay)
+    let div = document.getElementById("onetimeplay");
+    div.appendChild(onetimeplaybtn);
+}
+
+function playAndRemoveOneTimePlay(){
+    playerEl.play();
+    let div = document.getElementById("onetimeplay");
+    removeFadeOut(div, 135);
 }
 
 function makePlaylistItem(index){
     /*
-              <li class="media my-2">
-            <img src="..." width=100px class="align-self-center mr-3" alt="...">
-            <div class="media-body" >
-              <a><h5 class="mt-1 mb-2">歌曲名稱</h5></a>
-              <p class="my-1 align-self-center">一些信一些信息</p>
-            </div>
-          </li>
+<li class="media my-3 mx-1 col-lg-auto col-md-12">
+  <a href="javascript:;"><img class="align-self-center mr-3 rounded-lg"
+      width="100px" alt="さくら雫"
+      src="..."></a>
+  <div class="media-body">
+    <a href="javascript:;">
+      <h5 class="mt-1 mb-2 font-weight-bold">...</h5>
+    </a>
+    <p class="my-1 align-self-center">...</p>
+  </div>
+</li>
     */
-    let mh5 = document.createElement('h5');
-    mh5.setAttribute('class', 'mt-1 mb-2 font-weight-bold');
-    mh5.innerText = allMusic[index].name + ' ▶️️';
-    let ah5 = document.createElement('a');
-    ah5.setAttribute('href', 'javascript:;');
-    ah5.addEventListener('click',() => switchTo(index));
-    ah5.appendChild(mh5);
-    
-    let dp = document.createElement('p');
-    dp.setAttribute('class', 'my-1 align-self-center');
-    dp.innerHTML = allMusic[index].details;
-    
-    let mediaBody = document.createElement('div');
-    mediaBody.setAttribute('class', 'media-body');
-    mediaBody.appendChild(ah5);
-    mediaBody.appendChild(dp);
-    
-    let coverImg = document.createElement('img');
-    coverImg.setAttribute('class', 'align-self-center mr-3 rounded-lg');
-    coverImg.setAttribute('width', '100px');
-    coverImg.setAttribute('alt', allMusic[index].name);
-    coverImg.setAttribute('src', allMusic[index].poster);
-    let aimg = document.createElement('a');
-    aimg.setAttribute('href', 'javascript:;');
-    aimg.addEventListener('click',() => switchTo(index));
-    aimg.appendChild(coverImg);
-    
+
     let mediaEl = document.createElement('li');
     mediaEl.setAttribute('class', 'media my-3 mx-1 col-lg-auto col-md-12');
-    mediaEl.appendChild(aimg);
-    mediaEl.appendChild(mediaBody);
-    
+
+    mediaEl.innerHTML = `
+<div class="media-frame row align-content-center mr-3">
+    <div class="media-poster mr-3 d-flex">
+        <img class="align-self-center rounded-lg"
+        width="100px"
+        alt="${allMusic[index].name}"
+        src="${allMusic[index].poster}">
+    </div>
+    <div class="media-body">
+        <a href="javascript:;">
+            <h5 class="mt-1 mb-2 font-weight-bold">${allMusic[index].name}</h5>
+        </a>
+        <p class="my-1 align-self-center">${ allMusic[index].details}</p>
+    </div>
+</div>
+    `
+    //mediaEl.addEventListener('click',() => switchTo(index));
+    mediaEl.querySelector('.media-poster').addEventListener('click',() => switchTo(index));
+    mediaEl.querySelector('h5').addEventListener('click',() => switchTo(index));
     return mediaEl;
 }
 
@@ -215,7 +252,10 @@ function buildPlaylist(){
 }
 
 function setDetailsCard(){
-    mDetails.innerHTML = allMusic[nowPlaying].details;
+    mDetailsDesc.innerHTML = allMusic[nowPlaying].details;
+    mDetailsArtist.innerText = '🎤️' + allMusic[nowPlaying].artist;
+    mDetailsTitle.innerText = allMusic[nowPlaying].name;
+    document.documentElement.style.setProperty('--right-bg', `url('${allMusic[nowPlaying].poster}')`);
 }
 
 function switchTo(index, notPlay){
@@ -233,7 +273,15 @@ function updatePage(index){
     let title = document.querySelectorAll('meta[property="og:title"]')[0];
     title.content = allMusic[index].name + ' - ' + allMusic[index].artist;
     document.title = allMusic[index].name + ' - ' + allMusic[index].artist;
-    insertToast('info', 'Now Playing: <strong>' + allMusic[index].name + '</strong>', 2000);
+    insertToast('info', 
+    `Now Playing: <br>
+    <strong><em>${allMusic[index].name}</em></strong>
+    <br>
+    comes from the game:<br>
+    <strong><em>${allMusic[index].game}</em></strong>
+    `, 
+    4000);
+    document.documentElement.style.setProperty('--bg-url', `url('${allMusic[index].poster}')`);
     if(doNotNavigate){
         doNotNavigate = false;
     }else{

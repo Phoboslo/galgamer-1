@@ -69,6 +69,10 @@ img.layer-border {
   max-width: 96%;
 }
 
+article {
+  line-break: loose;
+}
+
 /* 配色 */
 :root {
   /* 網頁背景色: 0; */
@@ -93,7 +97,7 @@ img.layer-border {
   /* 頂欄文字顏色: 0; */
   --navbar-text-color: #fff;
   /* 網站頭圖默認值 */
-  --home-bg-url: url("/image/Atri/pv.webp");
+  --home-bg-url: url("/image/main/key.webp");
 }
 
 /* 夜間配色 */
@@ -133,4 +137,24 @@ img.layer-border {
 
 #banner {
   transition: background-image 0.3s ease-in-out;
+}
+
+/* for toast */
+.toast-top {
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+  z-index: 1030;
+  margin-top: 5rem!important;
+  margin-bottom: 0.5rem!important;
+}
+.toast-bottom {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+  margin-top: .5rem!important;
+  margin-bottom: 3rem!important;
 }

@@ -228,10 +228,18 @@ async function insertToast(type, data, last){
         await new Promise(r => setTimeout(r, 500));
     }
 
+    if(typeof TOAST_LOC !== 'string'){
+        TOAST_LOC = 'bottom';
+    }else if(TOAST_LOC.toLowerCase() !== 'top'){
+        TOAST_LOC = 'bottom'
+    }else{
+        TOAST_LOC = 'top'
+    }
+
     let toast = document.createElement('div');
     toast.setAttribute('id', 'mytoast');
     //toast.setAttribute('class', 'border border-light fixed-bottom text-light col-lg-4 col-md-10 col-sm-9 w-75 mx-auto py-2 my-2 rounded-lg' + ' bg-' + type);
-    toast.setAttribute('class', 'alert border border-primary fixed-bottom col-lg-4 col-md-10 col-sm-9 w-75 mx-auto py-2 mb-5 my-2 rounded-lg' + ' alert-' + type);
+    toast.setAttribute('class', `alert border border-primary toast-${TOAST_LOC} col-lg-5 col-md-8 col-10 mx-auto py-2 rounded-lg alert-${type}`);
     toast.innerHTML = data;
     // 漸變進入
     toast.style.transition = "opacity 0.5s ease";
@@ -508,29 +516,31 @@ function createShareBtn() {
     let insertTo = document.getElementById('navbar-toggler-btn');
     insertTo.parentNode.insertBefore(btn, insertTo);
     // 按鈕點擊事件
-    btn.addEventListener('click', function (e){
-        // url and text for TG share
-        
-        let title = document.querySelectorAll('meta[property="og:title"]')[0].content;
-        let tags = document.querySelectorAll('meta[property="article:tag"]');
-        let tagStr = '';
-        if(tags.length) {
-            //tags.forEach(function (tag){
-            //    tagStr += '#' + tag.content + ' ';
-            //});
-            for(let i = 0; i < tags.length; i++){
-                tagStr += '#' + tags[i].content + ' ';
-            }
+    btn.addEventListener('click', shareHandler);
+}
+
+function shareHandler(e){
+    // url and text for TG share
+    
+    let title = document.querySelectorAll('meta[property="og:title"]')[0].content;
+    let tags = document.querySelectorAll('meta[property="article:tag"]');
+    let tagStr = '';
+    if(tags.length) {
+        //tags.forEach(function (tag){
+        //    tagStr += '#' + tag.content + ' ';
+        //});
+        for(let i = 0; i < tags.length; i++){
+            tagStr += '#' + tags[i].content + ' ';
         }
-        let url = title;
-        let desc = tagStr + '\n🔗️' + window.location;
-        //nielog(url);
-        //nielog(desc);
-        url = encodeURIComponent(url);
-        desc = encodeURIComponent(desc);
-        // TG call
-        window.location = 'tg://msg_url?url=' + url + '&text=' + desc;
-    });
+    }
+    let url = title;
+    let desc = tagStr + '\n🔗️' + window.location;
+    //nielog(url);
+    //nielog(desc);
+    url = encodeURIComponent(url);
+    desc = encodeURIComponent(desc);
+    // TG call
+    window.location = 'tg://msg_url?url=' + url + '&text=' + desc;
 }
 
 // 友情链接加入首页
